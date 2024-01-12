@@ -1,17 +1,26 @@
 ## We Don't Know JS
 
-<h3 >
- JavaScript ও Web Development  এর Eco System   গভিরভাবে জানার  জন্য ও  ইন্টারভিউ জিজ্ঞাসা করার মত গুরুত্বপূর্ণ  সব প্রশ্ন ও উত্তর সমূহ একত্রে  । আশা করি প্রতিটি Developer   উপকৃত হবেন । 
-</h3>
+####  JavaScript ও Web Development  এর Eco System   গভিরভাবে জানার  জন্য ও  ইন্টারভিউ জিজ্ঞাসা করার মত গুরুত্বপূর্ণ  সব প্রশ্ন ও উত্তর সমূহ একত্রে  । আশা করি প্রতিটি Developer   উপকৃত হবেন । 
 
-<h5 >
-যদি আপনি Contribute  করতে চান, তাহলে <a href="https://github.com/yeasin-2002/We-Do-not-Know-JS/blob/main/CONTRIBUTING.md">CONTRIBUTIONS GUIDELINE </a> পড়ুন ।
-</h5>
+
 <h5 >
 এই রিপোটি  <a href="https://learnwithsumit.com/">Learn With Sumit </a>,
   <a href="https://www.youtube.com/@anisul-islam">Anisul Islam  </a>, 
   <a href="https://www.youtube.com/@StackLearner">Stack Learner </a> সব অন্য সকল বাংলাদেশী কন্টেন্ট ক্রিয়েটর ও লেখকদের উৎসর্গ  করা হল ।
 </h5>
+
+
+
+##### নির্দেশনা
+
+ - কোনো  সাজেসন্স,রিকুয়েস্ট থাকলেঃ <a href="https://github.com/yeasin-2002/We-Do-not-Know-JS/issues">  Issue </a>  ক্রিয়েট করুন 
+
+ - কোনো  প্রশ্ন না বুঝলে বা বিস্তারিত জানতে চাইলেঃ    <a href="https://github.com/yeasin-2002/We-Do-not-Know-JS/discussions"> Discussion </a> এ জিজ্ঞাসা করুন  । 
+
+ -  Contribute  করতে চান চাইলেঃ  <a href="https://github.com/yeasin-2002/We-Do-not-Know-JS/blob/main/CONTRIBUTING.md"> Contributions Guideline </a> পড়ুন । 
+
+
+
 
 <br>
 
@@ -59,7 +68,7 @@ Ans:
 </details>
  
  <details>
- <summary>৬.  Single irresponsible principal কাকে বলে?   </summary>
+ <summary>৬.  Single Responsible principal কাকে বলে?   </summary>
  Ans:
  </details>
 
