@@ -11,6 +11,8 @@
 
 
 
+<br>
+
 ##### নির্দেশনা
 
  - কোনো  সাজেসন্স,রিকুয়েস্ট থাকলেঃ <a href="https://github.com/yeasin-2002/We-Do-not-Know-JS/issues">  Issue </a>  ক্রিয়েট করুন 
@@ -44,60 +46,116 @@
 
 <details>
 <summary> ১.  Local storage ও  session   এর মধ্যে পার্থক্য কি ?  </summary>
-Ans:
+  
+  ####  local storage ও session  এর মধ্যে  পার্থক্য হলোঃ 
+
+| পার্থক্য | Local Storage | Session Storage  |
+| --- | --- | --- |
+| স্থায়ীত্ব |   মা্যানুয়ালি বা প্রোগ্রামিক্যালি  ব্রাউজার ডাটা  ক্লিয়ার  না করা পর্যন্ত  | ট্যাব ক্লোস করার সাথে সাথে |
+|  এভাইলেবল  | সকল window তেই  | নির্দিষ্ট  ট্যাবেই  |
+| উপযোগী  |  দীর্ঘ সময় ডাটা  রাখায় | আল্প  সময় ডাটা  রাখায় |
 </details>
 
 <details>
 <summary> ২. DOM ও BOM এর মধ্যে পার্থক্য কি ?  </summary>
-Ans:
+
+#### BOM ও  DOM ব্রাউজারের JavaScript  এর Window Object এর  উপাদান । ব্রাউজারে সকল  কিছু window নামের একটা master object এর থেকে একসেস করা যায় 
+
+BOM ও DOM এর মধ্যে পার্থক্য হলোঃ 
+
+| বিষয় | DOM | BOM |
+| --- | --- | --- |
+| পূর্ননাম | Document Object Model | Browser Object Model |
+| ব্যখ্যা | HTML ও  XML documents যার মাধ্যমে হোস্ট এনভাইরমেন্ট  এর স্ট্রাকচার   | ব্রাউজার স্পেসিফিক ফাংশনালিটি |
+| উপাদান  | Elements, Attributes, Text, etc. |  Window, Screen, Location, History, Navigator, etc. |
+| নিয়ন্ত্রনকারী  | W3C | প্রতিটি ব্রাউজারে ভিন্ন ভিন্নভাবে ইম্প্লিমেন্ট করে  |
 </details>
 
 <details>
-<summary>৩.  primitive ও   non-primitive data types  এর  মধ্যে  পার্থক্য কি? উভয়ের একটী করে উদাহরণ দেও   </summary>
-Ans:
+<summary>৩.  Pure Function কাকে বলে ?     </summary>
+
+#### Computer Science  এর ভাষায় যে সকল  function  ইন্টার্নাল  লজিক নিয়ে থাকে ও  একই Input এর জন্য একই Output দিয়ে থাকে তাকে Pure Function   বলে । 
+
+এর ২টা বৈশিষ্ট থাকে 
+
+- নিজের বিজনেস লজিক নিয়ে কনসার্ন  ।
+- Same Input এর জন্য Same output  দিয়ে থাকে ।
 </details>
 
 <details>
 <summary>৪.  Falsy  ভ্যালু কোনগুলেকে বলে?  </summary>
--> 0, "", null, undefined, NaN, false এগুলোকে falsy ভালু বলে ।
+
+####  0, "", null, undefined, NaN, false এগুলোকে falsy ভালু বলে ।
 </details>
 
 <details>
-<summary>৫.  Pure Function কাকে বলে ? </summary>
-Ans:
+<summary>৫.  falsy ও  nullish ভ্যালু এর মধ্যে পার্থক্য কি ?  </summary>
+
+#### Falsy value বলতে 0, "", null, undefined, NaN, false কে বুঝায়   এবং nullish value বলতে null, undefined কে বুঝায় ।
+nullish value মুলত falsy value এর সাবসেট । 
+
+##### ওপারেটর 
+-  falsy value  এর জন্য  || দিয়ে চেক করা যায় 
+- nullish value  ডিটেক্ট করতে ?? ব্যবহার করা হয় 
+
+
+
 </details>
+
  
  <details>
- <summary>৬.  Single Responsible principal কাকে বলে?   </summary>
- Ans:
+ <summary>৬.   Shallow Copy ও Deep Copy বলতে কি বুঝায়?   </summary>
+
+ ####  কোনো Object বা Array ১ লেভেল ডিপ কপি করতে গেলে তাকে Shallow Copy বলে । আর ২ লেভেল বা ততোধিক  ডিপ কপি করতে গেলে তাকে Deep Copy বলে ।
+
+#### উদাহরণঃ
+  <img src="./assets/shallowCopyVsDeepCopy.png" width="500px" >
+
+  এখানে, 
+   shallowCopy.lang যদি  পরিবর্তন করা হয় তবে arr  অর্থাত মূল array এর ভ্যালু পরিবর্তন হয় । কারণ এখানে  shallowCopy  এর মান মূল array এর রেফারেন্স নেয় ।
+  কিন্তু, 
+  deepCopy.lang যদি  পরিবর্তন করা হয় তবে arr  অর্থাত মূল array এর ভ্যালু পরিবর্তন হয় না । কারণ এখানে  deepCopy  এর মান মূল array এর ক্লোন নেয় ।
+
+  যেহেতু arr.lang  ও একটি Array তাই এটিও রেফারেন্স টাইপের তাই সেটিও ডিপলি করে পরিবর্তন করতে হয় 
+
+
  </details>
+
+<details>
+<summary>৭.  Deep Copy   এর ক্ষেত্রে JSON.stringify ও পরে আবার JSON.parse করে  করলে এই  পদ্ধতি কি ব্যবহার করা  উচিত?    </summary>
+<img src="./assets/json_strinify_persepng.png" width="500px" >
+</details>
+
 
  <details>
- <summary>৭.  Event Propagation কাকে বলে?  </summary>
+ <summary>৮.  Event Propagation কাকে বলে?  </summary>
  Ans:
  </details>
 
   <details>
-  <summary>৮.  Event Bubbling  বনাম Event Delegations এর মধ্যে  পার্থক্য কি?  </summary>
+  <summary>৯.  Event Bubbling  বনাম Event Delegations এর মধ্যে  পার্থক্য কি?  </summary>
   Ans:
   </details>
 
   <details>
-  <summary>৯.  Shallow Copy ও Deep Copy বলতে কি বুঝায়?  </summary>
+  <summary>১০.  Single Responsible principal কাকে বলে?  </summary>
   Ans:
   </details>
 
   <details>
-  <summary>১০.  Deep Copy   এর ক্ষেত্রে JSON.stringify ও পরে আবার JSON.parse করে  করলে এই  পদ্ধতি কি ব্যবহার করা  উচিত?  </summary> 
+  <summary>১১.  primitive ও   non-primitive data types  এর  মধ্যে  পার্থক্য কি? উভয়ের একটী করে উদাহরণ দেও
+   </summary> 
   
 
   <img src="./assets/json_strinify_persepng.png" width="500px" >
   </details>
 
   <details>
-<summary> ১১. JavaScript এ   null and Undefined এর মধ্যে পার্থক্য কি ?   </summary>
+<summary> ১২. JavaScript এ   null and Undefined এর মধ্যে পার্থক্য কি ?   </summary>
 Ans:
 </details>
+
+
 
 </div>
 
