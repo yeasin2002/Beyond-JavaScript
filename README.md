@@ -136,14 +136,25 @@ nullish value মুলত falsy value এর সাবসেট ।
  ####  কোনো Object বা Array ১ লেভেল ডিপ কপি করতে গেলে তাকে Shallow Copy বলে । আর ২ লেভেল বা ততোধিক  ডিপ কপি করতে গেলে তাকে Deep Copy বলে ।
 
 #### উদাহরণঃ
-  <img src="./assets/shallowCopyVsDeepCopy.png" width="500px" >
+
+ ১. Shallow Copy 
+
+  <img src="./assets/shallowCopyExample.png" width="500px" >
 
   এখানে, 
-   shallowCopy.lang যদি  পরিবর্তন করা হয় তবে arr  অর্থাত মূল array এর ভ্যালু পরিবর্তন হয় । কারণ এখানে  shallowCopy  এর মান মূল array এর রেফারেন্স নেয় ।
-  কিন্তু, 
-  deepCopy.lang যদি  পরিবর্তন করা হয় তবে arr  অর্থাত মূল array এর ভ্যালু পরিবর্তন হয় না । কারণ এখানে  deepCopy  এর মান মূল array এর ক্লোন নেয় ।
+  original array কে Spread Oparetor দিয়ে কপি করা হয় ।
+  যেহেতু origianl array এর মাঝে অবজেক্ট আছে তাই এখানে অবজেক্ট এর ক্ষেত্রে একই রেফারেন্স দিয়ে কপি হয়েছে । তাই যখন আমরা  original array এর অবজেক্ট এর কোনো প্রপার্টি চেঞ্জ করবো তখন কপি করা array এর অবজেক্ট এর কোনো প্রপার্টি চেঞ্জ হয়ে যাবে ।
 
-  যেহেতু arr.lang  ও একটি Array তাই এটিও রেফারেন্স টাইপের তাই সেটিও ডিপলি করে পরিবর্তন করতে হয় 
+  
+ ২. Deep Copy 
+
+  <img src="./assets/deepCopyExample.png" width="500px" >
+
+  এখানে, 
+  original object  কে Spread Oparetor দিয়ে কপি করা হয়  এবং  তার পাশাপাশি  এর ভিতরের Object কেউ আবার Spread Oparetor দিয়ে  কপি করা হয়েছে । তাই এডি ২ লেভেল নেস্টেড হবার পরো সম্পুর্ন Deeply Copy হয়ে  
+
+  Tips: অনেক লেভেলের ডিপ কোনো Object/Array যদি Immutadly   পরিবর্তন 
+
 
 
  </details>
@@ -155,8 +166,13 @@ nullish value মুলত falsy value এর সাবসেট ।
 
 
  <details>
- <summary>৮.  Event Propagation কাকে বলে?  </summary>
- Ans:
+ <summary>৮.  Event Propagation ও Event Delations  কাকে বলে?  </summary>
+ 
+ ### Event Propagation
+  JavaScript-এ Event Propagation হলো একটি ইভেন্ট হ্যান্ডলিং প্রক্রিয়া যা তিনটি ফেজে ঘটে: Capturing Phase, Target Phase, এবং Bubbling Phase. এই তিনটি ফেজে ঘটে একটি ইভেন্ট হ্যান্ডলিং প্রক্রিয়া। 
+
+### Event Delations
+ প্যারেন্ট এলিমেন্ট এর উপর একটি ইভেন্ট হ্যান্ডলার সেট করে এবং এই ইভেন্ট হ্যান্ডলার এর মাধ্যমে চাইল্ড এলিমেন্ট এর উপর ইভেন্ট হ্যান্ডলার সেট করা হয় তাকে Event Delations বলে ।
  </details>
 
   <details>
@@ -165,12 +181,18 @@ nullish value মুলত falsy value এর সাবসেট ।
   </details>
 
   <details>
-  <summary>১০.  Single Responsible principal কাকে বলে?  </summary>
+  <summary> ১০.  event.target ও event.currentTarget ও this.target  এর মধ্যে পার্থক্য কী ? </summary>
+  Ans: 
+  </details>
+
+
+  <details>
+  <summary>১১. Single Responsible principal কাকে বলে?  </summary>
   Ans:
   </details>
 
   <details>
-  <summary>১১.  primitive ও   non-primitive data types  এর  মধ্যে  পার্থক্য কি? উভয়ের একটী করে উদাহরণ দেও
+  <summary>১২.  primitive ও   non-primitive data types  এর  মধ্যে  পার্থক্য কি? উভয়ের একটী করে উদাহরণ দেও
    </summary> 
   
 
@@ -191,12 +213,22 @@ Ans:
 <div> 
  <details>
  <summary> ১.  React ও React-DOM কী? Website বানাতে ২টি আলাদা আলাদা ইন্সটল কেন করতে  হয়?  </summary>
- Ans:
+ 
+React.js বলতে React ও React-DOM  এর সমন্বয়ে একটা  প্যাকেজ বুঝায় । যদিও ২টি আলাদা আলদা ভূমিকা রাখে  । 
+
+##### React :    এটি মূলত  JavaScript  ওয়েব ও অ্যাপ এর  জন্য একটি প্যাকেজ  ও কাচামাল বলা যায় । 
+
+কিভাবে রিয়েক্ট কাজ করবে তার নির্ধারণ  করে । 
+
+##### React-DOM : Browser DOM  এর একটি  কপি বা শেডো ডম ।  মূলত React এ কোনো State পরিবর্তন হলে সেটি আগে  Virtual-DOM (V-DOM) এ সেটি  পরিবর্তন করে এবং  তা ডিফিং বা  রি- কনসালেসশন এলগোরিদম এর মাধ্যমে কোন component এ   পরিবর্তন হয়েছে সেটি এই খসড়া ডমে  পরিবর্তনের  এরপর সারর্জিক্যাল অপারেশনের এর  মাধ্যমে মূল ডমে পরিরর্তন করে
+
  </details>
 
  <details>
  <summary>২.  “React is Reactive ” এইটি দ্বারা React কি  বুঝাতে চাচ্ছে? </summary>
- Ans:
+ 
+ ### React এর কোনো State   পরিবর্তনের সাথে সাথে Component Re-render এর মাধ্যমে Updated Sate টি Brower DOM এ  Automatically পরিরর্তন করে ।  তাই বলে হয় রিয়েক্ট রিয়েক্টিভ  মানে State  পরিবর্তনের  সাথে সাথে তা রিয়েক্ট করে ও তার  ফলাফল মূল ডমে রিফলেক্ট করে
+
  </details>
 
  <details>
@@ -206,42 +238,135 @@ Ans:
  
  <details>
  <summary>৪.  React State Update এর ক্ষেত্রে Batch Update বলতে কি বুঝায় ? </summary>
- Ans:
+
+ ### React এর কোনো State Update হলে  তা  সাথে সাথে  মূল ডমে পরিবর্তন রিফলেক্ট করে না । অর্থাৎ,  একত্রে  পরিবর্তিত Sate সমূহ মূল ডমে Update করে । 
+
+অনেক State একত্রে গ্রুপ আকারে  update করাকেই Batch Update বলা হয় ।
  </details>
 
  <details>
  <summary>৫.  একাধিক DOM Operations এর ক্ষেত্রে Browser DOM  কি আসলেই Slow?   এক্ষেত্রে React  কিভাবে DOM Operations Optimize করতে পারে ।  </summary>
- Ans:
+ 
+###  Browser DOM Operations  Slow নয় তবে পার্সিনং থেকে  Display পার্ট    প্রতি অপারেশনের  করতে হয় ।    এক্ষেত্রে React.js Batch Update এর মাধ্যমে   একত্রে সব State update  করে । 
+
+#### ফলে  কম  ওপারেশন হয় সেটির ক্ষেত্রে  কম Parsing and  Display process  থাকায় DOM Optimize হয়
  </details>
 
  <details>
  <summary>৬.  ডিফিং বা  রি- কনসালেসশন এলগোরিদম কাকে বলে? এবং React-DOM এটিকে কোন ক্ষেত্রে ব্যবহার  করে ? </summary>
- Ans:
+Application এর কোনো State পরিবর্তন হলে সেটি  রেন্ডার ট্রি এর মাঝে খুজঝে তা মূল ডমে তা update  করতে  Diffing Algorithm  ব্যবহার করা হয় । 
+
+#### মূলত, রিয়েক্ট একটি  Component Tree বা Render Tree মেইন্টাইন করে । তাই কোনো Component এ State পরিবর্তন হলে সেই Component টি রেন্ডার ট্রি থেকে খুজে বের  করার জন্য যে Algorithm ব্যবহার করে  তাকে ডিফিং বা  রি- কনসালেসশন এলগোরিদম বলে ।
  </details>
 
  <details>
  <summary>৭.  React Component এর নাম Capital Letter দিয়া শুরু কেন করতে হয় ?  </summary>
- Ans:
+ Application এর function  JSX  রিটার্ন করতে পারে আবার অন্য যেকোনো ভ্যালু । 
+
+এক্ষেত্রে কোনটি JSX রিটার্ন করে এমন , অর্থাৎ কোনটী  কোম্পোনেন্ট আর কোনটি সাধারণ function তার  নির্নয়ের  জন্য Component এর নামে  Capital Letter দিয়ে  শুরু করতে হয় ।
  </details>
 
  <details>
  <summary> ৮.  “Props are Immutable” এর মানে কি ?  </summary>
- Ans:
+ 
+
+React Components এর  Props হিসেবে একটি Object পেয়ে থাকে । 
+ যেমন 
+
+```jsx
+**export const ReactComponentsDemo = (props) => {
+ const {name,id} = props; 
+
+  return <div >index</div>;
+};**
+```
+
+এই Props নামের Object a   আমরা name, id পাচ্ছি । 
+
+উদাহরণ হিসেবে এমন ধরতে পারি, 
+
+```jsx
+{
+id: 1, 
+name: "yeasin", 
+}
+```
+
+এক্ষেত্রে কোনো কারনে বা কোনো event এর  মাধ্যমে state  পরিবর্তন হয়ে name = “md kawsar islam yeasin ”  হয়ে গেল । 
+
+এক্ষেত্রে,  মনে হতে পারে  update হবার কারনে name এর ভ্যালু পরিবর্তন  করবে props এর, কিন্তু Props are immutable এর মানে  বুঝায় এর কোনো  ভ্যালু পরিবর্তন হলে  পরবরর্তী রেন্ডারে আবার নতুন একট  object পাবে । শুধুমাত্র updated value টা নয় 
+
+অর্থাৎ, এর পরবর্তীতে রি রেন্ডারে  props হবে 
+
+```jsx
+{
+id: 1, 
+name: "md kawar islam  yeasin", 
+}
+```
+
  </details>
 
  <details>
  <summary>৯.  JSX Components  কে কেন কোনো প্যারেন্ট কম্পোনেন্ট বা Fragment দিয়ে Wrap করতে হয় ?  </summary>
- Ans:
+
+ React Component JSX রিটার্ন করে । JSX  মূলত একটি Object । প্রতিটী html tag  Object হিসেবে  শেষে কম্পাইল করে । 
+
+আমরা জানি, কোনো function  যেকোনো   একটি মাত্র   ভ্যালু রিটার্ন করে । 
+
+তাই যদি একটি মাত্র element বা Fragment  দিয়া Wrap করা থাকে তাহলে একটি Object এর   মধ্যে বাকি সব element  গুলো nested object আকারে থাকে ও তা  রিটার্ন করে ।
  </details>
 
  <details>
  <summary>১০.  React এ List রেন্ডার করতে হলে Array.prototype.map ব্যবহার করা হয়। map ব্যাতিত forEach,for loop,while loop এর মাধ্যমেও কি  List রেন্ডার করা যায় ? হ্যা হলে কিভাবে?  </summary>
- Ans:
+### List Render এর ক্ষেত্রে আমরা map ব্যবহার করে থাকি ।
+
+যেমনঃ 
+
+```tsx
+import { Fragment } from "react";
+import { Component1, Component2, Component3 } from "./Components";
+
+const App = () => {
+  const list = [Component1, Component2, Component3];
+  return (
+    <div>
+      <h1>App</h1>
+      {list.map((Val, index) => {
+        return (
+          <Fragment key={index}>
+            <Val /> {/* প্রতিটি JSX Component এখানে  Call হচ্ছে  */}
+          </Fragment>
+        );
+      })}
+    </div>
+  );
+```
+
+### আমরা   Array.prototype.map কেন ব্যবহার করি ?
+
+React এর রেন্ডারের জন্য  চাই JSX Return করে এমন  function বা  React কম্পোনেন্ট  । 
+
+এক্ষেত্রে map একটি  নতুন modified array রিটার্ন করে । যা সরাসরি UI এর মাঝে  ব্যবহার করতে পারে । উপরের  Examples এর ক্ষেত্রে Array.prototype.map ব্যবহার  করায় list এর modified একটি Array of Components আমরা পাই যা  React তা সরাসরি UI তে রেন্ডার করতে পারছে ।
  </details>
 
  <details>
  <summary> ১১.  List রেন্ডার এর ক্ষেত্রে প্রতিটি element কে কেন আলাদা আলাদা key দিতে হয় ? যদি key না দেয়া হয় তাহলে default ভাবে কি কী হিসেবে  নেয়?  </summary>
- Ans:
+ 
+### React এ List Render করার ক্ষেত্রে প্রতিটি element কে আলাদা আলাদা key দিতে হয় । যদি প্রোগ্রামার key না দেয় তাহলে এটি Default ভাবে Index কে  key হিসেবে নিয়ে থাকে ।
+
+### index কে key হিসেবে দেয়া কেন উচিত নয় ?
+
+index কে যদি key হিসেবে দেই  তাহলে এক্ষেত্রে কিছু  সমস্যা হতে পারে । যেমনঃ 
+
+ধরি,  
+
+1. List of Components যা map করে UI তে দেখানো হল । এখানে প্রতিটি elements এর key তাদের index কে দেয়া হল । 
+2. onClick কোনো event এ ১ম index  এর Component কে remove করা হল । 
+3. এখন ২য় element টি হয়ে যাবে ১ম element । যেহেতু array এর ১ম elements টি remove করা হয়েছে তাই  ২য়টির index হবে  ১ম টির index অর্থাৎ 1 . 
+4. রিয়েক্ট মূলত index দিয়ে ট্রাক রাখে । এক্ষেত্রে React  সঠিকভাবে ট্রাক রাখাতে পারবে না । কারন তার  অনুযায়ী  1 index ওলা Component টি remove করা হয়েছে  কিন্তু  এখন আবার  আবার  দেখা যাচ্ছে যে  আবার 1 index এর কোনো component আছে ।  এক্ষেত্রে React  কনফিউসড  হয়ে যাবে । 
+5. এসল ক্ষেত্রে Wired Behave করতে পারে ।
+
  </details>
 
  <details>
