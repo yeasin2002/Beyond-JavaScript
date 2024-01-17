@@ -1,6 +1,6 @@
-## We Don't Know JS
+## Beyond JavaScript 
 
-#### JavaScript ও Web Development এর Eco System গভিরভাবে জানার জন্য ও ইন্টারভিউ জিজ্ঞাসা করার মত গুরুত্বপূর্ণ সব প্রশ্ন ও উত্তর সমূহ একত্রে । আশা করি প্রতিটি Developer উপকৃত হবেন ।
+##### JavaScript ও Web Development এর Eco System গভিরভাবে জানার জন্য ও ইন্টারভিউ জিজ্ঞাসা করার মত গুরুত্বপূর্ণ সব প্রশ্ন ও উত্তর সমূহ একত্রে । আশা করি প্রতিটি Developer উপকৃত হবেন ।
 
 <h5 >
 এই রিপোটি  <a href="https://learnwithsumit.com/">Learn With Sumit </a>,
@@ -9,19 +9,19 @@
 </h5>
 
 
-#### সকল কন্ট্রিবিউটোরস যাদের প্রতি কৃতজ্ঞতা প্রকাশ করছি।
+##### সকল কন্ট্রিবিউটোরস যাদের প্রতি কৃতজ্ঞতা প্রকাশ করছি।
 
- <img src="https://contrib.rocks/image?repo=yeasin-2002/We-Do-not-Know-JS" />
+ <img src="https://contrib.rocks/image?repo=yeasin-2002/Beyond-JavaScript" />
 
 <br>
 
 ### নির্দেশনা
 
- - কোনো  সাজেসন্স,রিকুয়েস্ট থাকলেঃ <a href="https://github.com/yeasin-2002/We-Do-not-Know-JS/issues">  Issue </a>  ক্রিয়েট করুন 
+ - কোনো  সাজেসন্স,রিকুয়েস্ট থাকলেঃ <a href="https://github.com/yeasin-2002/Beyond-JavaScript/issues">  Issue </a>  ক্রিয়েট করুন 
 
- - কোনো  প্রশ্ন না বুঝলে বা বিস্তারিত জানতে চাইলেঃ    <a href="https://github.com/yeasin-2002/We-Do-not-Know-JS/discussions"> Discussion </a> এ জিজ্ঞাসা করুন  । 
+ - কোনো  প্রশ্ন না বুঝলে বা বিস্তারিত জানতে চাইলেঃ    <a href="https://github.com/yeasin-2002/Beyond-JavaScript/discussions"> Discussion </a> এ জিজ্ঞাসা করুন  । 
 
- -  Contribute  করতে চান চাইলেঃ  <a href="https://github.com/yeasin-2002/We-Do-not-Know-JS/blob/main/CONTRIBUTING.md"> Contributions Guideline </a> পড়ুন । 
+ -  Contribute  করতে চান চাইলেঃ  <a href="https://github.com/yeasin-2002/Beyond-JavaScript/blob/main/CONTRIBUTING.md"> Contributions Guideline </a> পড়ুন । 
 
 
 
