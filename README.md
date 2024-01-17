@@ -1,7 +1,6 @@
 ## We Don't Know JS
 
-####  JavaScript ও Web Development  এর Eco System   গভিরভাবে জানার  জন্য ও  ইন্টারভিউ জিজ্ঞাসা করার মত গুরুত্বপূর্ণ  সব প্রশ্ন ও উত্তর সমূহ একত্রে  । আশা করি প্রতিটি Developer   উপকৃত হবেন । 
-
+#### JavaScript ও Web Development এর Eco System গভিরভাবে জানার জন্য ও ইন্টারভিউ জিজ্ঞাসা করার মত গুরুত্বপূর্ণ সব প্রশ্ন ও উত্তর সমূহ একত্রে । আশা করি প্রতিটি Developer উপকৃত হবেন ।
 
 <h5 >
 এই রিপোটি  <a href="https://learnwithsumit.com/">Learn With Sumit </a>,
@@ -9,20 +8,15 @@
   <a href="https://www.youtube.com/@StackLearner">Stack Learner </a> সব অন্য সকল বাংলাদেশী কন্টেন্ট ক্রিয়েটর ও লেখকদের উৎসর্গ  করা হল ।
 </h5>
 
-
-
 <br>
 
 ##### নির্দেশনা
 
- - কোনো  সাজেসন্স,রিকুয়েস্ট থাকলেঃ <a href="https://github.com/yeasin-2002/We-Do-not-Know-JS/issues">  Issue </a>  ক্রিয়েট করুন 
+- কোনো সাজেসন্স,রিকুয়েস্ট থাকলেঃ <a href="https://github.com/yeasin-2002/We-Do-not-Know-JS/issues"> Issue </a> ক্রিয়েট করুন
 
- - কোনো  প্রশ্ন না বুঝলে বা বিস্তারিত জানতে চাইলেঃ    <a href="https://github.com/yeasin-2002/We-Do-not-Know-JS/discussions"> Discussion </a> এ জিজ্ঞাসা করুন  । 
+- কোনো প্রশ্ন না বুঝলে বা বিস্তারিত জানতে চাইলেঃ <a href="https://github.com/yeasin-2002/We-Do-not-Know-JS/discussions"> Discussion </a> এ জিজ্ঞাসা করুন ।
 
- -  Contribute  করতে চান চাইলেঃ  <a href="https://github.com/yeasin-2002/We-Do-not-Know-JS/blob/main/CONTRIBUTING.md"> Contributions Guideline </a> পড়ুন । 
-
-
-
+- Contribute করতে চান চাইলেঃ <a href="https://github.com/yeasin-2002/We-Do-not-Know-JS/blob/main/CONTRIBUTING.md"> Contributions Guideline </a> পড়ুন ।
 
 <br>
 
@@ -40,111 +34,109 @@
 
 <h3 align="center" id="js"><img src="https://skillicons.dev/icons?i=js" width="20" />  JavaScript</h3>
 
-<div> 
-
-
+<div>
 
 <details>
 <summary> ১.  Local storage ও  session   এর মধ্যে পার্থক্য কি ?  </summary>
   
-  ####  local storage ও session  এর মধ্যে  পার্থক্য হলোঃ 
+  ####  local storage ও session  এর মধ্যে  পার্থক্য হলোঃ
 
-| পার্থক্য | Local Storage | Session Storage  |
-| --- | --- | --- |
-| স্থায়ীত্ব |   মা্যানুয়ালি বা প্রোগ্রামিক্যালি  ব্রাউজার ডাটা  ক্লিয়ার  না করা পর্যন্ত  | ট্যাব ক্লোস করার সাথে সাথে |
-|  এভাইলেবল  | সকল window তেই  | নির্দিষ্ট  ট্যাবেই  |
-| উপযোগী  |  দীর্ঘ সময় ডাটা  রাখায় | আল্প  সময় ডাটা  রাখায় |
+| পার্থক্য  | Local Storage                                                        | Session Storage            |
+| --------- | -------------------------------------------------------------------- | -------------------------- |
+| স্থায়ীত্ব | মা্যানুয়ালি বা প্রোগ্রামিক্যালি ব্রাউজার ডাটা ক্লিয়ার না করা পর্যন্ত | ট্যাব ক্লোস করার সাথে সাথে |
+| এভাইলেবল  | সকল window তেই                                                       | নির্দিষ্ট ট্যাবেই          |
+| উপযোগী    | দীর্ঘ সময় ডাটা রাখায়                                                 | আল্প সময় ডাটা রাখায়        |
+
 </details>
 
 <details>
 <summary> ২. DOM ও BOM এর মধ্যে পার্থক্য কি ?  </summary>
 
-#### BOM ও  DOM ব্রাউজারের JavaScript  এর Window Object এর  উপাদান । ব্রাউজারে সকল  কিছু window নামের একটা master object এর থেকে একসেস করা যায় 
+#### BOM ও DOM ব্রাউজারের JavaScript এর Window Object এর উপাদান । ব্রাউজারে সকল কিছু window নামের একটা master object এর থেকে একসেস করা যায়
 
-BOM ও DOM এর মধ্যে পার্থক্য হলোঃ 
+BOM ও DOM এর মধ্যে পার্থক্য হলোঃ
 
-| বিষয় | DOM | BOM |
-| --- | --- | --- |
-| পূর্ননাম | Document Object Model | Browser Object Model |
-| ব্যখ্যা | HTML ও  XML documents যার মাধ্যমে হোস্ট এনভাইরমেন্ট  এর স্ট্রাকচার   | ব্রাউজার স্পেসিফিক ফাংশনালিটি |
-| উপাদান  | Elements, Attributes, Text, etc. |  Window, Screen, Location, History, Navigator, etc. |
-| নিয়ন্ত্রনকারী  | W3C | প্রতিটি ব্রাউজারে ভিন্ন ভিন্নভাবে ইম্প্লিমেন্ট করে  |
+| বিষয়          | DOM                                                              | BOM                                                |
+| ------------- | ---------------------------------------------------------------- | -------------------------------------------------- |
+| পূর্ননাম      | Document Object Model                                            | Browser Object Model                               |
+| ব্যখ্যা       | HTML ও XML documents যার মাধ্যমে হোস্ট এনভাইরমেন্ট এর স্ট্রাকচার | ব্রাউজার স্পেসিফিক ফাংশনালিটি                      |
+| উপাদান        | Elements, Attributes, Text, etc.                                 | Window, Screen, Location, History, Navigator, etc. |
+| নিয়ন্ত্রনকারী | W3C                                                              | প্রতিটি ব্রাউজারে ভিন্ন ভিন্নভাবে ইম্প্লিমেন্ট করে |
+
 </details>
 
 <details>
 <summary>৩.  Pure Function কাকে বলে ?     </summary>
 
-#### Computer Science  এর ভাষায় যে সকল  function  ইন্টার্নাল  লজিক নিয়ে থাকে ও  একই Input এর জন্য একই Output দিয়ে থাকে তাকে Pure Function   বলে । 
+#### Computer Science এর ভাষায় যে সকল function ইন্টার্নাল লজিক নিয়ে থাকে ও একই Input এর জন্য একই Output দিয়ে থাকে তাকে Pure Function বলে ।
 
-এর ২টা বৈশিষ্ট থাকে 
+এর ২টা বৈশিষ্ট থাকে
 
-- নিজের বিজনেস লজিক নিয়ে কনসার্ন  ।
-- Same Input এর জন্য Same output  দিয়ে থাকে ।
+- নিজের বিজনেস লজিক নিয়ে কনসার্ন ।
+- Same Input এর জন্য Same output দিয়ে থাকে ।
 
-
-Pure Function এর   উদাহরণঃ 
+Pure Function এর উদাহরণঃ
 
 <img src="./assets/pureFnExample.png"  width="500px" />
 
-এখানে pureFn কে Input হিসেবে যতবারই ২ দেয়া হবে  এটি  প্রতিবার ৪ রিটার্ন করবে ।
+এখানে pureFn কে Input হিসেবে যতবারই ২ দেয়া হবে এটি প্রতিবার ৪ রিটার্ন করবে ।
 
-এখানে Pure function  নীতি ২টি সঠিকভাবে ফলো করা হয়েছে । 
+এখানে Pure function নীতি ২টি সঠিকভাবে ফলো করা হয়েছে ।
 
-১.  প্রতিবার  same input এর জন্য same output দিবে । 
+১. প্রতিবার same input এর জন্য same output দিবে ।
 
-২. বাহিরের কোনো   প্রকার  স্টেট  বা কিছু প্ররিরর্তন করে নাই 
+২. বাহিরের কোনো প্রকার স্টেট বা কিছু প্ররিরর্তন করে নাই
 
-অপরদিকে, 
+অপরদিকে,
 
 <img src="./assets/impureFnExample.png"  width="500px" />
 
-impureFn এর  ক্ষেত্রে   Pure function  নীতি ২টি সঠিকভাবে ফলো করা হয়নি । 
+impureFn এর ক্ষেত্রে Pure function নীতি ২টি সঠিকভাবে ফলো করা হয়নি ।
 
-১.  প্রতিবার same input দিলেও আলাদা আলাদা output দিচ্ছে । 
+১. প্রতিবার same input দিলেও আলাদা আলাদা output দিচ্ছে ।
 
-২. এটি বাহিরের count variable পরিবর্তন করছে, অর্থাৎ শুধুমাত্র নিজের লজিক নিয়ে কনসার্ন না ,  function টি নিজের  body এর বাহিরের কিছু পরিবর্তন  করে ফেলেছে ।
+২. এটি বাহিরের count variable পরিবর্তন করছে, অর্থাৎ শুধুমাত্র নিজের লজিক নিয়ে কনসার্ন না , function টি নিজের body এর বাহিরের কিছু পরিবর্তন করে ফেলেছে ।
 
 তাই এটি pure function না ।
-
 
 </details>
 
 <details>
 <summary>৪.  Falsy  ভ্যালু কোনগুলেকে বলে?  </summary>
 
-####  0, "", null, undefined, NaN, false এগুলোকে falsy ভালু বলে ।
+#### 0, "", null, undefined, NaN, false এগুলোকে falsy ভালু বলে ।
+
 </details>
 
 <details>
 <summary>৫.  falsy ও  nullish ভ্যালু এর মধ্যে পার্থক্য কি ?  </summary>
 
-#### Falsy value বলতে 0, "", null, undefined, NaN, false কে বুঝায়   এবং nullish value বলতে null, undefined কে বুঝায় ।
-nullish value মুলত falsy value এর সাবসেট । 
+#### Falsy value বলতে 0, "", null, undefined, NaN, false কে বুঝায় এবং nullish value বলতে null, undefined কে বুঝায় ।
 
-##### ওপারেটর 
--  falsy value  এর জন্য  || দিয়ে চেক করা যায় 
-- nullish value  ডিটেক্ট করতে ?? ব্যবহার করা হয় 
+nullish value মুলত falsy value এর সাবসেট ।
 
+##### ওপারেটর
 
+- falsy value এর জন্য || দিয়ে চেক করা যায়
+- nullish value ডিটেক্ট করতে ?? ব্যবহার করা হয়
 
 </details>
 
- 
  <details>
  <summary>৬.   Shallow Copy ও Deep Copy বলতে কি বুঝায়?   </summary>
 
- ####  কোনো Object বা Array ১ লেভেল ডিপ কপি করতে গেলে তাকে Shallow Copy বলে । আর ২ লেভেল বা ততোধিক  ডিপ কপি করতে গেলে তাকে Deep Copy বলে ।
+#### কোনো Object বা Array ১ লেভেল ডিপ কপি করতে গেলে তাকে Shallow Copy বলে । আর ২ লেভেল বা ততোধিক ডিপ কপি করতে গেলে তাকে Deep Copy বলে ।
 
 #### উদাহরণঃ
+
   <img src="./assets/shallowCopyVsDeepCopy.png" width="500px" >
 
-  এখানে, 
-   shallowCopy.lang যদি  পরিবর্তন করা হয় তবে arr  অর্থাত মূল array এর ভ্যালু পরিবর্তন হয় । কারণ এখানে  shallowCopy  এর মান মূল array এর রেফারেন্স নেয় ।
-  কিন্তু, 
-  deepCopy.lang যদি  পরিবর্তন করা হয় তবে arr  অর্থাত মূল array এর ভ্যালু পরিবর্তন হয় না । কারণ এখানে  deepCopy  এর মান মূল array এর ক্লোন নেয় ।
+এখানে,
+shallowCopy.lang যদি পরিবর্তন করা হয় তবে arr অর্থাত মূল array এর ভ্যালু পরিবর্তন হয় । কারণ এখানে shallowCopy এর মান মূল array এর রেফারেন্স নেয় ।
+কিন্তু,
+deepCopy.lang যদি পরিবর্তন করা হয় তবে arr অর্থাত মূল array এর ভ্যালু পরিবর্তন হয় না । কারণ এখানে deepCopy এর মান মূল array এর ক্লোন নেয় ।
 
-  যেহেতু arr.lang  ও একটি Array তাই এটিও রেফারেন্স টাইপের তাই সেটিও ডিপলি করে পরিবর্তন করতে হয় 
-
+যেহেতু arr.lang ও একটি Array তাই এটিও রেফারেন্স টাইপের তাই সেটিও ডিপলি করে পরিবর্তন করতে হয়
 
  </details>
 
@@ -152,7 +144,6 @@ nullish value মুলত falsy value এর সাবসেট ।
 <summary>৭.  Deep Copy   এর ক্ষেত্রে JSON.stringify ও পরে আবার JSON.parse করে  করলে এই  পদ্ধতি কি ব্যবহার করা  উচিত?    </summary>
 <img src="./assets/json_strinify_persepng.png" width="500px" >
 </details>
-
 
  <details>
  <summary>৮.  Event Propagation কাকে বলে?  </summary>
@@ -172,7 +163,7 @@ nullish value মুলত falsy value এর সাবসেট ।
   <details>
   <summary>১১.  primitive ও   non-primitive data types  এর  মধ্যে  পার্থক্য কি? উভয়ের একটী করে উদাহরণ দেও
    </summary> 
-  
+
 
   <img src="./assets/json_strinify_persepng.png" width="500px" >
   </details>
@@ -181,8 +172,6 @@ nullish value মুলত falsy value এর সাবসেট ।
 <summary> ১২. JavaScript এ   null and Undefined এর মধ্যে পার্থক্য কি ?   </summary>
 Ans:
 </details>
-
-
 
 </div>
 
@@ -291,9 +280,9 @@ Ans:
   
   যেমন Terminal এ node লিখে এন্টার দিলে একটি REPL এনভায়রনমেন্ট শুরু হয়। এখানে আমরা যেকোনো ধরনের জাভাস্ক্রিপ্ট কোড লিখতে পারি এবং তা রান করতে পারি।
 
-  উদাহরণঃ
+উদাহরণঃ
 
-   ![image](./assets/nodeREPLExample.png)
+![image](./assets/nodeREPLExample.png)
 
 </details>
 
