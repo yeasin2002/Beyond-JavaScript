@@ -1,11 +1,11 @@
-## We Don't Know JS
+## Beyond JavaScript 
 
 ##### JavaScript ও Web Development এর Eco System গভিরভাবে জানার জন্য ও ইন্টারভিউ জিজ্ঞাসা করার মত গুরুত্বপূর্ণ সব প্রশ্ন ও উত্তর সমূহ একত্রে । আশা করি প্রতিটি Developer উপকৃত হবেন ।
 
 <h5 >
 এই রিপোটি  <a href="https://learnwithsumit.com/">Learn With Sumit </a>,
   <a href="https://www.youtube.com/@anisul-islam">Anisul Islam  </a>, 
-  <a href="https://www.youtube.com/@StackLearner">Stack Learner </a> সব অন্য সকল বাংলাদেশী কন্টেন্ট ক্রিয়েটর ও লেখকদের উৎসর্গ  করা হল ।
+  <a href="https://www.youtube.com/@StackLearner">Stack Learner </a> সব অন্য সকল বাংলাদেশী প্রোগ্রামিং রিলেটেড  কন্টেন্ট ক্রিয়েটর ও লেখকদের উৎসর্গ  করা হল ।
 </h5>
 
 
@@ -21,7 +21,7 @@
 
  - কোনো  প্রশ্ন না বুঝলে বা বিস্তারিত জানতে চাইলেঃ    <a href="https://github.com/yeasin-2002/We-Do-not-Know-JS/discussions"> Discussion </a> এ জিজ্ঞাসা করুন  । 
 
- -  Contribute  করতে চান চাইলেঃ  <a href="https://github.com/yeasin-2002/We-Do-not-Know-JS/blob/main/CONTRIBUTING.md"> Contributions Guideline </a> পড়ুন । 
+ -  Contribute  করতে  চাইলেঃ  <a href="https://github.com/yeasin-2002/We-Do-not-Know-JS/blob/main/CONTRIBUTING.md"> Contributions Guideline </a> পড়ুন । 
 
 
 
@@ -32,10 +32,12 @@
 ### সূচিপত্র
 
 - [JavaScript](#js)
+- [TypeScript](#ts)
 - [React.js](#reactjs)
 - [Next.js](#nextjs)
 - [Node/Express](#node-express)
 - [Database](#database)
+- [Guess The Output Challenge](#GTO)
 
 <br>
 
@@ -192,13 +194,13 @@ Tips: অনেক লেভেলের ডিপ কোনো Object/Array য
   <details>
   <summary>১২.  primitive ও   non-primitive data types  এর  মধ্যে  পার্থক্য কি? উভয়ের একটী করে উদাহরণ দেও
    </summary> 
-  
 
-  <img src="./assets/json_strinify_persepng.png" width="500px" >
+  Ans: 
+
   </details>
 
   <details>
-<summary> ১২. JavaScript এ   null and Undefined এর মধ্যে পার্থক্য কি ?   </summary>
+<summary> ১৩. JavaScript এ   null and Undefined এর মধ্যে পার্থক্য কি ?   </summary>
 
 - নাল এর সাধারণ ব্যবহার
   একটি ফাংশন প্যারামিটার হিসাবে, এর অর্থ হল যে ফাংশন প্যারামিটার কোনও অবজেক্ট নয়
@@ -261,7 +263,7 @@ function myFn(obj) {
 console.log(myFn()); //undefined
 ```
 
-- নাল এবং অপরিজ্ঞাত মধ্যে মিল
+- নাল এবং undefined মধ্যে মিল
   বুলিয়ান রূপান্তরিত হলে মিথ্যা
 
 ```javascript
@@ -269,7 +271,7 @@ console.log(Boolean(null)); // false
 console.log(Boolean(undefined)); // false
 ```
 
-নাল এবং অপরিজ্ঞাত মধ্যে পার্থক্য
+নাল এবং undefined মধ্যে পার্থক্য
 কোনও সংখ্যায় রূপান্তরিত করার সময় ফলাফলটি পৃথক। নাল রূপান্তরকরণের ফলাফলটি 0 এর একটি বৈধ সংখ্যা মান এবং অপরিবর্তিত রূপান্তরের ফলাফল NaN হয়।
 
 ```javascript
@@ -277,15 +279,15 @@ console.log(Number(null)); // 0
 console.log(Number(undefined)); // NaN
 ```
 
-- দুটি প্রকারের ধরন পৃথক, নাল প্রকারের অবজেক্ট এবং অপরিজ্ঞাত প্রকারটি অপরিজ্ঞাত।
+- দুটি প্রকারের ধরন পৃথক, নাল প্রকারের অবজেক্ট এবং undefined প্রকারটি undefined।
 
 ```javascript
 console.log(typeof null); //object
 console.log(typeof undefined); //undefined
 ```
 
-- নাল এবং অপরিজ্ঞাত তুলনা করুন
-  নাল এবং অপরিজ্ঞাত মধ্যে পার্থক্য করার জন্য, শুধুমাত্র একত্রিত হতে পারে cong একত্রিত করে, এটি দুটি প্রকারের সমান কিনা তা কঠোরভাবে তুলনা করবে।
+- নাল এবং undefined তুলনা করুন
+  নাল এবং undefined মধ্যে পার্থক্য করার জন্য, শুধুমাত্র একত্রিত হতে পারে cong একত্রিত করে, এটি দুটি প্রকারের সমান কিনা তা কঠোরভাবে তুলনা করবে।
 
 ```javascript
 console.log(Boolean(null == undefined)); // true
@@ -299,14 +301,23 @@ console.log(Boolean(null === undefined)); // false
 </details>
 
 <details>
-<summary>  “  Array, Objects are mutable and string, number, Boolean  are immutable “ এখানে mutable ও immutable দ্বারা কি বুঝানো  হয়েছে ।  </summary>
+<summary> ১৪.  “  Array, Objects are mutable and string, number, Boolean  are immutable “ এখানে mutable ও immutable দ্বারা কি বুঝানো  হয়েছে ।  </summary>
 
 ### Ans:
 
 </details>
+</div>
 
+<h3 align="center" id="ts"><img src="https://skillicons.dev/icons?i=ts" width="20" />  TypeScript</h3>
+
+<div>
+<details>
+<summary>  any  ও unknown এর মাঝে কি পার্থক্য কি ?  </summary>
+Ans:
+</details>
 
 </div>
+
 
 <h3 align="center" id="reactjs"><img src="https://skillicons.dev/icons?i=react" width="20" />  React.js</h3>
 
@@ -373,9 +384,10 @@ Application এর কোনো State পরিবর্তন হলে সে�
  <details>
  <summary> ৮.  “Props are Immutable” এর মানে কি ?  </summary>
  
+Immutable এর মানে অপরিবর্তনযোগ্য ।  সাধারনত modifications  করা  যাবে না এমন বুঝায় তবে Replace করা যাবে  এমন । 
+ React Components এর  Props হিসেবে একটি Object পেয়ে থাকি  । 
 
-React Components এর  Props হিসেবে একটি Object পেয়ে থাকে । 
- যেমন 
+ যেমনঃ 
 
 ```jsx
 **export const ReactComponentsDemo = (props) => {
@@ -460,25 +472,17 @@ React এর রেন্ডারের জন্য চাই JSX Return ক�
 
 উদাহরণঃ 
 
-```tsx
-import React from 'react';
+```jsx
+export const App = () => {
+  const data = ['Item 1', 'Item 2', 'Item 3'];
+  const items = [];
 
-class MyComponent extends React.Component {
-  render() {
-    const data = ['Item 1', 'Item 2', 'Item 3'];
-    const items = [];
-
-    data.forEach((item, index) => {
-      items.push(<li key={index}>{item}</li>);
-    });
-
-    return (
-      <ul>
-        {items}
-      </ul>
-    );
-  }
-}
+  data.forEach((item, index) => {
+    items.push(<li key={index}>{item}</li>);
+  });
+  
+  return <ul>{items}</ul>;
+};
 
 export default MyComponent;
 ```
@@ -591,7 +595,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
  </details>
 
 <details>
-<summary>  Immutably কোনো Array/Object of State  এর কোনো element Add, delete and update করা যায় ?  </summary>
+<summary> ১৭.  Immutably কোনো Array/Object of State  এর কোনো element Add, delete and update করা যায় ?  </summary>
 
 ধরি, 
 
@@ -635,7 +639,7 @@ setArr(deletedArr);
 </details>
 
   <details>
-  <summary>  React এর কোন event  Bubbling হয় না ?  </summary>
+  <summary>১৮. React এর কোন event টি Bubbling হয় না ?  </summary>
 
 ### React এর Scroll বা onScroll event  event  Bubbling হয় না । 
 
@@ -678,8 +682,15 @@ Ans:
 <img src="https://skillicons.dev/icons?i=mysql" width="20" />
 <img src="https://skillicons.dev/icons?i=postgresql" width="20" />
   Database</h3>
-
+<div>
   <details>
   <summary>  SQL ও No-SQL এর মধ্যে মূল পার্থক্য কি ?  </summary>
   Ans:
   </details>
+</div>
+
+<h3 align="center" id="GTO"> <img src="https://skillicons.dev/icons?i=js" width="20" /><img src="https://skillicons.dev/icons?i=ts" width="20" /> Guess The Output </h3>
+
+<div>
+<!-- Coding Challange -->
+</div>
