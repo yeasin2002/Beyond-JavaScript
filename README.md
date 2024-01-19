@@ -641,12 +641,23 @@ setArr(deletedArr);
   <details>
   <summary>১৮. React এর কোন event টি Bubbling হয় না ?  </summary>
 
-### React এর Scroll বা onScroll event  event  Bubbling হয় না । 
-
+#### React এর Scroll বা onScroll event  event  Bubbling হয় না । 
   </details>
 
+<details>
+<summary>  Declarative ও Imperative syntax এর    মাঝে   পার্থক্য কী? React কোন ধরণের  উপায় ব্যবহার করে  UI ম্যানুপুলেট করে ?  </summary>
+Ans:
+</details>
 
+<details>
+<summary>  Derived বা Calculated  State কাকে বলে ?  </summary>
+Ans:
+</details>
 
+<details>
+<summary>  Mirror Props  কী? কোন ক্ষেত্রে এটি     অসুবিধা   করে  ?  </summary>
+Ans:
+</details>
 
 </div>
 
