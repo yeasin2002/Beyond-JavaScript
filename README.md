@@ -49,8 +49,9 @@
 
 <details>
 <summary> ১.  Local storage ও  session   এর মধ্যে পার্থক্য কি ?  </summary>
-  
-  ####  local storage ও session  এর মধ্যে  পার্থক্য হলোঃ
+
+
+  ####  <span style="color:#f43f5e;">উঃ</span> local storage ও session  এর মধ্যে  পার্থক্য হলোঃ
 
 | পার্থক্য  | Local Storage                                                        | Session Storage            |
 | --------- | -------------------------------------------------------------------- | -------------------------- |
@@ -161,8 +162,20 @@ Tips: অনেক লেভেলের ডিপ কোনো Object/Array য
 
 <details>
 <summary>৭.  Deep Copy   এর ক্ষেত্রে JSON.stringify ও পরে আবার JSON.parse করে  করলে এই  পদ্ধতি কি ব্যবহার করা  উচিত?    </summary>
+
+### Deep Copy   এর ক্ষেত্রে JSON.stringify ও পরে আবার JSON.parse করা হয় যা আসলে উচিত না । 
+যেমনঃ 
+
 <img src="./assets/json_strinify_persepng.png" width="500px" >
+
+কারনঃ 
+
+ - যদি কোনো `Object` এর মধ্যে কোনো `funtion` থাকে তাহলে সেটি `JSON.stringify` করলে সেটি `String` হয়ে যায় । এবং সেটি পরে আবার `JSON.parse` করলে সেটি `String` থেকে অবজেক্ট হয়ে যায় । কিন্তু সেটি `funtion` হওয়া সত্ত্বেও সেটি `funtion` হিসেবে কাজ করবে না । কারন সেটি `String` হয়ে গেছে । তাই এই পদ্ধতি ব্যবহার করা উচিত না ।
+
+ - `Object` হলো `JavaScript` এর বিশেষ ডাটা টাইপ , এক্ষেত্রে এর ফলে এটি `String` হয়ে যাবে এবং সেটি পরে আবার `Object` হিসেবে কাজ করবে না  অনেক ক্ষেত্রে  কারন এর Prototype কে সেটি হারিয়ে যাবে । 
+
 </details>
+
 
  <details>
  <summary>৮.  Event Propagation ও Event Delations  কাকে বলে?  </summary>
@@ -313,7 +326,12 @@ console.log(Boolean(null === undefined)); // false
 <div>
 <details>
 <summary>১. any  ও unknown এর মাঝে কি পার্থক্য কি ?  </summary>
-Ans:
+
+####  <span style="color:#f43f5e;">উঃ</span>  any এবং unknown উভয়ই TypeScript এর বিশেষ ধরনের টাইপ যা যে কোন  variable  এ    ডিক্লেয়ার করা যায় , তবে এগুলি বিভিন্ন পরিস্থিতিতে ব্যবহার করা হয়:
+
+- `any` : এই টাইপটি TypeScript Officially  নিজেরা Recommend করে না  । আপনি একটি `any` টাইপে যে কোন মান নির্ধারণ করতে পারেন এবং কোন কম্পাইল সময় চেক ছাড়াই একটি `any` টাইপের যে কোন বৈশিষ্ট্য অ্যাক্সেস করতে পারেন। এটি একটি ভেরিয়েবলের জন্য টাইপ চেকিং থেকে বাদ দেওয়ার মতো।
+
+- `unknown` : এই টাইপটি `any` এর টাইপ-নিরাপদ   বিকল্প ।   একটি `unknown` টাইপে যে কোন মান নির্ধারণ করতে পারা যাবে , তবে আপনি কোন প্রকার টাইপ চেকিং না করলে একটি `unknown` টাইপের যে কোন বৈশিষ্ট্য অ্যাক্সেস করতে, তাদের কল করতে / বানাতে  করতে বা যে কোন expresstions  ব্যবহার করতে পারবেন না (সমানতা চেক ছাড়া)।
 </details>
 
 </div>
@@ -728,19 +746,20 @@ export const DeriveState = ({ initialCategory }) => {
 
 <details>
 <summary>১. Server Side Rendering এর সুবিধা কি ?  </summary>
-Ans:
+ <span style="color:#f43f5e;">উঃ</span>
 </details>
 
 <details>
 <summary>২.  Client Components এর মধ্যেও কিভাবে Server Components রেন্ডার করা যায় ?  </summary>
-Ans:
+ <span style="color:#f43f5e;">উঃ</span>
 </details>
 
 <h3 align="center" id="node-express"><img src="https://skillicons.dev/icons?i=nodejs" width="20" /> <img src="https://skillicons.dev/icons?i=express" width="20" />  Node/Express</h3>
 
 <details>
 <summary> ১. Node এ  REPL  Context  বলতে কি বুঝায়</summary>
-  Node.js REPL (Read-Eval-Print Loop) হল একটি ইন্টারেক্টিভ রানটাইম এনভায়রনমেন্ট যেখানে  Node.js কোড লিখে তা তারপরেই রান করা যায় ও Output দেখা যায়।
+
+ ####  <span style="color:#f43f5e;">উঃ</span> Node.js REPL (Read-Eval-Print Loop) হল একটি ইন্টারেক্টিভ রানটাইম এনভায়রনমেন্ট যেখানে  Node.js কোড লিখে তা তারপরেই রান করা যায় ও Output দেখা যায়।
   
   যেমন Terminal এ node লিখে এন্টার দিলে একটি REPL এনভায়রনমেন্ট শুরু হয়। এখানে আমরা যেকোনো ধরনের জাভাস্ক্রিপ্ট কোড লিখতে পারি এবং তা রান করতে পারি।
 
@@ -758,7 +777,7 @@ Ans:
 <div>
   <details>
   <summary>১.  SQL ও No-SQL এর মধ্যে মূল পার্থক্য কি ?  </summary>
-  Ans:
+ <span style="color:#f43f5e;">উঃ</span>
   </details>
 </div>
 
