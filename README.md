@@ -312,7 +312,7 @@ console.log(Boolean(null === undefined)); // false
 
 <div>
 <details>
-<summary>  any  ও unknown এর মাঝে কি পার্থক্য কি ?  </summary>
+<summary>১. any  ও unknown এর মাঝে কি পার্থক্য কি ?  </summary>
 Ans:
 </details>
 
@@ -645,18 +645,80 @@ setArr(deletedArr);
   </details>
 
 <details>
-<summary>  Declarative ও Imperative syntax এর    মাঝে   পার্থক্য কী? React কোন ধরণের  উপায় ব্যবহার করে  UI ম্যানুপুলেট করে ?  </summary>
-Ans:
+<summary>১৯.  Declarative ও Imperative syntax এর    মাঝে   পার্থক্য কী? React কোন ধরণের  উপায় ব্যবহার করে  UI ম্যানুপুলেট করে ?  </summary>
+
+Declarative  বলতে  বর্ননামূলক বুঝায় এবং   Imperative  এর মানে বিস্তারিত নির্দেশনামূলক  বুঝায় । 
+
+উদাহরণঃ 
+
+আপনি  মিরপুর থেকে   শাহবাগ  যাবেন  । 
+
+ এক্ষেত্রে আপনি  গাড়িতে উঠলেন ও ড্রাইভারকে বললেন যে  আপনাকে শাহবাগ নিয়ে যেতে এখন সে তার নিজের মত রাস্তা  দিয়ে নিয়ে যাবে ।
+
+এই উপায় হচ্ছে  Declarative  । 
+
+আবার, 
+
+আপনি  গাড়িতে উঠে প্রতি রাস্তায় রাস্তায় বলে দিলেন এবার বামে এর পর ডানে যেতে এভাবে সম্পুর্ন রাস্তা তাকে দেখিইয়ে  দেখিয়ে নিয়ে গেলেন, এই উপায় হলো Imperative   
+
+React.js মূলত Declarative উপায় ফলো করে UI   ম্যানুপুলেট  করে থাকে ।  এখানে আমরা  নির্দিষ্ট state define করি ও তা setState দিয়ে পরিবর্তন করি  কিন্তু ম্যানুয়ালি কোনো DOM  এলিমেন্ট পরিবর্তন  করতে হয় না । React নিজে তা নিজের মত করে আমাদের তা বিস্তারিত বলে দিতে  হয় না । 
+
+আবার  Raw JavaScript  এর ক্ষেত্রে কোনো State পরিবর্তন করে  সেটা আবার ম্যানুয়ালি DOM এ Update  করে দিতে হত ।  তাই এক্ষেত্রে এটি Imperative উপায় ফলো করতে হয়
+
 </details>
 
 <details>
-<summary>  Derived বা Calculated  State কাকে বলে ?  </summary>
-Ans:
+<summary>২০.  Derived বা Calculated  State কাকে বলে ?  </summary>
+
+বর্তমানের কোনো State  সমূহের সমন্বয়ে  অন্য কোনো State বানানো কে Derived বা Calculated  State বলে । 
+
+যেমনঃ 
+
+```jsx
+const [firstName, setFirstName] = useState("");
+const [firstName, setLastName] = useState("");
+const [fullName, setFullName] = useState("");
+```
+
+এখানে, firstName and  lastName আছে আবার fullName এর State আছে । এখন আমাদের  যদি firstName বা lastName পরিবর্তন করতে হয়  তাহলে প্রতিবার event Handler এর থেকে fullName পরিবর্তন  করত  হবে । 
+
+কিন্তু, 
+
+```jsx
+const [firstName, setFirstName] = useState("");
+const [lastName, setLastName] = useState("");
+
+const fullName = firstName + lastName;
+```
+
+এখানে  fullName firstName   ও lastName এর  ভ্যালু নিয়ে আমরা fullName এর একটা ভ্যালু পাচ্ছি 
+
+এখানে যেহেতু  বর্তমানের  State এর   firstName ও  lastName   দিয়ে fullName বানানো হয়েছে তাই  এক্ষেত্রে fullName  Derived বা Calculated State বলা  হয় ।
+
 </details>
 
 <details>
-<summary>  Mirror Props  কী? কোন ক্ষেত্রে এটি     অসুবিধা   করে  ?  </summary>
-Ans:
+<summary>২১.  Mirror Props  কী? কোন ক্ষেত্রে এটি     অসুবিধা   করে  ?  </summary>
+
+useState এর Initial Value  যদি Parent Component  এর থেকে Props এর মাধ্যমে নিয়ে সেটি তা ব্যবহার করা হয়  তখন  সেটী Mirror Props বলা হয়  , 
+
+যেমন , 
+
+```jsx
+import { useState } from "react";
+
+export const DeriveState = ({ initialCategory }) => {
+  const [category, setCategory] = useState(initialCategory);
+
+  return <div>Mirror Props</div>
+};
+```
+
+এখানে, অসুবিধা হলোঃ 
+
+- Parent Component এর এই   ভ্যলু যদি State এর ভ্যালু হয় ও পরে তা পরিবর্তন হবে তা এই Child  Component এর  Value পরিবরর্তন হবে না  ।
+- এটি ১ম এই Initial Values হিসেবে থাকবে ও  এর মাঝে  Setter Function এর মাধ্যমেই পরিবর্তন  করানো যাবে ।  Parents এর কোনো setter Function দিয়া পরিবর্তন করলে তা Child এর  value পরিবর্তন হবে না
+
 </details>
 
 </div>
@@ -665,19 +727,19 @@ Ans:
 <h3 align="center" id="nextjs"><img src="https://skillicons.dev/icons?i=nextjs" width="20" />  Next.js</h3>
 
 <details>
-<summary>  Server Side Rendering এর সুবিধা কি ?  </summary>
+<summary>১. Server Side Rendering এর সুবিধা কি ?  </summary>
 Ans:
 </details>
 
 <details>
-<summary>  Client Components এর মধ্যেও কিভাবে Server Components রেন্ডার করা যায় ?  </summary>
+<summary>২.  Client Components এর মধ্যেও কিভাবে Server Components রেন্ডার করা যায় ?  </summary>
 Ans:
 </details>
 
 <h3 align="center" id="node-express"><img src="https://skillicons.dev/icons?i=nodejs" width="20" /> <img src="https://skillicons.dev/icons?i=express" width="20" />  Node/Express</h3>
 
 <details>
-<summary> Node এ  REPL  Context  বলতে কি বুঝায়</summary>
+<summary> ১. Node এ  REPL  Context  বলতে কি বুঝায়</summary>
   Node.js REPL (Read-Eval-Print Loop) হল একটি ইন্টারেক্টিভ রানটাইম এনভায়রনমেন্ট যেখানে  Node.js কোড লিখে তা তারপরেই রান করা যায় ও Output দেখা যায়।
   
   যেমন Terminal এ node লিখে এন্টার দিলে একটি REPL এনভায়রনমেন্ট শুরু হয়। এখানে আমরা যেকোনো ধরনের জাভাস্ক্রিপ্ট কোড লিখতে পারি এবং তা রান করতে পারি।
@@ -695,12 +757,12 @@ Ans:
   Database</h3>
 <div>
   <details>
-  <summary>  SQL ও No-SQL এর মধ্যে মূল পার্থক্য কি ?  </summary>
+  <summary>১.  SQL ও No-SQL এর মধ্যে মূল পার্থক্য কি ?  </summary>
   Ans:
   </details>
 </div>
 
-<h3 align="center" id="GTO"> <img src="https://skillicons.dev/icons?i=js" width="20" /><img src="https://skillicons.dev/icons?i=ts" width="20" /> Guess The Output </h3>
+<h3 align="center" id="GTO"> <img src="https://skillicons.dev/icons?i=js" width="20" /> <img src="https://skillicons.dev/icons?i=ts" width="20" /> Guess The Output </h3>
 
 <div>
 <!-- Coding Challange -->
