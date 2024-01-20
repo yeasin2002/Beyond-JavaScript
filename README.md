@@ -739,7 +739,17 @@ export const DeriveState = ({ initialCategory }) => {
 
 </details>
 
-</div>
+<details>
+<summary>  Props Drilling কাকে বলে ?  </summary>
+<span style='color:#f43f5e;'>উঃ</span>  
+</details>  
+
+<details>
+<summary>  Stae Lifting up মেথদ কি ও কেন ফলো করা হয় ?  </summary>
+<span style='color:#f43f5e;'>উঃ</span>  
+</details>
+
+</div>  
 
 <!-- Next.js -->
 <h3 align="center" id="nextjs"><img src="https://skillicons.dev/icons?i=nextjs" width="20" />  Next.js</h3>
