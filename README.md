@@ -319,6 +319,59 @@ console.log(Boolean(null === undefined)); // false
 ### Ans:
 
 </details>
+
+<details>
+<summary>  structuredClone  কিভাবে কাজ করে ?  </summary>
+<span style='color:#f43f5e;'>উঃ</span>  
+
+<img  src="./assets/structuredClone.png" width="500px"  />
+
+কোনো একটী Object/Array কে  Copy করতে হলে আমরা সাধারনত  `spread operator` বা  `Slice`  ব্যবহার করি । 
+
+যেমন 
+
+```jsx
+const skill =['html', 'css', 'js']
+
+const cloneWithSlice = skill.slice()
+const cloneSpread = [...skill]
+```
+
+কিন্তু যদি এটি আরও ভিতর আরও আবার কোনো Array/Object থাকত তখন  সেই পার্ট নিজেদের আবার Spread দিয়ে করা প্রয়োজন Deep Copy করতে হলে  । 
+
+সহজে করতে আমরা সবাই Immer ব্যবহার করি যা একটি থার্ড পার্টি লাইব্রেরি । তবে বর্তমানে JavaScript এর বিল্ড ইন মেথদ আছে যা দিয়ে  সহজে এটি করা যেতে পারে । 
+
+```jsx
+const person = {
+  name: 'yeasin', 
+  skill: ["typeScript", "react"]
+}
+
+const cloneWithStructured =  structuredClone(person)
+```
+
+### **[Syntax](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone#syntax)**
+
+```jsx
+structuredClone(value)
+structuredClone(value, options)
+```
+
+### Reference
+
+- [MDN](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone#syntax)
+- [MDN The structured clone algorithm](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm)
+- [Can I use](https://caniuse.com/?search=structuredClone)
+- You Tube: **[James Q Quick](https://www.jamesqquick.com/blog/deep-clones-javascript-structuredclone/)**
+
+# Warning:
+
+- এটি `ES2022` এর ফিচার তাই Node 17+ ও লেটেস্ট ব্রাউজারে সাপোর্ট করে শুধু ।   এক্ষেত্রে `TypeScript`   ব্যবহার করা হলে `Perser`  হিসেবে ব্যবহার করলে তখন এটি চাইলে আগের কোনো `JS Verson` এ কনভার্ট করতে পারেন ।
+- কোনো Object এর ক্ষেত্রে যদি `functions` থাকে তাহলে সেটির ক্ষেত্রে এটি Deep Copy করতে পারে না
+
+
+</details>
+
 </div>
 
 <h3 align="center" id="ts"><img src="https://skillicons.dev/icons?i=ts" width="20" />  TypeScript</h3>
