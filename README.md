@@ -915,4 +915,34 @@ useEffect(() => {
 
 <div>
 <!-- Coding Challange -->
+
+<details>
+<summary>  
+
+What will be the output and why ?
+<img src="./assets/Challenge/1.png" >
+
+ </summary>
+<span style='color:#f43f5e;'>উঃ</span>  Yeasin
+
+#### কারন  : 
+
+১ম এ আমরা এটি লক্ষ করিঃ 
+```
+const takeInput = (input ) => {
+  console.log(input);
+};
+
+takeinput()
+```
+আগে এটি লক্ষ করি, এখানে যদি  takeInput  কে  call করা হয় তাহলে input এর   value By  default হিসেবে  undefined হিসেবে থাকবে । এখানে আমরা কোনো ভ্যালু পাস করিনি । তাই এখানে  input এর ভ্যালু হিসেবে  undefined হিসেবে থাকবে ।
+
+কিন্তু এক্ষেত্রে এটির default value দিয়ে দিলে এর পর যদি যদি ওই paramitar এর  ভ্যালু  undefined হয় তাহলে এটি ওই default value টি নিয়ে দেখাবে । 
+
+তাই যেহেতু আমাদের input  এর default value দেয়া ছিল এই জন্য এখানে আমরা  takeInput  কে call করলে এটি  undefined না হয়ে  Yeasin দেখাবে ।
+
+
+
+
+</details>
 </div>
