@@ -907,7 +907,7 @@ useEffect(() => {
   Database</h3>
 <div>
   <details>
-  <summary>১.  SQL ও No-SQL এর মধ্যে মূল পার্থক্য কি ?  </summary>
+  <summary>১.  SQL ও MySQL এর মধ্যে  পার্থক্য কি ?  </summary>
  <span style="color:#f43f5e;">উঃ</span>
 
 ✅ সংক্ষেপে বললে, একটি হলো ডাটাবেজ, অন্যটি হলো ল্যাংগুয়েজ।
