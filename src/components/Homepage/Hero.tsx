@@ -14,13 +14,13 @@ export function Hero() {
       <div className="container relative mx-auto px-4 py-32 text-center">
         {/* New Version Banner */}
         <div className="mb-8 inline-block">
-          <div className="bg-primary/10 text-primary rounded-full px-4 py-1.5 text-sm font-medium">
+          <div className="rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
             Nuxt UI v2.21 is out!
           </div>
         </div>
 
         {/* Main Heading */}
-        <h1 className="mb-8 text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl">
+        <h1 className="mb-8 bg-opacity-50 bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-4xl font-bold tracking-tight text-transparent md:text-6xl lg:text-7xl">
           <span>A </span>
           <span className="text-primary">UI Library</span>
           <span> for</span>
@@ -37,11 +37,11 @@ export function Hero() {
 
         {/* CTAs */}
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <button className="hover:bg-foreground/90 rounded-lg bg-foreground px-8 py-2.5 font-medium text-background transition-colors">
+          <button className="rounded-lg bg-foreground px-8 py-2.5 font-medium text-background transition-colors hover:bg-foreground/90">
             Get Started
           </button>
           <div className="group relative">
-            <button className="bg-brand-nuxt-green flex items-center gap-2 rounded-lg px-4 py-2.5 font-mono text-sm text-black">
+            <button className="flex items-center gap-2 rounded-lg bg-brand-nuxt-green px-4 py-2.5 font-mono text-sm text-black">
               <span>npx nuxi@latest module add ui</span>
               <Copy className="h-4 w-4" />
             </button>
