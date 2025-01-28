@@ -1,5 +1,6 @@
-import { Github, Moon, Search } from 'lucide-react';
+import { Github, Search } from 'lucide-react';
 import Link from 'next/link';
+import { DarkModeToggle } from '../shared';
 
 export function Navbar() {
   return (
@@ -55,9 +56,7 @@ export function Navbar() {
           <button className="rounded-lg p-2 text-gray-400 transition-colors hover:bg-gray-800 hover:text-white">
             <Search className="h-5 w-5" />
           </button>
-          <button className="rounded-lg p-2 text-gray-400 transition-colors hover:bg-gray-800 hover:text-white">
-            <Moon className="h-5 w-5" />
-          </button>
+          <DarkModeToggle />
           <button className="rounded-lg p-2 text-gray-400 transition-colors hover:bg-gray-800 hover:text-white">
             <Github className="h-5 w-5" />
           </button>
