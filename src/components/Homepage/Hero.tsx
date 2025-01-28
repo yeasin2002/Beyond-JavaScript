@@ -2,7 +2,7 @@ import { Copy } from 'lucide-react';
 
 export function Hero() {
   return (
-    <div className="bg-background relative flex min-h-screen flex-col items-center justify-center overflow-hidden text-white">
+    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-background text-white">
       {/* Grid Background */}
       <div
         className="absolute inset-0 bg-[linear-gradient(to_right,#1f223130_1px,transparent_1px),linear-gradient(to_bottom,#1f223130_1px,transparent_1px)] bg-[size:4rem_4rem]"
@@ -12,7 +12,7 @@ export function Hero() {
         }}
       />
 
-      <div className="relative container mx-auto px-4 py-32 text-center">
+      <div className="container relative mx-auto px-4 py-32 text-center">
         {/* New Version Banner */}
         <div className="mb-8 inline-block">
           <div className="bg-primary/10 text-primary rounded-full px-4 py-1.5 text-sm font-medium">
@@ -38,7 +38,7 @@ export function Hero() {
 
         {/* CTAs */}
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <button className="bg-primary hover:bg-primary/90 text-background rounded-lg px-8 py-2.5 font-medium transition-colors">
+          <button className="bg-primary hover:bg-primary/90 rounded-lg px-8 py-2.5 font-medium text-background transition-colors">
             Get Started
           </button>
           <div className="group relative">
