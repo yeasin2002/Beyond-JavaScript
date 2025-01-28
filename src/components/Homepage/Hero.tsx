@@ -2,8 +2,7 @@ import { Copy } from 'lucide-react';
 
 export function Hero() {
   return (
-    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-background text-white">
-      {/* Grid Background */}
+    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-background">
       <div
         className="absolute inset-0 bg-[linear-gradient(to_right,#1f223130_1px,transparent_1px),linear-gradient(to_bottom,#1f223130_1px,transparent_1px)] bg-[size:4rem_4rem]"
         style={{
@@ -38,16 +37,14 @@ export function Hero() {
 
         {/* CTAs */}
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <button className="bg-primary hover:bg-primary/90 rounded-lg px-8 py-2.5 font-medium text-background transition-colors">
+          <button className="hover:bg-foreground/90 rounded-lg bg-foreground px-8 py-2.5 font-medium text-background transition-colors">
             Get Started
           </button>
           <div className="group relative">
-            <div className="flex items-center gap-2 rounded-lg bg-gray-800/50 px-4 py-2.5 font-mono text-sm text-gray-300">
+            <button className="bg-brand-nuxt-green flex items-center gap-2 rounded-lg px-4 py-2.5 font-mono text-sm text-black">
               <span>npx nuxi@latest module add ui</span>
-              <button className="-m-2 rounded-lg p-2 text-gray-400 transition-colors hover:bg-gray-800/50 hover:text-white">
-                <Copy className="h-4 w-4" />
-              </button>
-            </div>
+              <Copy className="h-4 w-4" />
+            </button>
           </div>
         </div>
       </div>
