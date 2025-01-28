@@ -3,11 +3,11 @@ import Link from 'next/link';
 
 export function Navbar() {
   return (
-    <nav className="bg-background/80 fixed top-0 z-50 w-full border-b border-gray-800 backdrop-blur-sm">
+    <nav className="fixed top-0 z-50 flex w-full items-center justify-center border-b border-gray-800 bg-background/80 backdrop-blur-sm">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center gap-2">
-            <svg className="text-primary h-8 w-8" viewBox="0 0 24 24">
+            <svg className="h-8 w-8 text-primary" viewBox="0 0 24 24">
               <path
                 fill="currentColor"
                 d="M12 2L2 19h20L12 2zm0 3l7.5 13h-15L12 5z"
