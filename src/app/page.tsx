@@ -1,10 +1,11 @@
-import { Hero, Navbar } from '@/components/Homepage';
+import { Hero, Navbar, UserReview } from '@/components/Homepage';
 
 export default function Home() {
   return (
-    <main className="bg-background min-h-screen">
+    <main className="min-h-screen bg-background">
       <Navbar />
       <Hero />
+      <UserReview />
     </main>
   );
 }
