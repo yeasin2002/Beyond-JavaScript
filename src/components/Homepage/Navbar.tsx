@@ -1,6 +1,6 @@
+import { DarkModeToggle } from '@/components/shared';
 import { Github, Search } from 'lucide-react';
 import Link from 'next/link';
-import { DarkModeToggle } from '../shared';
 
 export function Navbar() {
   return (
