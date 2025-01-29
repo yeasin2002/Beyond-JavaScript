@@ -2,7 +2,6 @@ import { DarkModeToggle } from '@/components/shared';
 import { navigation } from '@/data';
 import { Github } from 'lucide-react';
 import Link from 'next/link';
-import { SearchContent } from './SearchContent';
 
 export function Navbar() {
   return (
@@ -31,7 +30,7 @@ export function Navbar() {
           </nav>
         </div>
         <div className="flex items-center gap-4">
-          <SearchContent />
+          {/* <SearchContent /> */}
 
           <DarkModeToggle />
           <Link
