@@ -5,6 +5,9 @@ const nextConfig = {
   experimental: {
     typedRoutes: true
   },
+  images: {
+    remotePatterns: [{ protocol: 'https' as const, hostname: 'skillicons.dev' }]
+  },
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx']
 };
 

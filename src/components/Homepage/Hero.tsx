@@ -1,4 +1,5 @@
-import { Copy } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export function Hero() {
   return (
@@ -14,14 +15,12 @@ export function Hero() {
       />
 
       <div className="container relative mx-auto px-4 py-32 text-center">
-        {/* New Version Banner */}
         <div className="mb-8 inline-block">
           <div className="rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
-            Nuxt UI v2.21 is out!
+            {`It's`} under maintenance
           </div>
         </div>
 
-        {/* Main Heading */}
         <h1 className="mb-8 bg-opacity-50 bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-4xl font-bold tracking-tight text-transparent md:text-6xl lg:text-7xl">
           <span>A </span>
           <span className="text-primary">UI Library</span>
@@ -30,24 +29,40 @@ export function Hero() {
           <span>Modern Web Apps</span>
         </h1>
 
-        {/* Subtitle */}
         <p className="mx-auto mb-12 max-w-2xl text-lg text-gray-400">
-          Nuxt UI simplifies the creation of stunning and responsive web
-          applications with its comprehensive collection of fully styled and
-          customizable UI components designed for Nuxt.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
+          ratione. Dicta voluptate nemo eius quidem animi culpa dolorem tempore
+          dignissimos!
         </p>
 
-        {/* CTAs */}
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <button className="rounded-lg bg-foreground px-8 py-2.5 font-medium text-background transition-colors hover:bg-foreground/90">
-            Get Started
-          </button>
-          <div className="group relative">
-            <button className="flex items-center gap-2 rounded-lg bg-brand-nuxt-green px-4 py-2.5 font-mono text-sm text-black">
-              <span>npx nuxi@latest module add ui</span>
-              <Copy className="h-4 w-4" />
-            </button>
-          </div>
+          <Link
+            href={'/javascript'}
+            className="flex items-center justify-center gap-x-2 rounded-lg bg-foreground px-8 py-2.5 font-medium text-background transition-colors hover:bg-foreground/90"
+          >
+            <Image
+              src="/assets/icons/javaScript.svg"
+              alt="JavaScript"
+              className="size-6"
+              width={40}
+              height={40}
+            />
+            JavaScript
+          </Link>
+
+          <Link
+            className="flex items-center justify-center gap-x-1 rounded-lg bg-brand-nuxt-green px-8 py-2.5 font-mono font-medium text-black transition-colors hover:bg-brand-nuxt-green/90"
+            href={'/reactjs'}
+          >
+            <Image
+              src="/assets/icons/React-Dark.svg"
+              alt="JavaScript"
+              className="size-6"
+              width={40}
+              height={40}
+            />
+            React JS
+          </Link>
         </div>
       </div>
 
