@@ -1,5 +1,5 @@
 import type { Config } from 'tailwindcss';
-import tailwindcssAnimated from 'tailwindcss-animated';
+import tailwindcssAnimated from 'tailwindcss-animate';
 
 export default {
   darkMode: ['class'],

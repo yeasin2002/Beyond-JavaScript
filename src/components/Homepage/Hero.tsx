@@ -4,9 +4,11 @@ export function Hero() {
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-background">
       <div
-        className="absolute inset-0 bg-[linear-gradient(to_right,#1f223130_1px,transparent_1px),linear-gradient(to_bottom,#1f223130_1px,transparent_1px)] bg-[size:4rem_4rem]"
+        className="absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:4rem_4rem] dark:bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)]"
         style={{
           maskImage:
+            'radial-gradient(circle at center, transparent 0%, black 100%)',
+          WebkitMaskImage:
             'radial-gradient(circle at center, transparent 0%, black 100%)'
         }}
       />
@@ -48,6 +50,8 @@ export function Hero() {
           </div>
         </div>
       </div>
+
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 w-full bg-gradient-to-t from-white dark:from-background" />
     </div>
   );
 }
