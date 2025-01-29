@@ -12,7 +12,7 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator
-} from '@/components/ui';
+} from '@/components/ui/shadcn';
 
 export const SearchContent = () => {
   return (

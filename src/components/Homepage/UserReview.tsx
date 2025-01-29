@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { Marquee } from '@/components/shared/marque';
+import { Marquee } from '@/components/ui/custom/marque';
 import { cn } from '@/utils';
 
 const reviews = [

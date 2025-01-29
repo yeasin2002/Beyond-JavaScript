@@ -4,13 +4,13 @@ import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import * as React from 'react';
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/shadcn/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu';
+} from '@/components/ui/shadcn/dropdown-menu';
 
 export function DarkModeToggle() {
   const { setTheme } = useTheme();

@@ -1,4 +1,4 @@
-import { DarkModeToggle } from '@/components/shared';
+import { DarkModeToggle } from '@/components/ui';
 import { navigation } from '@/data';
 import { Github } from 'lucide-react';
 import Link from 'next/link';
