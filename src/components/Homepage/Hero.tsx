@@ -1,4 +1,5 @@
 import { courseList } from '@/data';
+import { anekBangla, hindSiliguri, mina, sriracha } from '@/fonts';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -16,45 +17,58 @@ export function Hero() {
       />
 
       <div className="container relative mx-auto px-4 py-32 text-center">
-        <div className="mb-8 inline-block">
-          <div className="rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+        <div className="mb-4 inline-block">
+          <div
+            className={`rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary`}
+          >
             👷 under maintenance
           </div>
         </div>
 
-        <h1 className="mb-8 bg-opacity-50 bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-4xl font-bold tracking-tight text-transparent md:text-6xl lg:text-7xl">
-          <span>A </span>
-          <span className="text-primary">UI Library</span>
-          <span> for</span>
-          <br />
-          <span>Modern Web Apps</span>
-        </h1>
+        <div>
+          <h1
+            className={`mb-4 bg-opacity-50 bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text py-2 pb-2 text-4xl font-bold tracking-tight text-transparent md:text-6xl lg:text-7xl`}
+          >
+            <span className={`${sriracha.className}`}>Programming</span>
+            <br />
+            <span className={` ${anekBangla.className}`}>
+              শিখুন নিজের মাতৃভাষায়{' '}
+            </span>
+          </h1>
+          <h2
+            className={`mx-auto mb-6 max-w-2xl text-lg text-gray-400 ${hindSiliguri.className}`}
+          >
+            বাংলায় প্রোগ্রামিং শেখার জন্য সহজ ও সহজবোধ্য ব্লগ, টিউটোরিয়াল, এবং
+            বিস্তারিত ডকুমেন্টেশন । প্রোগ্রামিং শেখার জন্য বাংলায় সবচেয়ে বড়
+            রিসোর্স ।
+          </h2>
+        </div>
 
-        <p className="mx-auto mb-12 max-w-2xl text-lg text-gray-400">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
-          ratione. Dicta voluptate nemo eius quidem animi culpa dolorem tempore
-          dignissimos!
-        </p>
+        <div className="mx-auto max-w-3xl space-y-3">
+          <p className={`text-lg text-gray-400 ${mina.className}`}>
+            লিখিত কোর্সসমূহ:{' '}
+          </p>
 
-        <div className="mx-auto flex max-w-3xl flex-col flex-wrap items-center justify-center gap-4 sm:flex-row">
-          {courseList.map(course => {
-            return (
-              <Link
-                key={course.name}
-                href={{ pathname: course.link }}
-                className="flex items-center justify-center gap-x-2 rounded-lg bg-foreground px-8 py-2.5 font-medium text-background transition-colors hover:bg-foreground/90"
-              >
-                <Image
-                  src={course.icon}
-                  alt={course.name}
-                  className="size-6"
-                  width={40}
-                  height={40}
-                />
-                {course.name}
-              </Link>
-            );
-          })}
+          <div className="flex flex-col flex-wrap items-center justify-center gap-4 sm:flex-row">
+            {courseList.map(course => {
+              return (
+                <Link
+                  key={course.name}
+                  href={{ pathname: course.link }}
+                  className="flex items-center justify-center gap-x-2 rounded-lg bg-foreground px-8 py-2.5 font-medium text-background transition-colors hover:bg-foreground/90"
+                >
+                  <Image
+                    src={course.icon}
+                    alt={course.name}
+                    className="size-6"
+                    width={40}
+                    height={40}
+                  />
+                  {course.name}
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </div>
 
