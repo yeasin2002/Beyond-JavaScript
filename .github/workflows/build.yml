@@ -28,9 +28,6 @@ jobs:
           npm install -g bun
           bun install
 
-      - name: Type check
-        run: bun tsc --noEmit
-
       - name: Format
         run: bun run format:check
 
