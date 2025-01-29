@@ -21,7 +21,7 @@ export function Navbar() {
             {navigation.map((item, index) => (
               <Link
                 key={index}
-                href={item.href}
+                href={{ pathname: item.href }}
                 className="text-sm text-gray-400 transition-colors hover:text-white"
               >
                 {item.title}
