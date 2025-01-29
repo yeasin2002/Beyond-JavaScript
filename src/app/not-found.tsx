@@ -36,10 +36,10 @@ export default function NotFound() {
             </Button>
           </Link>
           <Link
-            href={'/js-interview-questions'}
+            href={'/javascript'}
             className="relative flex h-10 items-center rounded-md bg-zinc-800/50 px-4 text-sm text-zinc-400"
           >
-            npm run dev
+            Learn JavaScript
           </Link>
         </div>
       </div>
