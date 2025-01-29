@@ -18,7 +18,7 @@ export function Hero() {
       <div className="container relative mx-auto px-4 py-32 text-center">
         <div className="mb-8 inline-block">
           <div className="rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
-            {`It's`} under maintenance
+            👷 under maintenance
           </div>
         </div>
 
@@ -36,12 +36,12 @@ export function Hero() {
           dignissimos!
         </p>
 
-        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <div className="mx-auto flex max-w-3xl flex-col flex-wrap items-center justify-center gap-4 sm:flex-row">
           {courseList.map(course => {
             return (
               <Link
                 key={course.name}
-                href={course.link}
+                href={{ pathname: course.link }}
                 className="flex items-center justify-center gap-x-2 rounded-lg bg-foreground px-8 py-2.5 font-medium text-background transition-colors hover:bg-foreground/90"
               >
                 <Image

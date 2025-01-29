@@ -1,20 +1,31 @@
+import JavaScriptIcon from '@/assets/icons/JavaScript.svg';
+import PostgreSQLIcon from '@/assets/icons/PostgreSQL-Dark.svg';
+import ReactIcon from '@/assets/icons/React-Dark.svg';
+import TypeScriptIcon from '@/assets/icons/TypeScript.svg';
+
 export const courseList = [
   {
     name: 'JavaScript',
-    icon: '/assets/icons/javaScript.svg',
+    icon: JavaScriptIcon,
     style: 'bg-foreground',
     link: '/javascript'
   },
   {
     name: 'React JS',
-    icon: '/assets/icons/React-Dark.svg',
+    icon: ReactIcon,
     style: 'bg-brand-nuxt-green',
     link: '/reactjs'
   },
   {
     name: 'TypeScript',
-    icon: '/assets/icons/typescript.svg',
+    icon: TypeScriptIcon,
     style: 'bg-brand-nuxt-green',
     link: '/typescript'
+  },
+  {
+    name: 'Database',
+    icon: PostgreSQLIcon,
+    style: 'bg-brand-nuxt-green',
+    link: '/database'
   }
 ];
