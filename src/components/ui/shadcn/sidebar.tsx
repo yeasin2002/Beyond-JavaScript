@@ -1,12 +1,10 @@
 'use client';
 
-import * as React from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { VariantProps, cva } from 'class-variance-authority';
-import { PanelLeft } from 'lucide-react';
+import { CircleArrowRight } from 'lucide-react';
+import * as React from 'react';
 
-import { useIsMobile } from '@/hooks/use-mobile';
-import { cn } from '@/utils';
 import { Button } from '@/components/ui/shadcn/button';
 import { Input } from '@/components/ui/shadcn/input';
 import { Separator } from '@/components/ui/shadcn/separator';
@@ -18,6 +16,8 @@ import {
   TooltipProvider,
   TooltipTrigger
 } from '@/components/ui/shadcn/tooltip';
+import { useIsMobile } from '@/hooks/use-mobile';
+import { cn } from '@/utils';
 
 const SIDEBAR_COOKIE_NAME = 'sidebar:state';
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
@@ -276,7 +276,11 @@ const SidebarTrigger = React.forwardRef<
       }}
       {...props}
     >
-      <PanelLeft />
+      <CircleArrowRight
+        className={cn('[ transition-all', {
+          'rotate-180': open
+        })}
+      />
       <span className="sr-only">Toggle Sidebar</span>
     </Button>
   );

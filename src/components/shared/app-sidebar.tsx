@@ -1,5 +1,3 @@
-import { Calendar, Home, Inbox, Search, Settings } from 'lucide-react';
-
 import {
   Sidebar,
   SidebarContent,
@@ -10,37 +8,13 @@ import {
   SidebarMenuButton,
   SidebarMenuItem
 } from '@/components/ui/shadcn/sidebar';
+import { SidebarContentType } from '@/types';
 
-// Menu items.
-const items = [
-  {
-    title: 'Home',
-    url: '#',
-    icon: Home
-  },
-  {
-    title: 'Inbox',
-    url: '#',
-    icon: Inbox
-  },
-  {
-    title: 'Calendar',
-    url: '#',
-    icon: Calendar
-  },
-  {
-    title: 'Search',
-    url: '#',
-    icon: Search
-  },
-  {
-    title: 'Settings',
-    url: '#',
-    icon: Settings
-  }
-];
+type Props = {
+  menu: SidebarContentType[];
+};
 
-export function AppSidebar() {
+export function AppSidebar({ menu }: Props) {
   return (
     <Sidebar>
       <SidebarContent>
@@ -48,12 +22,12 @@ export function AppSidebar() {
           <SidebarGroupLabel>Application</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {items.map(item => (
-                <SidebarMenuItem key={item.title}>
+              {menu.map(item => (
+                <SidebarMenuItem key={item.name}>
                   <SidebarMenuButton asChild>
                     <a href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
+                      {/* <item.icon /> */}
+                      <span>{item.name}</span>
                     </a>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
