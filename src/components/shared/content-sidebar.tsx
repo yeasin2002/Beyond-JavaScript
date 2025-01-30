@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger
 } from '@/components/ui/shadcn/accordion';
+import { publicSans } from '@/fonts';
 import { SidebarContentType } from '@/types';
 import Link from 'next/link';
 import * as React from 'react';
@@ -20,14 +21,11 @@ export function ContentSidebar({ menu, children }: Props) {
     <div className="flex h-screen divide-x-4">
       <div className="min-w-60 overflow-y-auto bg-background pt-5">
         {menu.map(item => {
-          console.log(`item`, item);
-          console.table({
-            name: item.name,
-            content: item?.content?.length
-          });
-
           return (
-            <div key={item.name} className="space-y-2 px-4">
+            <div
+              key={item.name}
+              className={`space-y-2 px-4 ${publicSans.className}`}
+            >
               {!item?.content ? (
                 <Link
                   href={{ pathname: item.url }}
@@ -39,7 +37,7 @@ export function ContentSidebar({ menu, children }: Props) {
                 <Accordion type="single" collapsible className="">
                   <AccordionItem value="item-1" className="border-none">
                     <AccordionTrigger> {item.name} </AccordionTrigger>
-                    <AccordionContent>
+                    <AccordionContent className="space-y-2 pl-4">
                       {item?.content?.map((item, index) => (
                         <Link
                           key={index}
@@ -57,7 +55,7 @@ export function ContentSidebar({ menu, children }: Props) {
           );
         })}
       </div>
-      <div className="px-3">{children}</div>
+      <div className="px-3 py-4">{children}</div>
     </div>
   );
 }
