@@ -1,7 +1,7 @@
 import { ThemeProvider } from '@/components/shared';
 import type { Metadata } from 'next';
 
-import './globals.css';
+import '../styles/main.css';
 
 export const metadata: Metadata = {
   title: 'Beyond JavaScript',

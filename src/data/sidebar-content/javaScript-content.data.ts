@@ -2,21 +2,23 @@ import { SidebarContentType } from '@/types';
 
 export const javaScriptContent: SidebarContentType[] = [
   {
-    name: 'Basic',
-    url: '/javascript'
-  },
-  {
-    name: 'Advance',
-    url: '/javascript',
+    name: 'Fundamentals',
     content: [
+      { name: 'Pure Functions', url: '/javascript/pure-functions' },
       {
-        name: 'Array',
-        url: '/javascript/array'
+        name: 'Shallow  and Deep Copy',
+        url: '/javascript/shallow-and-deep-copy'
       },
       {
-        name: 'Object',
-        url: '/javascript/object'
+        name: 'Event Propagation and Event delegation',
+        url: '/javascript/event-propagation-and-event-delegation'
       }
+    ]
+  },
+  {
+    name: 'Browser API',
+    content: [
+      { name: 'storage and cookies', url: '/javascript/storage-and-cookies' }
     ]
   }
 ];
