@@ -1,5 +1,5 @@
 import { DarkModeToggle } from '@/components/ui';
-import { navigation } from '@/data';
+import { courseList } from '@/data';
 import { Github } from 'lucide-react';
 import Link from 'next/link';
 
@@ -18,13 +18,13 @@ export function Navbar() {
           </Link>
 
           <nav className="hidden gap-6 md:flex">
-            {navigation.map((item, index) => (
+            {courseList.map((item, index) => (
               <Link
                 key={index}
-                href={{ pathname: item.href }}
+                href={{ pathname: item.link }}
                 className="text-sm text-gray-400 transition-colors hover:text-white"
               >
-                {item.title}
+                {item.name}
               </Link>
             ))}
           </nav>
