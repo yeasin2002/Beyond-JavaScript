@@ -21,7 +21,7 @@ type Props = {
 export function ContentSidebar({ menu, children }: Props) {
   return (
     <div className="flex h-[90vh] divide-x-4">
-      <div className="w-[300px] overflow-y-auto bg-background pt-5">
+      <div className="w-64 min-w-64 overflow-y-auto bg-background pt-5">
         {menu.map(item => {
           return (
             <div
