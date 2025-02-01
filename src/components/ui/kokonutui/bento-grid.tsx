@@ -1,14 +1,7 @@
 'use client';
 
 import { cn } from '@/utils';
-import {
-  CheckCircle,
-  Clock,
-  Globe,
-  Star,
-  TrendingUp,
-  Video
-} from 'lucide-react';
+import { CheckCircle, Globe, TrendingUp, Video } from 'lucide-react';
 
 interface BentoItem {
   title: string;
