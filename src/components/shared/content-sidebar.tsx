@@ -20,19 +20,18 @@ type Props = {
 
 export function ContentSidebar({ menu, children }: Props) {
   return (
-    <div className="flex h-[90vh] divide-x-4">
-      <div className="w-64 min-w-64 overflow-y-auto bg-background pt-5">
+    <div className="container mx-auto grid h-[90vh] grid-cols-12 divide-x-4">
+      <div className="col-span-2 overflow-y-auto overflow-x-hidden truncate bg-background pt-5">
         {menu.map(item => {
           return (
             <div
               key={item.name}
-              className={`space-y-2 px-4 ${publicSans.className}`}
+              className={`space-y-2 overflow-x-hidden px-4 ${publicSans.className}`}
             >
               <Accordion type="single" collapsible className="">
                 <AccordionItem value="item-1" className="border-none">
                   <AccordionTrigger className="capitalize">
-                    {' '}
-                    {item.name}{' '}
+                    {item.name}
                   </AccordionTrigger>
                   <AccordionContent className="space-y-2 pl-4">
                     {item?.content?.map((item, index) => (
@@ -51,7 +50,9 @@ export function ContentSidebar({ menu, children }: Props) {
           );
         })}
       </div>
-      <div className="typography px-3 py-4">{children}</div>
+      <div className="typography col-span-10 size-full px-3 py-4">
+        {children}
+      </div>
     </div>
   );
 }

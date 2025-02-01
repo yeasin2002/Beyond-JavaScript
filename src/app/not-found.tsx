@@ -88,7 +88,7 @@ export default function RooNotFound() {
               height={20}
             />
             <span className="text-sm tracking-wide text-white/60">
-              Kokonut UI
+              404 - Not Found
             </span>
           </motion.div>
 
