@@ -1,7 +1,9 @@
+import { ContentSidebar } from '@/components/shared/content-sidebar';
+import { reactjsContent } from '@/data/sidebar-content';
 import React, { PropsWithChildren } from 'react';
 
-const JSInterviewQuestion = ({ children }: PropsWithChildren) => {
-  return <div>{children}</div>;
+const ReactPage = ({ children }: PropsWithChildren) => {
+  return <ContentSidebar menu={reactjsContent}>{children}</ContentSidebar>;
 };
 
-export default JSInterviewQuestion;
+export default ReactPage;
