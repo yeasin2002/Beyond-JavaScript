@@ -20,5 +20,9 @@ export const javaScriptContent: SidebarContentType[] = [
     content: [
       { name: 'storage and cookies', url: '/javascript/storage-and-cookies' }
     ]
+  },
+  {
+    name: 'OOP',
+    content: [{ name: 'Introduction', url: '/javascript/introduction' }]
   }
 ];

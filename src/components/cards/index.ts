@@ -1,1 +1,1 @@
-export * from './bento-cards';
+export * from './prominent-cards';
