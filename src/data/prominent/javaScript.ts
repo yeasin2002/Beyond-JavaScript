@@ -1,4 +1,6 @@
-export const jsProminent = [
+import { Prominent } from '.';
+
+export const jsProminent: Prominent[] = [
   {
     label: 'সিঙ্গেল থ্রেডেড',
     desc: 'JavaScript একটি সিঙ্গেল থ্রেডেড ভাষা, যার মানে এটি একসাথে একটাই কাজ সম্পন্ন করতে পারে।'
