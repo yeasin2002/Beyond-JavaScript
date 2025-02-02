@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { cn } from '@/utils';
 import { ChevronDown, Mail } from "lucide-react";
-import { cn } from "@/utils";
+import { AnimatePresence, motion } from 'motion/react';
+import { useState } from 'react';
 
 interface FAQItemProps {
     question: string;
@@ -139,60 +139,58 @@ function Faq02() {
     ];
 
     return (
-        <section className="py-16 w-full bg-linear-to-b from-transparent via-gray-50/50 to-transparent dark:from-transparent dark:via-white/[0.02] dark:to-transparent">
-            <div className="container px-4 mx-auto">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="max-w-2xl mx-auto text-center mb-12"
-                >
-                    <h2 className="text-3xl font-semibold mb-3 bg-linear-to-r from-gray-900 via-gray-800 to-gray-900 dark:from-white dark:via-gray-100 dark:to-white bg-clip-text text-transparent">
-                        Frequently Asked Questions
-                    </h2>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                        Everything you need to know about our platform
-                    </p>
-                </motion.div>
+      <section className="bg-linear-to-b w-full from-transparent via-gray-50/50 to-transparent py-16 dark:from-transparent dark:via-white/[0.02] dark:to-transparent">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mx-auto mb-12 max-w-2xl text-center"
+          >
+            <h2 className="bg-linear-to-r mb-3 from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-3xl font-semibold text-transparent dark:from-white dark:via-gray-100 dark:to-white">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              Everything you need to know about our platform
+            </p>
+          </motion.div>
 
-                <div className="max-w-2xl mx-auto space-y-2">
-                    {faqs.map((faq, index) => (
-                        <FAQItem key={index} {...faq} index={index} />
-                    ))}
-                </div>
+          <div className="mx-auto max-w-2xl space-y-2">
+            {faqs.map((faq, index) => (
+              <FAQItem key={index} {...faq} index={index} />
+            ))}
+          </div>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                    className={cn(
-                        "max-w-md mx-auto mt-12 p-6 rounded-lg text-center"
-                    )}
-                >
-                    <div className="inline-flex items-center justify-center p-1.5 rounded-full  mb-4">
-                        <Mail className="h-4 w-4" />
-                    </div>
-                    <p className="text-sm font-medium text-gray-900 dark:text-white mb-1">
-                        Still have questions?
-                    </p>
-                    <p className="text-xs text-gray-600 dark:text-gray-400 mb-4">
-                        We're here to help you
-                    </p>
-                    <button
-                        type="button"
-                        className={cn(
-                            "px-4 py-2 text-sm rounded-md",
-                            "bg-gray-900 dark:bg-white text-white dark:text-gray-900",
-                            "hover:bg-gray-800 dark:hover:bg-gray-100",
-                            "transition-colors duration-200",
-                            "font-medium"
-                        )}
-                    >
-                        Contact Support
-                    </button>
-                </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className={cn('mx-auto mt-12 max-w-md rounded-lg p-6 text-center')}
+          >
+            <div className="mb-4 inline-flex items-center justify-center rounded-full p-1.5">
+              <Mail className="h-4 w-4" />
             </div>
-        </section>
+            <p className="mb-1 text-sm font-medium text-gray-900 dark:text-white">
+              Still have questions?
+            </p>
+            <p className="mb-4 text-xs text-gray-600 dark:text-gray-400">
+              {`We're`} here to help you
+            </p>
+            <button
+              type="button"
+              className={cn(
+                'rounded-md px-4 py-2 text-sm',
+                'bg-gray-900 text-white dark:bg-white dark:text-gray-900',
+                'hover:bg-gray-800 dark:hover:bg-gray-100',
+                'transition-colors duration-200',
+                'font-medium'
+              )}
+            >
+              Contact Support
+            </button>
+          </motion.div>
+        </div>
+      </section>
     );
 }
 
