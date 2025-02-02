@@ -33,7 +33,13 @@ export const CourseHero = ({ heading, desc, prominentList = [] }: Props) => {
 
       <div className="grid grid-cols-3 gap-3">
         {prominentList.map(item => {
-          return <ProminentCard title={item.label} description={item.desc} />;
+          return (
+            <ProminentCard
+              title={item.label}
+              description={item.desc}
+              key={item.desc}
+            />
+          );
         })}
       </div>
     </div>

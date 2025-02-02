@@ -1,7 +1,7 @@
 'use client';
 
 import { cn } from '@/utils';
-import { Star, TrendingUp } from 'lucide-react';
+import { Star } from 'lucide-react';
 import type React from 'react';
 
 interface BentoCardProps {
