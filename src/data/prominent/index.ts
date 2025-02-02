@@ -3,4 +3,6 @@ export type Prominent = {
   desc: string;
 };
 
-export * from './javaScript';
+export * from './javaScript.prominent';
+export * from './typescript.prominent';
+
