@@ -23,9 +23,9 @@ export const courseList = [
     link: '/typescript'
   },
   {
-    name: 'Database',
+    name: 'SQL',
     icon: PostgreSQLIcon,
     style: 'bg-brand-nuxt-green',
-    link: '/database'
+    link: '/sql'
   }
 ];
