@@ -12,8 +12,6 @@ import { SidebarContentType } from '@/types';
 import Link from 'next/link';
 import * as React from 'react';
 
-import '@/styles/typography.css';
-
 type Props = {
   menu: SidebarContentType[];
   children: React.ReactNode;
