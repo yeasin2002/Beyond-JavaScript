@@ -32,7 +32,12 @@ export function FrequentlyAskedQuestions() {
 
         <div className="mx-auto max-w-2xl space-y-2">
           {HomepageFAQ_data.map((faq, index) => (
-            <FAQItem key={index} {...faq} index={index} />
+            <FAQItem
+              key={index}
+              {...faq}
+              index={index}
+              className={anekBangla.className}
+            />
           ))}
         </div>
 

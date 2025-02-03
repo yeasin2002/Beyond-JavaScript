@@ -11,16 +11,16 @@ export const courseList = [
     link: '/javascript'
   },
   {
-    name: 'React JS',
-    icon: ReactIcon,
-    style: 'bg-brand-nuxt-green',
-    link: '/reactjs'
-  },
-  {
     name: 'TypeScript',
     icon: TypeScriptIcon,
     style: 'bg-brand-nuxt-green',
     link: '/typescript'
+  },
+  {
+    name: 'React JS',
+    icon: ReactIcon,
+    style: 'bg-brand-nuxt-green',
+    link: '/reactjs'
   },
   {
     name: 'SQL',

@@ -9,9 +9,10 @@ interface FAQItemProps {
   question: string;
   answer: string;
   index: number;
+  className?: string;
 }
 
-export function FAQItem({ question, answer, index }: FAQItemProps) {
+export function FAQItem({ question, answer, index, className }: FAQItemProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -28,7 +29,8 @@ export function FAQItem({ question, answer, index }: FAQItemProps) {
         'transition-all duration-200 ease-in-out',
         isOpen
           ? 'bg-linear-to-br dark:via-white/2 from-white via-gray-50/50 to-white dark:from-white/5 dark:to-white/5'
-          : 'hover:bg-gray-50/50 dark:hover:bg-white/[0.02]'
+          : 'hover:bg-gray-50/50 dark:hover:bg-white/[0.02]',
+        className
       )}
     >
       <button

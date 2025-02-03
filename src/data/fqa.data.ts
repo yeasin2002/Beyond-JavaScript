@@ -6,23 +6,22 @@ interface FAQItemProps {
 
 export const HomepageFAQ_data: Omit<FAQItemProps, 'index'>[] = [
   {
-    question: 'What makes your platform unique?',
+    question: 'এই সাইটের মূল মোটিভ কী?',
     answer:
-      "Our platform stands out through its intuitive design, powerful automation capabilities, and seamless integration options. We've focused on creating a user experience that combines simplicity with advanced features."
+      'মূলত নিজেদের নোট শেয়ার ও কমিউনিটি করাই একটা উদেশ্য, বাংলায় রিসোর্স ক্রিয়েট করা যাতে সবাই উপকৃত হয়। '
   },
   {
-    question: 'How does the pricing structure work?',
-    answer:
-      'We offer flexible, transparent pricing tiers designed to scale with your needs. Each tier includes a core set of features, with additional capabilities as you move up. All plans start with a 14-day free trial.'
+    question: 'এই প্রজেক্ট কি রেগুলার মেইন্টেইন করা হবে?',
+    answer: 'অবশ্যই প্রতিনিয়র আপডেট করা হবে, .'
   },
   {
-    question: 'What kind of support do you offer?',
+    question: 'আমি কিভাবে কন্ট্রিবিউট করতে পারি?',
     answer:
-      'We provide comprehensive support through multiple channels. This includes 24/7 live chat, detailed documentation, video tutorials, and dedicated account managers for enterprise clients.'
+      'GitHub এর থেকে রিপো ফর্ক করে নিয়ে আপনার লেখা বা কন্ট্রিবিউশনের টপিক শেয়ার করে পুল রিকুয়েস্ট দিতে পারে। '
   },
   {
-    question: 'How can I get started?',
+    question: 'এখানে কি কি টপিক কভার করা হবে?',
     answer:
-      "You can get started by signing up for a free trial. Once you've signed up, you'll have access to our platform's full range of features. You can also contact our support team for assistance."
+      'আপদাতো JavaScript, TypeScript নিয়ে রেগুলার কাজ হচ্ছে, পরবর্তী সময়ে React/Next ,vue/Nuxt, SQL সহ  অন্যান্য টপিক কভার করা হবে'
   }
 ];

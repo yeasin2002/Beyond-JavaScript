@@ -32,7 +32,7 @@ export function Hero() {
             <span className={`${sriracha.className}`}>Programming</span>
             <br />
             <span className={` ${anekBangla.className}`}>
-              শিখুন নিজের মাতৃভাষায়{' '}
+              শিখুন নিজের মাতৃভাষায়
             </span>
           </h1>
           <h2
@@ -44,30 +44,60 @@ export function Hero() {
           </h2>
         </div>
 
-        <div className="mx-auto max-w-3xl space-y-3">
-          <p className={`text-lg text-gray-400 ${mina.className}`}>
-            লিখিত কোর্সসমূহ:{' '}
-          </p>
+        {/*  running course   */}
+        <div className="space-y-4">
+          <div className="mx-auto max-w-3xl space-y-3">
+            <p className={`text-lg text-gray-400 ${mina.className}`}>
+              রানিং লিখিত কোর্সসমূহ:
+            </p>
 
-          <div className="flex flex-col flex-wrap items-center justify-center gap-4 sm:flex-row">
-            {courseList.map(course => {
-              return (
-                <Link
-                  key={course.name}
-                  href={{ pathname: course.link }}
-                  className="flex items-center justify-center gap-x-2 rounded-lg bg-foreground px-8 py-2.5 font-medium text-background transition-colors hover:bg-foreground/90"
-                >
-                  <Image
-                    src={course.icon}
-                    alt={course.name}
-                    className="size-6"
-                    width={40}
-                    height={40}
-                  />
-                  {course.name}
-                </Link>
-              );
-            })}
+            <div className="flex flex-col flex-wrap items-center justify-center gap-4 sm:flex-row">
+              {courseList.slice(0, 2).map(course => {
+                return (
+                  <Link
+                    key={course.name}
+                    href={{ pathname: course.link }}
+                    className="flex items-center justify-center gap-x-2 rounded-lg bg-foreground px-8 py-2.5 font-medium text-background transition-colors hover:bg-foreground/90"
+                  >
+                    <Image
+                      src={course.icon}
+                      alt={course.name}
+                      className="size-6"
+                      width={40}
+                      height={40}
+                    />
+                    {course.name}
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+          {/* coming soon  */}
+          <div className="mx-auto max-w-3xl space-y-3">
+            <p className={`text-lg text-gray-400 ${mina.className}`}>
+              শিঘ্রই আসবে
+            </p>
+
+            <div className="flex flex-col flex-wrap items-center justify-center gap-4 sm:flex-row">
+              {courseList.slice(2).map(course => {
+                return (
+                  <Link
+                    key={course.name}
+                    href={{ pathname: course.link }}
+                    className="flex items-center justify-center gap-x-2 rounded-lg bg-foreground px-8 py-2.5 font-medium text-background transition-colors hover:bg-foreground/90"
+                  >
+                    <Image
+                      src={course.icon}
+                      alt={course.name}
+                      className="size-6"
+                      width={40}
+                      height={40}
+                    />
+                    {course.name}
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
