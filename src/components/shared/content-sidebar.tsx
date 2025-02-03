@@ -7,6 +7,7 @@ import {
   AccordionTrigger
 } from '@/components/ui/shadcn/accordion';
 import { publicSans } from '@/fonts';
+import { anekBangla } from '@/fonts/Bengali.fonts';
 import { SidebarContentType } from '@/types';
 import Link from 'next/link';
 import * as React from 'react';
@@ -20,8 +21,8 @@ type Props = {
 
 export function ContentSidebar({ menu, children }: Props) {
   return (
-    <div className="container mx-auto grid h-[90vh] grid-cols-12 divide-x-4">
-      <div className="col-span-2 overflow-y-auto overflow-x-hidden truncate bg-background pt-5">
+    <div className="container mx-auto flex h-[90vh] !w-full divide-x-4">
+      <div className="min-w-60 overflow-x-hidden truncate bg-background pt-5">
         {menu.map(item => {
           return (
             <div
@@ -50,9 +51,8 @@ export function ContentSidebar({ menu, children }: Props) {
           );
         })}
       </div>
-      <div className="typography col-span-10 size-full px-3 py-4">
-        {children}
-      </div>
+
+      <div className={`py-4 pl-4 ${anekBangla.className} `}>{children}</div>
     </div>
   );
 }
