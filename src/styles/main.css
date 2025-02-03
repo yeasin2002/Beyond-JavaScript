@@ -90,3 +90,10 @@
 }
 
 
+
+
+@layer components {
+  .mdx-wrapper {
+   @apply prose prose-lg mx-auto max-w-none dark:prose-invert 
+  }
+}
