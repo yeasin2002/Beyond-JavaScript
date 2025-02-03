@@ -9,6 +9,10 @@ export const typeScriptContent: SidebarContentType[] = [
   {
     name: 'OOP',
     baseUrl: '/typescript/oop',
-    content: [{ name: 'Introduction', url: '/introduction' }]
+    content: [
+      { name: 'Introduction', url: '/introduction' },
+      { name: 'syntax', url: '/syntax' },
+      { name: 'pillars Of  OOP ', url: '/pillars' }
+    ]
   }
 ];

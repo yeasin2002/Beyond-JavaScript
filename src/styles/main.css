@@ -94,6 +94,6 @@
 
 @layer components {
   .mdx-wrapper {
-   @apply prose prose-lg mx-auto max-w-none dark:prose-invert 
+   @apply prose prose-lg mx-auto max-w-none dark:prose-invert pb-10 
   }
 }
