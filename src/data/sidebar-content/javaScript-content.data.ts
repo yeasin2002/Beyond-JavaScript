@@ -3,26 +3,30 @@ import { SidebarContentType } from '@/types';
 export const javaScriptContent: SidebarContentType[] = [
   {
     name: 'Fundamentals',
+    baseUrl: '/javascript/fundamentals',
     content: [
-      { name: 'Pure Functions', url: '/javascript/pure-functions' },
+      {
+        name: 'Pure Functions',
+        url: '/pure-functions'
+      },
       {
         name: 'Shallow  and Deep Copy',
-        url: '/javascript/shallow-and-deep-copy'
+        url: '/shallow-and-deep-copy'
       },
       {
         name: 'Event Propagation and Event delegation',
-        url: '/javascript/event-propagation-and-event-delegation'
+        url: '/event-propagation-and-event-delegation'
       }
     ]
   },
   {
     name: 'Browser API',
-    content: [
-      { name: 'storage and cookies', url: '/javascript/storage-and-cookies' }
-    ]
+    baseUrl: '/javascript/browser-api',
+    content: [{ name: 'storage and cookies', url: '/storage-and-cookies' }]
   },
   {
     name: 'OOP',
-    content: [{ name: 'Introduction', url: '/javascript/introduction' }]
+    baseUrl: '/javascript/oop',
+    content: [{ name: 'Introduction', url: '/introduction' }]
   }
 ];

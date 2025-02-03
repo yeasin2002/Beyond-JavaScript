@@ -34,13 +34,13 @@ export function ContentSidebar({ menu, children }: Props) {
                     {item.name}
                   </AccordionTrigger>
                   <AccordionContent className="space-y-2 pl-4">
-                    {item?.content?.map((item, index) => (
+                    {item?.content?.map((subContent, index) => (
                       <Link
                         key={index}
-                        href={{ pathname: item.url }}
+                        href={{ pathname: item.baseUrl + subContent.url }}
                         className="block truncate text-gray-100 hover:text-gray-200"
                       >
-                        {item.name}
+                        {subContent.name}
                       </Link>
                     ))}
                   </AccordionContent>
