@@ -19,13 +19,12 @@ export function FrequentlyAskedQuestions() {
           className="mx-auto mb-12 max-w-2xl text-center"
         >
           <h2
-            //  className="bg-linear-to-r mb-3 from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-3xl font-semibold text-transparent dark:from-white dark:via-gray-100 dark:to-white"
-            className={`mb-3 bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-4xl font-bold text-white ${hindSiliguri.className}`}
+            className={`homepage-section bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text ${hindSiliguri.className}`}
           >
             প্রায়শই জিজ্ঞাসিত প্রশ্ন
           </h2>
           <p
-            className={`text-sm text-gray-600 dark:text-gray-400 ${anekBangla.className}`}
+            className={`homepage-section-desc text-gray-600 dark:text-gray-400 ${anekBangla.className}`}
           >
             আমাদের প্ল্যাটফর্ম সম্পর্কে আপনার যা জানা দরকার তা
           </p>

@@ -3,7 +3,15 @@ import { maintainersInfo } from '@/data/maintainersInfo';
 import Link from 'next/link';
 import { ScatteredDotsBg } from '../shared';
 
+const footerLinks = [
+  { name: 'কন্ট্রিবিউশন গাইডলাইন', url: '/contribution' },
+  { name: 'পলিসি', url: '/privacy-policy' }
+];
+
 export function Footer() {
+  const year = new Intl.DateTimeFormat('bn-BD', { year: 'numeric' }).format(
+    new Date()
+  );
   return (
     <footer className="relative border-t border-white/10 bg-black text-white">
       {/* Gradient overlay */}
@@ -66,20 +74,18 @@ export function Footer() {
         <div className="mt-8 border-t border-white/10 pt-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <p className="text-sm text-gray-400">
-              © {new Date().getFullYear()} Stack Unboxed. All rights reserved.
+              ©{year} Stack Unboxed । সমস্ত অধিকার সংরক্ষিত ।
             </p>
             <div className="flex gap-6">
-              {['Privacy Policy', 'Terms of Service', 'Code of Conduct'].map(
-                item => (
-                  <a
-                    key={item}
-                    href="#"
-                    className="text-sm text-gray-400 transition-colors duration-200 hover:text-purple-400"
-                  >
-                    {item}
-                  </a>
-                )
-              )}
+              {footerLinks.map(item => (
+                <Link
+                  key={item.name}
+                  href={{ pathname: item.url }}
+                  className="text-sm text-gray-400 transition-colors duration-200 hover:text-purple-400"
+                >
+                  {item.name}
+                </Link>
+              ))}
             </div>
           </div>
         </div>

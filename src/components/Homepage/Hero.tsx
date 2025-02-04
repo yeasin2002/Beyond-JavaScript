@@ -27,9 +27,11 @@ export function Hero() {
 
         <div>
           <h1
-            className={`mb-4 bg-opacity-50 bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text py-2 pb-2 text-4xl font-bold tracking-tight text-transparent md:text-6xl lg:text-7xl`}
+            className={`mb-4 bg-opacity-50 bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text py-2 pb-2 text-5xl font-bold tracking-tight text-transparent md:text-6xl lg:text-7xl`}
           >
-            <span className={`${sriracha.className}`}>Programming</span>
+            <span className={`font-extrabold ${sriracha.className}`}>
+              Programming
+            </span>
             <br />
             <span className={` ${anekBangla.className}`}>
               শিখুন নিজের মাতৃভাষায়
@@ -48,7 +50,7 @@ export function Hero() {
         <div className="space-y-4">
           <div className="mx-auto max-w-3xl space-y-3">
             <p className={`text-lg text-gray-400 ${mina.className}`}>
-              রানিং লিখিত কোর্সসমূহ:
+              চলমান লিখিত কোর্সসমূহ:
             </p>
 
             <div className="flex flex-col flex-wrap items-center justify-center gap-4 sm:flex-row">

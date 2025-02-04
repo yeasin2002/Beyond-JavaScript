@@ -100,4 +100,11 @@
   .mdx-wrapper {
     @apply prose prose-lg mx-auto max-w-none pb-10 dark:prose-invert;
   }
+  .homepage-section {
+    @apply mb-3  text-4xl font-bold text-white tracking-tight md:text-6xl
+  }
+
+  .homepage-section-desc {
+    @apply text-lg md:text-xl  text-gray-400
+  }
 }
