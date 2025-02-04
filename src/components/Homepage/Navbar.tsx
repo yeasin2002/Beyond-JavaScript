@@ -34,7 +34,7 @@ export function Navbar() {
 
           <DarkModeToggle />
           <Link
-            href={'https://github.com/yeasin2002/Beyond-JavaScript'}
+            href={'https://github.com/yeasin2002/Stack-Unboxed'}
             target="_blank"
             className="rounded-lg p-2 text-gray-400 transition-colors hover:bg-gray-800 hover:text-white"
           >

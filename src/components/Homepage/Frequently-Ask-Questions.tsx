@@ -61,7 +61,7 @@ export function FrequentlyAskedQuestions() {
           </p>
           <Link
             target="_blank"
-            href="https://github.com/yeasin2002/Beyond-JavaScript/discussions"
+            href="https://github.com/yeasin2002/Stack-Unboxed/discussions"
             className={cn(
               'rounded-md px-4 py-2 text-sm',
               'bg-gray-900 text-white dark:bg-white dark:text-gray-900',

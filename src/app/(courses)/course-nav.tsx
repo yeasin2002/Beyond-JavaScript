@@ -31,7 +31,7 @@ export function CourseNavbar() {
         <div className="flex items-center gap-4">
           <DarkModeToggle />
           <Link
-            href={'https://github.com/yeasin2002/Beyond-JavaScript'}
+            href={'https://github.com/yeasin2002/Stack-Unboxed'}
             target="_blank"
             className="rounded-lg p-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
           >
