@@ -6,7 +6,10 @@ const nextConfig = {
     typedRoutes: true
   },
   images: {
-    remotePatterns: [{ protocol: 'https' as const, hostname: 'skillicons.dev' }]
+    remotePatterns: [
+      { protocol: 'https' as const, hostname: 'skillicons.dev' },
+      { protocol: 'https' as const, hostname: 'avatars.githubusercontent.com' }
+    ]
   },
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx']
 };

@@ -5,6 +5,7 @@ import { anekBangla, hindSiliguri } from '@/fonts/Bengali.fonts';
 import { cn } from '@/utils';
 import { Github, Mail } from 'lucide-react';
 import { motion } from 'motion/react';
+import Link from 'next/link';
 import { FAQItem } from './FAQ-item';
 
 export function FrequentlyAskedQuestions() {
@@ -58,8 +59,9 @@ export function FrequentlyAskedQuestions() {
           <p className="mb-4 text-xs text-gray-600 dark:text-gray-400">
             GitHub এর ডিসকাস করে জানতে পারেন ।
           </p>
-          <button
-            type="button"
+          <Link
+            target="_blank"
+            href="https://github.com/yeasin2002/Beyond-JavaScript/discussions"
             className={cn(
               'rounded-md px-4 py-2 text-sm',
               'bg-gray-900 text-white dark:bg-white dark:text-gray-900',
@@ -71,7 +73,7 @@ export function FrequentlyAskedQuestions() {
           >
             <Github />
             <span>GitHub</span>
-          </button>
+          </Link>
         </motion.div>
       </div>
     </section>

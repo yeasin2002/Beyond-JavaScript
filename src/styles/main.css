@@ -77,8 +77,15 @@
   }
 }
 
-
-
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
 
 @layer base {
   * {
@@ -89,11 +96,8 @@
   }
 }
 
-
-
-
 @layer components {
   .mdx-wrapper {
-   @apply prose prose-lg mx-auto max-w-none dark:prose-invert pb-10 
+    @apply prose prose-lg mx-auto max-w-none pb-10 dark:prose-invert;
   }
 }

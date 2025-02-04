@@ -1,9 +1,11 @@
 import {
+  Contributors,
   FrequentlyAskedQuestions,
   Hero,
   Navbar,
   UserReview
 } from '@/components/Homepage';
+import { ScatteredDotsBg } from '@/components/shared';
 
 export default function Home() {
   return (
@@ -11,7 +13,11 @@ export default function Home() {
       <Navbar />
       <Hero />
       <UserReview />
-      <FrequentlyAskedQuestions />
+      <div className="relative">
+        <ScatteredDotsBg />
+        <FrequentlyAskedQuestions />
+        <Contributors />
+      </div>
     </main>
   );
 }
