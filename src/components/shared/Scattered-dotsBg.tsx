@@ -2,7 +2,7 @@ import React from 'react';
 
 export const ScatteredDotsBg = () => {
   return (
-    <div className="absolute inset-0 overflow-hidden">
+    <div className="pointer-events-none absolute inset-0 select-none overflow-hidden">
       {[...Array(50)].map((_, i) => (
         <div
           key={i}

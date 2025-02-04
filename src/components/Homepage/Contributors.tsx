@@ -1,3 +1,4 @@
+import { anekBangla, hindSiliguri } from '@/fonts/Bengali.fonts';
 import { contributorsList } from '@/types';
 import { Github } from 'lucide-react';
 import Image from 'next/image';
@@ -22,15 +23,15 @@ export async function Contributors() {
     <section className="min-h-[70vh] overflow-hidden text-white">
       <div className="container relative z-10 mx-auto px-4 py-16">
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <h1 className="mb-4 text-5xl font-bold tracking-tight md:text-6xl">
-            Our Amazing{' '}
-            <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
-              Contributors
-            </span>
+          <h1
+            className={`bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text py-4 text-5xl font-bold tracking-tight text-transparent md:text-6xl ${hindSiliguri.className}`}
+          >
+            কন্ট্রিবিউটরগণ
           </h1>
-          <p className="text-lg text-gray-400 md:text-xl">
-            Meet the talented developers who have contributed to making this
-            project better
+          <p
+            className={`text-lg text-gray-400 md:text-xl ${anekBangla.className}`}
+          >
+            যাদের সহযোগীটায় এই সাইটের কার্যক্রম করা হয় ।
           </p>
         </div>
 
