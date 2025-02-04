@@ -1,5 +1,6 @@
 import {
   Contributors,
+  Footer,
   FrequentlyAskedQuestions,
   Hero,
   Navbar,
@@ -18,6 +19,7 @@ export default function Home() {
         <FrequentlyAskedQuestions />
         <Contributors />
       </div>
+      <Footer />
     </main>
   );
 }
