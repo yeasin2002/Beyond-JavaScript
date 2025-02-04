@@ -5,7 +5,7 @@ import Image from 'next/image';
 async function getContributors() {
   try {
     const url =
-      'https://api.github.com/repos/yeasin2002/Beyond-JavaScript/contributors';
+      'https://api.github.com/repos/yeasin2002/Stack-Unboxed/contributors';
     const res = await fetch(url);
     if (!res.ok) throw new Error('Failed to fetch contributors');
     return res.json();
