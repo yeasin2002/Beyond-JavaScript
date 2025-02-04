@@ -4,4 +4,3 @@ export * from './FloatingPaths';
 export * from './noice';
 export * from './Scattered-dotsBg';
 export * from './theme-provider';
-
