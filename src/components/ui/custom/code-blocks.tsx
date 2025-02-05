@@ -2,43 +2,46 @@
 
 import { publicSans } from '@/fonts/English.fonts';
 import { cn } from '@/utils';
-import { Check, Copy, FileCode } from 'lucide-react';
+import { Check, Copy } from 'lucide-react';
 import { useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark as syntaxStyle } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
+// language or framework icons
+import css from '@/assets/icons/CSS.svg';
+import html from '@/assets/icons/HTML.svg';
+import js from '@/assets/icons/JavaScript.svg';
+import pg from '@/assets/icons/PostgreSQL-Dark.svg';
+import react from '@/assets/icons/React-Dark.svg';
+import rust from '@/assets/icons/Rust.svg';
+import ts from '@/assets/icons/TypeScript.svg';
+import { language } from '@/types';
+import Image from 'next/image';
+
 interface CodeBlockProps {
   code: string;
-  language: string;
+  language: language;
   filename?: string;
   showLineNumbers?: boolean;
   className?: string;
 }
 
-const getLanguageIcon = (language = 'typescript') => {
+const getLanguageIcon = (language: language = 'typescript') => {
   switch (language.toLowerCase()) {
     case 'html':
-      return '🌐';
+      return html;
     case 'css':
-      return '🎨';
+      return css;
     case 'javascript':
-    case 'js':
-      return '🟨';
-    case 'typescript':
-    case 'ts':
-      return '🔷';
-    case 'python':
-      return '🐍';
-    case 'go':
-      return '🐹';
-    case 'rust':
-      return '🦀';
-    case 'vue':
-      return '🟩';
+      return js;
+    case 'database':
+      return pg;
     case 'react':
-      return '⚛️';
-    default:
-      return '📄';
+      return react;
+    case 'rust':
+      return rust;
+    case 'typescript':
+      return ts;
   }
 };
 
@@ -65,19 +68,14 @@ export function CodeBlock({
         className
       )}
     >
-      <div className="flex items-center justify-between border-b border-gray-500 px-4 py-2">
+      <div className="flex items-center justify-between border-b border-gray-500 px-4">
         <div className="flex items-center gap-2 text-sm text-[#565f89]">
-          {filename ? (
-            <>
-              <FileCode className="h-4 w-4" />
-              <span>{filename}</span>
-            </>
-          ) : (
-            <>
-              <span>{getLanguageIcon(language)}</span>
-              <span>{language}</span>
-            </>
-          )}
+          <Image
+            src={getLanguageIcon(language)}
+            alt="language icon"
+            className="size-5"
+          />
+          <span>{filename || language}</span>
         </div>
         <button
           onClick={copyToClipboard}
@@ -85,9 +83,9 @@ export function CodeBlock({
           aria-label="Copy code"
         >
           {copied ? (
-            <Check className="h-4 w-4 text-green-500" />
+            <Check className="size-4 text-green-500" />
           ) : (
-            <Copy className="h-4 w-4 text-[#565f89]" />
+            <Copy className="size-4 text-[#565f89]" />
           )}
         </button>
       </div>
