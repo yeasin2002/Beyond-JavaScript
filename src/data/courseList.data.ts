@@ -1,4 +1,5 @@
 import JavaScriptIcon from '@/assets/icons/JavaScript.svg';
+import linuxIcon from '@/assets/icons/Linux.svg';
 import PostgreSQLIcon from '@/assets/icons/PostgreSQL-Dark.svg';
 import ReactIcon from '@/assets/icons/React-Dark.svg';
 import TypeScriptIcon from '@/assets/icons/TypeScript.svg';
@@ -27,5 +28,11 @@ export const courseList = [
     icon: PostgreSQLIcon,
     style: 'bg-brand-nuxt-green',
     link: '/sql'
+  },
+  {
+    name: 'Linux',
+    icon: linuxIcon,
+    style: 'bg-brand-nuxt-green',
+    link: '/linux'
   }
 ];

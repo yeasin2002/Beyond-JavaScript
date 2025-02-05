@@ -41,7 +41,7 @@ export function Footer() {
               {' '}
               কোর্সসমূহ{' '}
             </h4>
-            <ul className="space-y-2">
+            <ul className="grid grid-cols-1 items-center space-y-2 md:grid-cols-2">
               {courseList.map(item => (
                 <li key={item.name}>
                   <a
