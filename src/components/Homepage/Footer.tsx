@@ -1,5 +1,7 @@
 import { courseList } from '@/data';
 import { maintainersInfo } from '@/data/maintainersInfo';
+import { anekBangla, hindSiliguri, mina } from '@/fonts/Bengali.fonts';
+import { publicSans, rubik } from '@/fonts/English.fonts';
 import Link from 'next/link';
 import { ScatteredDotsBg } from '../shared';
 
@@ -22,10 +24,12 @@ export function Footer() {
         <div className="mb-8 grid grid-cols-1 gap-12 md:grid-cols-3">
           {/* Brand Section */}
           <div className="space-y-4">
-            <h3 className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-2xl font-bold text-transparent">
+            <h3
+              className={`bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-2xl font-bold text-transparent ${publicSans.className}`}
+            >
               Stack Unboxed
             </h3>
-            <p className="max-w-sm text-gray-400">
+            <p className={`max-w-sm text-gray-400 ${hindSiliguri.className}`}>
               বাংলায় প্রোগ্রামিং শেখার জন্য সহজ ও সহজবোধ্য ব্লগ, টিউটোরিয়াল, এবং
               বিস্তারিত ডকুমেন্টেশন
             </p>
@@ -33,13 +37,16 @@ export function Footer() {
 
           {/* course Links */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold"> কোর্সসমূহ </h4>
+            <h4 className={`text-lg font-semibold ${anekBangla.className}`}>
+              {' '}
+              কোর্সসমূহ{' '}
+            </h4>
             <ul className="space-y-2">
               {courseList.map(item => (
                 <li key={item.name}>
                   <a
                     href="#"
-                    className="text-gray-400 transition-colors duration-200 hover:text-purple-400"
+                    className={`text-gray-400 transition-colors duration-200 hover:text-purple-400 ${rubik.className}`}
                   >
                     {item.name}
                   </a>
@@ -50,7 +57,7 @@ export function Footer() {
 
           {/* Connect Section */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">
+            <h4 className={`text-lg font-semibold ${anekBangla.className}`}>
               মেইন্টেনার এর সাথে যোগাযোগ
             </h4>
             <div className="flex gap-4">
@@ -60,7 +67,7 @@ export function Footer() {
                   href={{ pathname: social.link }}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-lg border border-white/10 bg-white/5 p-2 transition-colors duration-200 hover:bg-white/10 hover:text-purple-400"
+                  className={`rounded-lg border border-white/10 bg-white/5 p-2 transition-colors duration-200 hover:bg-white/10 hover:text-purple-400`}
                 >
                   <social.icon className="h-5 w-5" />
                   <span className="sr-only">{social.name}</span>
@@ -73,7 +80,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-8 border-t border-white/10 pt-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p className="text-sm text-gray-400">
+            <p className={`text-sm text-gray-400 ${hindSiliguri.className}`}>
               ©{year} Stack Unboxed । সমস্ত অধিকার সংরক্ষিত ।
             </p>
             <div className="flex gap-6">
@@ -81,7 +88,7 @@ export function Footer() {
                 <Link
                   key={item.name}
                   href={{ pathname: item.url }}
-                  className="text-sm text-gray-400 transition-colors duration-200 hover:text-purple-400"
+                  className={`text-base text-gray-400 transition-colors duration-200 hover:text-purple-400 ${mina.className}`}
                 >
                   {item.name}
                 </Link>

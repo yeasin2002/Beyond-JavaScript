@@ -1,5 +1,6 @@
 import { DarkModeToggle } from '@/components/ui';
 import { courseList } from '@/data';
+import { rubik } from '@/fonts';
 import { Github } from 'lucide-react';
 import Link from 'next/link';
 
@@ -22,7 +23,7 @@ export function Navbar() {
               <Link
                 key={index}
                 href={{ pathname: item.link }}
-                className="text-sm text-gray-400 transition-colors hover:text-white"
+                className={`text-sm text-gray-400 transition-colors hover:text-white ${rubik.className}`}
               >
                 {item.name}
               </Link>
