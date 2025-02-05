@@ -3,6 +3,7 @@ import { courseList } from '@/data';
 import { rubik } from '@/fonts';
 import { Github } from 'lucide-react';
 import Link from 'next/link';
+import { NavbarMobile } from './navbar-mobile';
 
 export function Navbar() {
   return (
@@ -41,6 +42,7 @@ export function Navbar() {
           >
             <Github className="h-5 w-5" />
           </Link>
+          <NavbarMobile />
         </div>
       </div>
     </nav>

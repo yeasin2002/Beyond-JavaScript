@@ -1,4 +1,5 @@
 import { anekBangla, hindSiliguri } from '@/fonts/Bengali.fonts';
+import { publicSans, rubik } from '@/fonts/English.fonts';
 import { contributorsList } from '@/types';
 import { Github } from 'lucide-react';
 import Image from 'next/image';
@@ -7,7 +8,11 @@ async function getContributors() {
   try {
     const url =
       'https://api.github.com/repos/yeasin2002/Stack-Unboxed/contributors';
-    const res = await fetch(url);
+    const res = await fetch(url, {
+      next: {
+        revalidate: 86400 // one day
+      }
+    });
     if (!res.ok) throw new Error('Failed to fetch contributors');
     return res.json();
   } catch (error) {
@@ -28,9 +33,7 @@ export async function Contributors() {
           >
             কন্ট্রিবিউটরগণ
           </h1>
-          <p
-            className={`homepage-section-desc ${anekBangla.className}`}
-          >
+          <p className={`homepage-section-desc ${anekBangla.className}`}>
             যাদের সহযোগীটায় এই সাইটের কার্যক্রম করা হয় ।
           </p>
         </div>
@@ -51,11 +54,15 @@ export async function Contributors() {
                       className="rounded-full object-cover"
                     />
                   </div>
-                  <h2 className="mb-2 text-xl font-semibold">
+                  <h2
+                    className={`mb-2 text-xl font-medium ${publicSans.className}`}
+                  >
                     {contributor.login}
                   </h2>
                   <div className="flex items-center gap-2">
-                    <span className="text-sm text-gray-400">
+                    <span
+                      className={`text-sm text-gray-400 ${rubik.className}`}
+                    >
                       {contributor.contributions} contributions
                     </span>
                     <a

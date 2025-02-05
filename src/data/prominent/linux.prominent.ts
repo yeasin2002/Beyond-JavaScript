@@ -1,3 +1,5 @@
+//  ChatGPT দিয়ে বানানো আপদাতো সময়ের জন্য, পরবর্তিতে পরিবর্তন হবে  ।
+
 import { Prominent } from '.';
 
 export const linuxProminent: Prominent[] = [

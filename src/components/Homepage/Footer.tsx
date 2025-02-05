@@ -38,10 +38,9 @@ export function Footer() {
           {/* course Links */}
           <div className="space-y-4">
             <h4 className={`text-lg font-semibold ${anekBangla.className}`}>
-              {' '}
-              কোর্সসমূহ{' '}
+              কোর্সসমূহ
             </h4>
-            <ul className="grid grid-cols-1 items-center space-y-2 md:grid-cols-2">
+            <ul className="grid grid-cols-2 items-center space-y-2">
               {courseList.map(item => (
                 <li key={item.name}>
                   <a

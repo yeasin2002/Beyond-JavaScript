@@ -12,7 +12,7 @@ interface Props extends React.ComponentPropsWithRef<'div'> {
 
 export const CourseHero = ({ heading, desc, prominentList = [] }: Props) => {
   return (
-    <div className="w-full">
+    <div className="w-full pb-10">
       <div className="relative flex min-h-[40vh] flex-col items-center justify-center text-center">
         <h1
           className={`mb-4 flex bg-opacity-50 bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text py-2 pb-2 text-center text-4xl font-bold tracking-tight text-transparent md:text-6xl lg:text-7xl ${anekBangla.className}`}

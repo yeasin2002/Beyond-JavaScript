@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { Marquee } from '@/components/ui/custom/marque';
+import { anekBangla, hindSiliguri } from '@/fonts/Bengali.fonts';
 import { cn } from '@/utils';
 
 const reviews = [
@@ -79,19 +80,33 @@ const ReviewCard = ({
 
 export const UserReview = () => {
   return (
-    <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background py-20 md:shadow-xl">
-      <Marquee pauseOnHover className="[--duration:20s]">
-        {firstRow.map(review => (
-          <ReviewCard key={review.username} {...review} />
-        ))}
-      </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:20s]">
-        {secondRow.map(review => (
-          <ReviewCard key={review.username} {...review} />
-        ))}
-      </Marquee>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
+    <div className="py-20">
+      <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">
+        <Marquee pauseOnHover className="[--duration:20s]">
+          {firstRow.map(review => (
+            <ReviewCard key={review.username} {...review} />
+          ))}
+        </Marquee>
+        <Marquee reverse pauseOnHover className="[--duration:20s]">
+          {secondRow.map(review => (
+            <ReviewCard key={review.username} {...review} />
+          ))}
+        </Marquee>
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
+      </div>
+
+      <div
+        className={`mt-6 flex flex-col items-center justify-center text-center text-xs text-zinc-500 md:text-base`}
+      >
+        <h2 className={`${hindSiliguri.className} `}>
+          আমরা আপনাদের Review কালেক্ট করছি, পরবর্তীতে এখানে শো করার জন্য ।
+        </h2>
+        <div className={`flex gap-x-4 ${anekBangla.className}`}>
+          <p> সাইটটির সম্পর্কে আপনার রিভিউ লিখতে চান? </p>
+          <button className="underline"> রিভিউ লিখুন </button>
+        </div>
+      </div>
     </div>
   );
 };

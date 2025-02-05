@@ -27,7 +27,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/(courses)/javascript/(OOP)/introduction/page.mdx"
+    "src/app/**/*.mdx"
   ],
   "exclude": ["node_modules"]
 }
