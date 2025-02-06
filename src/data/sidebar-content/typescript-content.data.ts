@@ -13,7 +13,13 @@ export const typeScriptContent: SidebarContentType[] = [
       { name: 'Introduction', url: '/introduction' },
       { name: 'Basic syntax', url: '/syntax' },
       { name: 'Access Modifiers', url: '/access-modifiers' },
-      { name: 'pillars Of  OOP ', url: '/pillars' }
+      { name: 'Setters Getter', url: '/setters-getter' },
+      { name: 'pillars Of  OOP ', url: '/pillars' },
+      {
+        name: 'practical: datetime-helper ',
+        url: '/practical-datetime-helper'
+      },
+      { name: 'practical: chalk ', url: '/practical-chalk' }
     ]
   }
 ];

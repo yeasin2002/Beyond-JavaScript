@@ -37,7 +37,7 @@ export function ContentSidebar({ menu, children }: Props) {
                       <Link
                         key={index}
                         href={{ pathname: item.baseUrl + subContent.url }}
-                        className="block truncate text-gray-100 hover:text-gray-200"
+                        className="block truncate capitalize text-gray-100 hover:text-gray-200"
                       >
                         {subContent.name}
                       </Link>
