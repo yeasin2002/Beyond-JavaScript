@@ -1,8 +1,116 @@
 import { CodeBlock } from '../../../../../../components/ui/custom/code-blocks';
 
-# React world Example : Date Time Helper 
+# React world Example : Date Time Helper
 
 এক্ষেত্রে আমরা একটা Date Time হেল্পার বানাবো যা আমাদের রেগুলার লাইফের কোণ
 প্রজেক্টেও ব্যবহার করা যাবে এমন । এক্ষেত্রে এমরা আগে রিকুয়ারমেন্ট বিশ্লেষন করব ।
 ও এর একটা অংশ কোড এখানে শেয়ার করা হবে, বাকি সম্পুর্ন অংশ আপনাদের নিজেদের
 প্রাক্টিস করতে হবে
+
+### রিকুয়ারমেন্টস
+
+একটা `Class` থাকবে যার প্রধান কাজ হবে Date নিয়ে । এর কিছু method থাকবে যার
+মাধ্যমে Date নিয়া নানা নানা অপারেশন করতে পারব, যেমন ডেট ট্রান্সফার ইত্যাদি ।
+এখানে ২৫টি মেথদ এর রিকুয়ারমেন্ট দেয়া হলে, আমরা এখানে বেসিকগুলো দিয়ে উদাহরণসহ
+দেখাব, বাকি ২০টা মেথদ চাইলে আপনি নিজের করতে পারেন। এক্ষেত্রে আমাদের সাথে শেয়ার
+করতেও পারেন ।
+
+##### Basic Method
+
+1. parseDate (string → Date)
+2. formatDate (Date → string, customizable)
+3. getCurrentDate (date-only)
+4. getCurrentTime (time-only)
+5. getCurrentDateTime (date + time)
+
+ <CodeBlock
+language='typescript'
+filename='date-time-helper.ts'
+code={`
+class DateUtils {
+  parseDate(dateString: string): Date {
+    return new Date(dateString);
+  }
+
+  formatDate(date: Date, separator: string = "/"): string {
+ const day = date.getDate().toString().padStart(2, "0");
+ const month = (date.getMonth() + 1).toString().padStart(2, "0");
+ const year = date.getFullYear().toString();
+ return day + separator + month + separator + year;
+  }
+
+  getCurrentDate(): string {
+    const now = new Date();
+    return this.formatDate(now);
+  }
+
+  getCurrentTime(): string {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, "0");
+    const minutes = now.getMinutes().toString().padStart(2, "0");
+    const seconds = now.getSeconds().toString().padStart(2, "0");
+    return hours + ":" + minutes + ":" + seconds;
+  }
+
+  getCurrentDateTime(): string {
+    return this.getCurrentDate() + " " + this.getCurrentTime();
+  }
+}
+
+export default DateUtils;`}/>
+
+
+#### এক্ষেত্রে এর ব্যবহার উদাহরণসহ দেখানো হল । 
+ <CodeBlock
+language='typescript'
+filename='date-time-helper.ts'
+code={`
+import DateUtils from "./date-time-helper";
+const dateUtils = new DateUtils();
+
+const parsedDate = dateUtils.parseDate("2025-02-06"); 
+const formattedDate = dateUtils.formatDate(parsedDate, "-"); 
+const currentDate =dateUtils.getCurrentDate(); const currentTime = dateUtils.getCurrentTime();
+const currentDateTime = dateUtils.getCurrentDateTime();
+
+console.log("Parsed Date:", parsedDate); 
+console.log("Formatted Date:",formattedDate);
+console.log("Current Date:", currentDate);
+console.log("CurrentTime:", currentTime);
+console.log("Current DateTime:", currentDateTime);
+
+`}/>
+
+### বাকি এই ২০ টা মেথড চাইলে আপনারা কাজ করতে পারেন তাই সে হিসেবে রিকুয়ারমেন্ট দেয়া হল।
+
+##### Manipulation
+
+1. addDays/addHours/addMinutes/addMonths/addYears
+2. subtractDays/subtractHours/subtractMinutes/etc.
+3. startOfDay/startOfWeek/startOfMonth/startOfYear
+4. endOfDay/endOfWeek/endOfMonth/endOfYear
+
+##### Comparison & Validation
+
+1. isBefore (date comparison)
+2. isAfter
+3. isSame (granularity: day/hour/minute)
+4. isBetween
+5. isValid (validate Date object)
+
+##### Utilities
+
+1. getDifference (time between dates, e.g., days/minutes)
+2. toUnixTimestamp (Date → seconds/milliseconds)
+3. fromUnixTimestamp (seconds → Date)
+4. cloneDate (immutable copy)
+5. getDaysInMonth
+6. isLeapYear
+7. getTimezoneOffset (for local/UTC conversions)
+8. convertTimeZone (timezone translation)
+
+##### Advanced
+
+1. getWeekOfYear (ISO week number)
+2. getRelativeTime (e.g., "3 days ago")
+3. toUTC/toLocalTime (explicit timezone handling)
