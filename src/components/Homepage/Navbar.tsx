@@ -1,4 +1,4 @@
-import { DarkModeToggle } from '@/components/ui';
+// import { DarkModeToggle } from '@/components/ui';
 import { courseList } from '@/data';
 import { rubik } from '@/fonts';
 import { Github } from 'lucide-react';
@@ -33,8 +33,8 @@ export function Navbar() {
         </div>
         <div className="flex items-center gap-4">
           {/* <SearchContent /> */}
+          {/* <DarkModeToggle /> */}
 
-          <DarkModeToggle />
           <Link
             href={'https://github.com/yeasin2002/Stack-Unboxed'}
             target="_blank"
