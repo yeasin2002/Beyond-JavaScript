@@ -1,25 +1,9 @@
 import { anekBangla, hindSiliguri } from '@/fonts/Bengali.fonts';
 import { publicSans, rubik } from '@/fonts/English.fonts';
+import { getContributors } from '@/helpers';
 import { contributorsList } from '@/types';
 import { Github } from 'lucide-react';
 import Image from 'next/image';
-
-async function getContributors() {
-  try {
-    const url =
-      'https://api.github.com/repos/yeasin2002/Stack-Unboxed/contributors';
-    const res = await fetch(url, {
-      next: {
-        revalidate: 86400 // one day
-      }
-    });
-    if (!res.ok) throw new Error('Failed to fetch contributors');
-    return res.json();
-  } catch (error) {
-    console.log('🚀 ~ getContributors ~ error:', error);
-    return [];
-  }
-}
 
 export async function Contributors() {
   const contributors = await getContributors();
@@ -34,12 +18,12 @@ export async function Contributors() {
             কন্ট্রিবিউটরগণ
           </h1>
           <p className={`homepage-section-desc ${anekBangla.className}`}>
-            যাদের সহযোগীটায় এই সাইটের কার্যক্রম করা হয় ।
+            যাদের সহযোগিতায় সাইটি পূর্নতা পেয়েছে ।
           </p>
         </div>
 
         <div className="flex items-center justify-center">
-          <div className="grid grid-cols-1 items-center justify-center gap-8 sm:grid-cols-2 md:grid-cols-3">
+          <div className="grid grid-cols-1 items-center justify-center gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {contributors?.map((contributor: contributorsList) => (
               <div
                 key={contributor.id}
