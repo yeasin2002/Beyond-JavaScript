@@ -1,0 +1,188 @@
+import { CodeBlock } from '../../../../../../components/ui/custom/code-blocks';
+
+# Access Modifiers
+
+ক্লাসের মেথড বা প্রোপার্টি visibility and accessibility কনট্রোল করার জন্য যে
+keyword ব্যবহার করা হয় তাকে Access Modifiers বলা হয় ।  
+অর্থাৎ কোন ক্লাসের মেথড বা প্রোপার্টি কে একসেস করতে পারবে, এটা কি শুধু ক্লাসের
+ভিরতেই একসেস করা যাবে নাকি বাহিরে বা এমন রিস্টিকশন বসান ও এমন একসেস কনট্রোল করার
+জন্য এই Access Modifiers ব্যবহার করা হয় ।
+
+## Access Modifiers এর প্রকারভেদঃ
+
+    1. Public
+    2. Privet
+    3. Protected
+
+##### এ নিয়ে এখন উদাহরণসহ বিস্তারিত আলোচনা করি,
+
+{/* todo: need to write details about it */}
+
+### Public
+
+যেকোনো মেথদ বা প্রোপার্টির ডিফল্ট মডিফায়ার Public হয়ে থাকে । কোণ মডিফায়ার না
+দেয়া হলে সেটা ডিফল্টভাবেই Public হয়ে থাকে, এবং Public method properties যেকেউ
+একসেস করতে পারে ।
+
+উদাহরণঃ
+
+<CodeBlock
+language='typescript'
+filename='public-class.ts'
+code={`
+ class Person {
+  public name: string; // এক্সপ্লিসিটলি বলে দেয়া হচ্ছে, এটা Public 
+  age: number; // কোন keyword দেয়া হয় তবুও ডিফল্টভাবেই এটা Public
+
+constructor(name: string) { this.name = name; }
+
+public greet(): void { console.log("Hello, my name is" + this.name ); } }
+
+const person = new Person("Alice"); console.log(person.name, person.age); // ✅
+ক্লাসের বাহিরেও প্রোপার্টি একেসেস করা যাচ্ছে person.greet(); // ✅ ক্লাসের
+বাহিরেও মেথড একেসেস করা যাচ্ছে
+
+`} />
+
+### Privet
+
+Developer নিজে থেকে এক্সপ্লিসিটলি বলে দিবে এটা Privet তাহলে সেই Method বা
+Properties তখন Privet হবে । ফলে উক্ত Method বা Properties শুধুমাত্র উক্ত Class
+এর মধ্যেই সিমাবদ্ধ থাকবে । এটিকে বাহিরে থেকে Access করা যাবে না ।
+
+উদাহরণঃ
+
+<CodeBlock
+language='typescript'
+filename='privet-class.ts'
+code={`
+class Person {
+  private age: number; // Private property
+
+constructor(private name: string, age: number) { this.age = age; }
+
+public introduce(): void { console.log('Hello, my name is .' + this.name); }
+
+private getAge(): number { return this.age; } }
+
+const person = new Person("Alice", 25); person.introduce(); // ✅ introduce
+মেথডে যেহেতু Public দেয়া আছে তাই এটা একসেস করতে পারবে ।
+
+console.log(person.age); // ❌ TypeScript এখানে ইরোর দিবে , যেহেতু এটা প্রাইভেট
+তাই, Error: Property 'age' is private console.log(person.getAge()); // ❌
+এক্ষেত্রেও এই Method প্রাইভেট keyword দেয়াতে এটা প্রাইভেট ও শধুমাত্রে ক্লাসের
+ভিতরে এক্সেস আছে , Error: Method 'getAge' is private `} />
+
+### Protected
+
+protected Modifiers হলে সেই method বা property সেগুলো শুধু নিজের ক্লাস বা
+সাব-ক্লাস অর্থাৎ এই ক্লাস `extends` করা কোন ক্লাস ব্যবহার করতে পারবে । তবে
+ক্লাসের বাহিরে তা পারবে না কেউ ব্যবহার করতে ।
+
+উদাহরণঃ
+
+<CodeBlock
+language='typescript'
+filename='protected-class.ts'
+code={`
+class Person {
+  protected name: string; // Protected property
+
+constructor(name: string) { this.name = name; }
+
+protected getName(): string { return this.name; } }
+
+class Student extends Person { private grade: number;
+
+constructor(name: string, grade: number) { super(name); this.grade = grade; }
+
+public introduce(): void { console.log("Hello, my name is " + this.getName() + "
+and I am in grade " + this.grade ); } }
+
+const student = new Student("Bob", 10); student.introduce(); // ✅ Allowed //
+console.log(student.name); // ❌ Error: Property 'name' is protected //
+console.log(student.getName()); // ❌ Error: Method 'getName' is protected
+
+`} />
+
+<div className='my-20'>
+### কোনটা কোথায় ব্যবহার করতে হবেঃ
+
+<table >
+  <thead  className=' text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400 '>
+    <tr  className='*:px-2'>
+      <th> অবস্থা </th>
+      <th>কোনটি ব্যবহার করবেন?</th>
+    </tr>
+  </thead>
+  <tbody>
+
+<tr>
+  <td>
+    <strong> যেকোন জায়গায় একসেস দিতে চাইলে </strong>
+  </td>
+  <td>
+    <code>Public</code>
+  </td>
+</tr>
+
+    <tr>
+      <td>
+        <strong>একটি ভ্যারিয়েবল/মেথড সম্পূর্ণ গোপন রাখতে চান</strong>
+      </td>
+      <td>
+        <code>private</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>শুধুমাত্র সাবক্লাস গুলোতে অ্যাক্সেস দিতে চান</strong>
+      </td>
+      <td>
+        <code>protected</code>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+</div>
+
+### Public, Privet and Protected এর মধ্যে তুলনাঃ
+
+<table>
+  <thead>
+    <tr>
+      <th> মডিফায়ার </th>
+      <th> ক্লাসের ভিতরে </th>
+      <th>সাব-ক্লাস (Child Class)</th>
+      <th> ক্লাসের বাহিরে </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <strong>public</strong>
+      </td>
+      <td>✅ Yes</td>
+      <td>✅ Yes</td>
+      <td>✅ Yes</td>
+    </tr>
+    <tr>
+      <td>
+        <strong>private</strong>
+      </td>
+      <td>✅ Yes</td>
+      <td>❌ No</td>
+      <td>❌ No</td>
+    </tr>
+    <tr>
+      <td>
+        <strong>protected</strong>
+      </td>
+      <td>✅ Yes</td>
+      <td>✅ Yes</td>
+      <td>❌ No</td>
+    </tr>
+  </tbody>
+</table>

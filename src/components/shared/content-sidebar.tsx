@@ -29,7 +29,7 @@ export function ContentSidebar({ menu, children }: Props) {
             >
               <Accordion type="single" collapsible className="">
                 <AccordionItem value="item-1" className="border-none">
-                  <AccordionTrigger className="capitalize">
+                  <AccordionTrigger className="truncate capitalize">
                     {item.name}
                   </AccordionTrigger>
                   <AccordionContent className="space-y-2 pl-4">

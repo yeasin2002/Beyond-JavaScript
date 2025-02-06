@@ -11,7 +11,8 @@ export const typeScriptContent: SidebarContentType[] = [
     baseUrl: '/typescript/oop',
     content: [
       { name: 'Introduction', url: '/introduction' },
-      { name: 'syntax', url: '/syntax' },
+      { name: 'Basic syntax', url: '/syntax' },
+      { name: 'Access Modifiers', url: '/access-modifiers' },
       { name: 'pillars Of  OOP ', url: '/pillars' }
     ]
   }

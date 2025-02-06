@@ -1,45 +1,44 @@
 import { CodeBlock } from '../../../../../../components/ui/custom/code-blocks';
 
+# Pillars Of OOP 
+
 ### আমরা আগেও জানলাম, TypeScript OOP এর মুল বিষয় বা পিলার সমূহ হলোঃ
 
-        1. classes
-        2. inheritance
-        3. polymorphism
-        4. encapsulation
-        5. abstraction
-        6. interface
+        1. Encapsulation
+        2. Abstraction
+        3. Inheritance
+        4. Polymorphism
+        
 
-এই অধ্যায়ে আমরা প্রতিটূল পিলার বিস্তারিত আলোচনা করব ।
+এই অধ্যায়ে আমরা প্রতিটি পিলারের পিলার বিস্তারিত আলোচনা করব ।
 
+## 1. Encapsulation
 
-## Class 
- `Class` হল কোনো অবজেক্ট বানানোর জন্য ফ্যাক্টরি বা  নীল-নকশা , আগের অধ্যায়ে যেহেতু আলোচনা করা হয়েছে তাই এই অধ্যায়ে এটি নিয়ে বিস্তারিত লিখে প্রয়োজন নেই ।
+## 2. Abstraction
 
-##  inheritance :
- অন্য কোণ ক্লাস এর মেথদ বা প্রোপার্টী কোণ ক্লাসে নিয়ে আসে তা একসেস বা ব্যবহার করাকে inheritance বলা হয় । উদাহরণ সহ এখন দেখিঃ
+## 3. inheritance :
+ অন্য কোন ক্লাস এর মেথদ বা প্রোপার্টি কোন ক্লাসে নিয়ে আসে তা একসেস (Access)  বা ব্যবহার করাকে inheritance বলা হয় । উদাহরণ সহ এখন দেখিঃ
 
 <CodeBlock language="TypeScript" 
-    code={`
-        class Animal {
-        name: string;
+code={`
+ class Animal {
+  name: string;
 
-        constructor(name: string) {
-        this.name = name;
-        }
+ constructor(name: string) {
+  this.name = name;
+}
 
-        makeSound(): void {
-        console.log("Animal makes a sound");
-        }
-        }
+  makeSound(): void {
+  console.log("Animal makes a sound");
+   }
+ }
 
-       // class that inheriting Animal
-       class Dog extends Animal {
-       makeSound(): void {
-       console.log("Woof! Woof!");
-         }
-        }
-
-`} />
+ // class that inheriting Animal
+ class Dog extends Animal {
+makeSound(): void {
+console.log("Woof! Woof!");
+   }
+}`} />
 
    এখানে Dog ক্লাস Animal ক্লাসকে `extends` keyword এর মাধ্যমে এর property এবং methods extends করছে । এক্ষাত্রে Animal হল Parent Class ও Dog হল Child Class ।  
    এটাকে এটাকে কিভাবে ব্যবহার করব তা দেখি । 
@@ -58,4 +57,24 @@ import { CodeBlock } from '../../../../../../components/ui/custom/code-blocks';
 
 
 
-## polymorphism 
+## 4. polymorphism :
+
+polymorphism মূলত Greek শব্দ থেকে এসেছে । এক্ষেত্রে শব্দ খন্ডালে পাইঃ 
+
+ - Poly : many (অনেক)
+ - Morph : forms(আকার/গঠন)
+
+যার শব্দের মানে হল `Many Forms` বা  `অনেক আকার/গঠন`  । 
+
+### polymorphism এর প্রয়োজনীয়তাঃ 
+ -  কোড রি-ইউজিবিলিটিঃ একটা সিঙ্গেল মেথড বা ফাংশন যা একাধিক ক্ষেত্রে একাধিক ভাবে ব্যবহার করা যায় । 
+ - এক্সটেনসিবিলিটিঃ নতুন ফিচার সহজেই এড করা যায়, এক্সিস্টিং কোড  পরিবর্তন না করেই । 
+ - মেইন্টেনেবিলিটিঃ কোড সহজেই মেইন্টেইন করা যায়, এক্সিটিং কোড যেহেতু পরিবর্তন করার প্রয়োজন হয় না ও সহজেই কোড রিড হয় যায় । 
+
+
+ ### Polymorphism এর প্রকারভেদঃ 
+ Polymorphism প্রধানত  ২ প্রকার 
+ 
+
+1. Compile-time Polymorphism (Method Overloading)
+2. Runtime Polymorphism (Method Overriding)

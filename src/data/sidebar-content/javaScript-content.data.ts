@@ -23,10 +23,5 @@ export const javaScriptContent: SidebarContentType[] = [
     name: 'Browser API',
     baseUrl: '/javascript/browser-api',
     content: [{ name: 'storage and cookies', url: '/storage-and-cookies' }]
-  },
-  {
-    name: 'OOP',
-    baseUrl: '/javascript/oop',
-    content: [{ name: 'Introduction', url: '/introduction' }]
   }
 ];
