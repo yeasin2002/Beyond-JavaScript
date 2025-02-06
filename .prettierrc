@@ -14,10 +14,12 @@
   ],
   "overrides": [
     {
-      "files": "*.md",
+      "files": [
+        "*.page.mdx",
+        "*.mdx"
+      ],
       "options": {
-        "tabWidth": 2,
-        "useTabs": false,
+        "printWidth": 1000,
         "proseWrap": "preserve"
       }
     }
