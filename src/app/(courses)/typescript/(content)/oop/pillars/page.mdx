@@ -9,7 +9,6 @@ import { CodeBlock } from '../../../../../../components/ui/custom/code-blocks';
         3. Inheritance
         4. Polymorphism
 
-
 এই অধ্যায়ে আমরা প্রতিটি পিলারের পিলার বিস্তারিত আলোচনা করব ।
 
 ## 1. Encapsulation
@@ -24,39 +23,40 @@ inheritance উদাহরণ সহ এখন দেখিঃ
 
 <CodeBlock language="TypeScript" 
 code={`
- class Animal {
-  name: string;
+ class League {
+  public apa = 'হাসিনা';
 
-constructor(name: string) {
-this.name = name;
+dialogue() {
+console.log('স্বজন হারানোর বেদনা');
 }
 
-makeSound(): void {
-console.log("Animal makes a sound");
+output(name: string): void {
+console.log(name + ' পালাইছে ');
 }
 }
 
-// class that inheriting Animal
-class Dog extends Animal {
-makeSound(): void {
-console.log("Woof! Woof!");
+class StudentLeague extends League {
+leader() {
+console.log('খুনি ' + this.apa);
 }
-}`} />
+}
 
-এখানে Dog ক্লাস Animal ক্লাসকে `extends` keyword এর মাধ্যমে এর property এবং methods extends করছে । এক্ষাত্রে Animal হল Parent Class ও Dog হল Child Class ।  
+`} />
+
+এখানে StudentLeague  ক্লাস League ক্লাসকে `extends` keyword এর মাধ্যমে এর property এবং methods extends করছে । এক্ষাত্রে League হল Parent Class ও StudentLeague হল Child Class ।  
  এটাকে এটাকে কিভাবে ব্যবহার করব তা দেখি ।
 
 <CodeBlock
   language="TypeScript"
   code={`
- // Create an instance of Dog
- const myDog = new Dog("Buddy");
- console.log(myDog.name); // Output: Buddy
- myDog.makeSound(); // Output: Woof! Woof!
-`}
-/>{' '}
+const chatroLeage = new StudentLeague();
+chatroLeage.leader(); //খুনি হাসিনা
+chatroLeage.output('হাসিনা'); //হাসিনা  পালাইছে
 
-যদিও Dog Class এর নিজের কোন `makeSound` নামের কোন method নাই কিন্তু তবুও আমরা ব্যবহার করতে পারছি কারন এটা তার প্যারেন্ট অর্থাৎ Animal Class এর থেকে নিয়েছে ।
+`}
+/>
+
+যদিও StudentLeague এর নিজের কোন `output` নামের কোন method নাই আবার তার নিজের কোণ  `apa` নামক প্রপার্টি নাই  কিন্তু তবুও আমরা ব্যবহার করতে পারছি এর  কারন এটা তার প্যারেন্ট অর্থাৎ League এর থেকে নিয়েছে ।
 
 ## 4. polymorphism :
 
