@@ -93,6 +93,9 @@ export function CodeBlock({
         language={language.toLowerCase()}
         style={syntaxStyle}
         showLineNumbers={showLineNumbers}
+        customStyle={{
+          fontSize: '0.9rem'
+        }}
       >
         {code}
       </SyntaxHighlighter>
