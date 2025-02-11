@@ -1,7 +1,7 @@
 import { courseList } from '@/data';
 import { maintainersInfo } from '@/data/maintainers-info';
 import { anekBangla, hindSiliguri, mina } from '@/fonts/bengali.fonts';
-import { publicSans, rubik } from '@/fonts/English.fonts';
+import { publicSans, rubik } from '@/fonts/english.fonts';
 import Link from 'next/link';
 import { ScatteredDotsBg } from '../shared';
 

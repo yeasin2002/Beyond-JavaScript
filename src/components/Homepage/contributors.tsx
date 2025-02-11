@@ -1,5 +1,5 @@
 import { anekBangla, hindSiliguri } from '@/fonts/bengali.fonts';
-import { publicSans, rubik } from '@/fonts/English.fonts';
+import { publicSans, rubik } from '@/fonts/english.fonts';
 import { getContributors } from '@/helpers';
 import { contributorsList } from '@/types';
 import { Github } from 'lucide-react';

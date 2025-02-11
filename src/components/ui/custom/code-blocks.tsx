@@ -1,6 +1,6 @@
 'use client';
 
-import { publicSans } from '@/fonts/English.fonts';
+import { publicSans } from '@/fonts/english.fonts';
 import { cn } from '@/utils';
 import { Check, Copy } from 'lucide-react';
 import { useState } from 'react';
