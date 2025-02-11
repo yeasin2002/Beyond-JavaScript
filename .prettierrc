@@ -15,8 +15,7 @@
   "overrides": [
     {
       "files": [
-        "*.page.mdx",
-        "*.mdx"
+        "*.page.mdx"
       ],
       "options": {
         "printWidth": 1000,
