@@ -1,0 +1,31 @@
+
+#### Computer Science এর ভাষায় যে সকল function ইন্টার্নাল লজিক নিয়ে থাকে ও একই Input এর জন্য একই Output দিয়ে থাকে তাকে Pure Function বলে ।
+
+এর ২টা বৈশিষ্ট থাকে
+
+- নিজের বিজনেস লজিক নিয়ে কনসার্ন ।
+- Same Input এর জন্য Same output দিয়ে থাকে ।
+
+Pure Function এর উদাহরণঃ
+
+<img src="/assets/pureFnExample.png"  width="500px" />
+
+এখানে pureFn কে Input হিসেবে যতবারই ২ দেয়া হবে এটি প্রতিবার ৪ রিটার্ন করবে ।
+
+এখানে Pure function নীতি ২টি সঠিকভাবে ফলো করা হয়েছে ।
+
+১. প্রতিবার same input এর জন্য same output দিবে ।
+
+২. বাহিরের কোনো প্রকার স্টেট বা কিছু প্ররিরর্তন করে নাই
+
+অপরদিকে,
+
+<img src="/assets/impureFnExample.png"  width="500px" />
+
+impureFn এর ক্ষেত্রে Pure function নীতি ২টি সঠিকভাবে ফলো করা হয়নি ।
+
+১. প্রতিবার same input দিলেও আলাদা আলাদা output দিচ্ছে ।
+
+২. এটি বাহিরের count variable পরিবর্তন করছে, অর্থাৎ শুধুমাত্র নিজের লজিক নিয়ে কনসার্ন না , function টি নিজের body এর বাহিরের কিছু পরিবর্তন করে ফেলেছে ।
+
+তাই এটি pure function না ।
