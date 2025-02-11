@@ -1,4 +1,3 @@
-import type { Metadata, ResolvingMetadata } from 'next';
 import dynamic from 'next/dynamic';
 import { notFound } from 'next/navigation';
 import fs from 'node:fs';
