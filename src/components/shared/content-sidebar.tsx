@@ -7,7 +7,7 @@ import {
   AccordionTrigger
 } from '@/components/ui/shadcn/accordion';
 import { publicSans } from '@/fonts';
-import { anekBangla } from '@/fonts/Bengali.fonts';
+import { anekBangla } from '@/fonts/bengali.fonts';
 import { SidebarContentType } from '@/types';
 import Link from 'next/link';
 import * as React from 'react';

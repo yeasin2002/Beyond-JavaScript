@@ -1,3 +1,4 @@
 export * from './background-lines';
 export * from './meteors';
-export * from './Spotlight';
+export * from './spotlight';
+

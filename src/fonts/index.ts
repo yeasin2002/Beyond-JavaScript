@@ -1,2 +1,2 @@
-export * from './Bengali.fonts';
+export * from './bengali.fonts';
 export * from './English.fonts';

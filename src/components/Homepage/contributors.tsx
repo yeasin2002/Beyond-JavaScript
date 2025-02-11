@@ -1,4 +1,4 @@
-import { anekBangla, hindSiliguri } from '@/fonts/Bengali.fonts';
+import { anekBangla, hindSiliguri } from '@/fonts/bengali.fonts';
 import { publicSans, rubik } from '@/fonts/English.fonts';
 import { getContributors } from '@/helpers';
 import { contributorsList } from '@/types';

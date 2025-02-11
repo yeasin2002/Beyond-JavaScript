@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { Marquee } from '@/components/ui/custom/marque';
-import { anekBangla, hindSiliguri } from '@/fonts/Bengali.fonts';
+import { anekBangla, hindSiliguri } from '@/fonts/bengali.fonts';
 import { cn } from '@/utils';
 
 const reviews = [

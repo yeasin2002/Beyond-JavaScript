@@ -1,6 +1,6 @@
 import { courseList } from '@/data';
 import { anekBangla, hindSiliguri, mina, sriracha } from '@/fonts';
-import { CourseItem } from './CourseItem';
+import { CourseItem } from './course-item';
 
 export function Hero() {
   return (

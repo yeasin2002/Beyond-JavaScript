@@ -1,6 +1,7 @@
 export * from './course-hero';
 export * from './elegant-shape';
-export * from './FloatingPaths';
+export * from './floating-paths';
 export * from './noice';
-export * from './Scattered-dotsBg';
+export * from './scattered-dots';
 export * from './theme-provider';
+

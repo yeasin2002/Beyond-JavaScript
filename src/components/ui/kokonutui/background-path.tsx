@@ -1,6 +1,6 @@
 'use client';
 
-import { FloatingPaths } from '@/components/shared/FloatingPaths';
+import { FloatingPaths } from '@/components/shared/floating-paths';
 import { Button } from '@/components/ui/shadcn';
 import { motion } from 'motion/react';
 

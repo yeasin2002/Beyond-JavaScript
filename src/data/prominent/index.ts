@@ -1,4 +1,4 @@
-export * from './javaScript.prominent';
+export * from './javascript.prominent';
 export * from './linux.prominent';
 export * from './reactjs.prominent';
 export * from './sql.prominent';

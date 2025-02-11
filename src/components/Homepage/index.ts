@@ -1,6 +1,7 @@
-export * from './Contributors';
-export * from './Footer';
-export * from './Frequently-Ask-Questions';
-export * from './Hero';
-export * from './Navbar';
-export * from './UserReview';
+export * from './contributors';
+export * from './footer';
+export * from './frequently-ask-questions';
+export * from './hero';
+export * from './navbar';
+export * from './user-review';
+

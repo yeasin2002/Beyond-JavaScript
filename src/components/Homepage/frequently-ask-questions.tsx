@@ -1,12 +1,12 @@
 'use client';
 
 import { HomepageFAQ_data } from '@/data/fqa.data';
-import { anekBangla, hindSiliguri } from '@/fonts/Bengali.fonts';
+import { anekBangla, hindSiliguri } from '@/fonts/bengali.fonts';
 import { cn } from '@/utils';
 import { Github, Mail } from 'lucide-react';
 import { motion } from 'motion/react';
 import Link from 'next/link';
-import { FAQItem } from './FAQ-item';
+import { FAQItem } from './faq-item';
 
 export function FrequentlyAskedQuestions() {
   return (

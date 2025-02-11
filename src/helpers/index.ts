@@ -1,1 +1,1 @@
-export * from './getContributorsList';
+export * from './get-contributors-list';
