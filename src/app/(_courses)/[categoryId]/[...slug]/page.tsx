@@ -1,3 +1,4 @@
+import { env } from '@/env';
 import dynamic from 'next/dynamic';
 import { notFound } from 'next/navigation';
 import fs from 'node:fs';
@@ -12,9 +13,8 @@ export default async function Page({
   const { slug, categoryId } = await params;
 
   const contentFilePath = path.join(
-    process.cwd(),
-    'src',
-    `content/${categoryId}/${slug.join('/')}.mdx`
+    env.SRC_FOLDER,
+    `content/${categoryId}/${slug.join('/').replace(/\.mdx$/, '')}.mdx`
   );
 
   if (!fs.existsSync(contentFilePath)) {
@@ -22,7 +22,10 @@ export default async function Page({
   }
 
   const MDXContent = dynamic(
-    () => import(`@/content/${categoryId}/${slug.join('/')}.mdx`)
+    () =>
+      import(
+        `@/content/${categoryId}/${slug.join('/').replace(/\.mdx$/, '')}.mdx`
+      )
   );
 
   return <MDXContent />;
