@@ -30,3 +30,44 @@ export default async function Page({
 
   return <MDXContent />;
 }
+
+export async function generateStaticParams() {
+  const categories = fs.readdirSync(path.join(env.SRC_FOLDER, 'content'));
+
+  const paths: { categoryId: string; slug: string[] }[] = [];
+
+  for (const category of categories) {
+    const categoryPath = path.join(env.SRC_FOLDER, 'content', category);
+
+    // Get all MDX files recursively
+    function getAllMdxFiles(dir: string): string[] {
+      const files: string[] = [];
+      const items = fs.readdirSync(dir);
+
+      for (const item of items) {
+        const fullPath = path.join(dir, item);
+        if (fs.statSync(fullPath).isDirectory()) {
+          files.push(...getAllMdxFiles(fullPath));
+        } else if (item.endsWith('.mdx')) {
+          files.push(fullPath);
+        }
+      }
+      return files;
+    }
+
+    const mdxFiles = getAllMdxFiles(categoryPath);
+
+    // Convert file paths to route parameters
+    for (const file of mdxFiles) {
+      const relativePath = path.relative(categoryPath, file);
+      const slug = relativePath.replace(/\.mdx$/, '').split(path.sep);
+
+      paths.push({
+        categoryId: category,
+        slug: slug
+      });
+    }
+  }
+
+  return paths;
+}

@@ -9,6 +9,12 @@ import React, { PropsWithChildren } from 'react';
 import { CourseNavbar } from './course-nav';
 import { ContentSidebar } from './sidebar';
 
+export function generateStaticParams() {
+  return Object.values(categoriesById).map(category => ({
+    params: { categoryId: category.id }
+  }));
+}
+
 const JSInterviewQuestion = async ({
   children,
   params
