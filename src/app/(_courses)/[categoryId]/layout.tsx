@@ -1,4 +1,6 @@
 import { categoriesById } from '@/data/categories';
+import { env } from '@/env';
+import { existReadDirSync } from '@/utils/file-system';
 import { toTitleCase } from '@/utils/naming-convention';
 import fs from 'fs';
 import { notFound } from 'next/navigation';
@@ -12,17 +14,16 @@ const JSInterviewQuestion = async ({
   params
 }: PropsWithChildren<{ params: Promise<{ categoryId: string }> }>) => {
   const { categoryId } = await params;
-  console.log('params', categoryId);
 
   if (!categoriesById.get(categoryId)) notFound();
 
-  const categoryDir = path.join(process.cwd(), 'src', 'content', categoryId);
-  const subcategories = fs.readdirSync(categoryDir).map(folder => ({
+  const categoryDir = path.join(env.SRC_FOLDER, 'content', categoryId);
+
+  const subcategories = existReadDirSync(categoryDir).map(folder => ({
     id: folder,
     name: toTitleCase(folder),
     url: `/${categoryId}/${folder}`,
-    contents: fs
-      .readdirSync(path.join(categoryDir, folder))
+    contents: existReadDirSync(path.join(categoryDir, folder))
       .filter(file =>
         fs.lstatSync(path.join(categoryDir, folder, file)).isFile()
       )
@@ -35,13 +36,13 @@ const JSInterviewQuestion = async ({
 
   const willHideSidebar =
     Array.isArray(subcategories) && subcategories.length === 0;
+
   return (
     <>
       <CourseNavbar />
       <ContentSidebar menu={subcategories} hideSidebar={willHideSidebar}>
         {children}
       </ContentSidebar>
-      ;
     </>
   );
 };
