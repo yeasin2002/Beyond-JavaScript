@@ -19,20 +19,26 @@ const JSInterviewQuestion = async ({
 
   const categoryDir = path.join(env.SRC_FOLDER, 'content', categoryId);
 
-  const subcategories = existReadDirSync(categoryDir).map(folder => ({
-    id: folder,
-    name: toTitleCase(folder),
-    url: `/${categoryId}/${folder}`,
-    contents: existReadDirSync(path.join(categoryDir, folder))
-      .filter(file =>
-        fs.lstatSync(path.join(categoryDir, folder, file)).isFile()
-      )
-      .map(content => ({
-        id: content,
-        url: `/${categoryId}/${folder}/${content.replace('.mdx', '')}`,
-        name: toTitleCase(content.replace('.mdx', ''))
-      }))
-  }));
+  const subcategories = existReadDirSync(categoryDir)
+    .map(folder => ({
+      id: folder,
+      name: toTitleCase(folder),
+      url: `/${categoryId}/${folder}`,
+      createdAt: fs.statSync(path.join(categoryDir, folder)).birthtime,
+      contents: existReadDirSync(path.join(categoryDir, folder))
+        .filter(file =>
+          fs.lstatSync(path.join(categoryDir, folder, file)).isFile()
+        )
+        .map(content => ({
+          id: content,
+          url: `/${categoryId}/${folder}/${content.replace('.mdx', '')}`,
+          name: toTitleCase(content.replace('.mdx', '')),
+          createdAt: fs.statSync(path.join(categoryDir, folder, content))
+            .birthtime
+        }))
+        .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())
+    }))
+    .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
 
   const willHideSidebar =
     Array.isArray(subcategories) && subcategories.length === 0;
