@@ -4,6 +4,7 @@ import fs from 'fs';
 import { notFound } from 'next/navigation';
 import path from 'path';
 import React, { PropsWithChildren } from 'react';
+import { CourseNavbar } from './course-nav';
 import { ContentSidebar } from './sidebar';
 
 const JSInterviewQuestion = async ({
@@ -32,7 +33,12 @@ const JSInterviewQuestion = async ({
       }))
   }));
 
-  return <ContentSidebar menu={subcategories}>{children}</ContentSidebar>;
+  return (
+    <>
+      <CourseNavbar />
+      <ContentSidebar menu={subcategories}>{children}</ContentSidebar>;
+    </>
+  );
 };
 
 export default JSInterviewQuestion;

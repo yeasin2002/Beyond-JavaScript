@@ -3,6 +3,7 @@ import { courseList } from '@/data';
 import { rubik } from '@/fonts';
 import { Github } from 'lucide-react';
 import Link from 'next/link';
+import { Logo } from '../shared/logo';
 import { NavbarMobile } from './navbar-mobile';
 
 export function Navbar() {
@@ -11,12 +12,7 @@ export function Navbar() {
       <div className="container mx-auto flex h-16 items-center justify-between px-8">
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center gap-2">
-            <svg className="h-8 w-8 text-primary" viewBox="0 0 24 24">
-              <path
-                fill="currentColor"
-                d="M12 2L2 19h20L12 2zm0 3l7.5 13h-15L12 5z"
-              />
-            </svg>
+            <Logo />
           </Link>
 
           <nav className="hidden gap-6 md:flex">
