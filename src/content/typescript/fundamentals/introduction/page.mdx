@@ -1,0 +1,105 @@
+## TypeScript
+
+TypeScript (TS**) হল একটি পাওয়ারফুল টাইপড, অবজেক্ট-ওরিয়েন্টেড, কম্পাইলড প্রোগ্রামিং ল্যাঙ্গুয়েজ যা মাইক্রোসফ্ট দ্বারা বানানো ও ডেভেলপ করা হয়। এটি **JavaScript** -এর একটি সুপারসেট, অর্থাৎ এটি JavaScript-এর উপর ভিত্তি করে তৈরি এবং এতে স্ট্যাটিক টাইপিং, ইন্টারফেস, জেনেরিক্স এবং আরও উন্নত ফিচার যোগ করা হয়েছে।
+
+TypeScript কম্পাইলার TS কোডকে সাধারণ JavaScript-এ ট্রান্সপাইল করে, যা ব্রাউজার এবং Node.js এনভায়রনমেন্টে চলতে পারে ।  
+TypeScript ডিজাইন করা হয়েছে ডেভেলপারদের স্কেলেবল, মেন্টেনেবল এবং তুলনামূলক কম বাগসহ অ্যাপ্লিকেশন তৈরি করতে সহায়তা করার জন্য, যাতে রানটাইমের পরিবর্তে কম্পাইল টাইমেই Errors বা Bug ধরা যায়।
+
+## TypeScript এর ইতিহাস এর এক পলকেঃ
+
+- 2010: সর্বপ্রথম TypeScript বানানোর জন্য ডেভেলপমেন্টের কাজ শুরু হয় Anders Hejlsberg (the lead architect of C# at Microsoft ) হাত ধরে ।
+- 2012: Microsoft এনাইউস করে TypeScript 0.8
+- 2017: TypeScript 2.3 এ TypeScript React (TSX), সাপোর্ট নিয়ে আসল TypeScript এর রিয়েক্টের JSX কোড লিখতে পারার জন্য ।
+- 2022: TypeScript 4.7 ভার্সনে ECMAScript Node.js এর জন্য ECMAScript module সাপোর্ট নিয়ে এসেছে ।
+
+## TypeScript এর বিশেষ ফিচারসমূহঃ
+
+- Static Typing
+- Interfaces
+- Classes & Object-Oriented Programming (OOP)
+- Generics
+- Type Inference
+- Enum (Enumerations)
+- Modules & Namespaces
+- Type Aliases & Union Types
+- Utility Types
+
+## TypeScript এর জনপ্রিয়তার কারণঃ
+
+- IDE বা Editor এর মধ্যেই Error দেখাতে পারে ।
+- কোড মেইন্টেনেবিলিটি বৃদ্ধি করে ।
+- ডেভেলপার প্রোডাক্টিভিটি বৃদ্ধি করে ।
+- JavaScript এ ট্রান্সপাইল করে ও আগের যেকোন ভার্সনে তা কনভার্ট করতে পারে ।
+- লার্জ স্কেল প্রজেক্টে মেইন্টেনেবল রাখে ।
+- বর্তমানে Bun, Deno, Node (experimental) সরাসরি TS রান করতে পারে ।
+
+## TypeScript এর অসুবিধা সমূহ ।
+
+- JavaScript এ কনভার্ট হতে হয় ।
+- পার্সোমেন্সে তেমন ইমপ্যাক্ট ফেলতে পারে না ।
+- রান-টাইমে ট্রান্সফাইল করতে হয় ।
+
+## TypeScript vs JavaScript
+
+
+<table class="w-full border-collapse overflow-hidden rounded-lg  shadow-lg border border-gray-500">
+  <thead>
+    <tr class="bg-blue-600 text-white">
+      <th class="px-6 py-3 text-left">ফিচার</th>
+      <th class="px-6 py-3 text-left">TypeScript</th>
+      <th class="px-6 py-3 text-left">JavaScript</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b ">
+      <td class="px-6 py-4 font-semibold">Typing</td>
+      <td class="px-6 py-4">Static (compile-time)</td>
+      <td class="px-6 py-4">Dynamic (runtime)</td>
+    </tr>
+    <tr class="border-b">
+      <td class="px-6 py-4 font-semibold">Error Detection</td>
+      <td class="px-6 py-4"> কম্পাইল টাইমে Errorধরতে পারে শুধু  </td>
+      <td class="px-6 py-4">রান-টাইমে Error ধরতে পারে</td>
+    </tr>
+    <tr class="border-b ">
+      <td class="px-6 py-4 font-semibold">Scalability</td>
+      <td class="px-6 py-4">large applications এর জন্য অসাধারণ </td>
+      <td class="px-6 py-4"> small/medium এর জন্য উপযোগী  </td>
+    </tr>
+    <tr class="border-b">
+      <td class="px-6 py-4 font-semibold">OOP Support</td>
+      <td class="px-6 py-4">স্ট্রং  OOP ফিচার সমর্থন করে </td>
+      <td class="px-6 py-4">লিমিটেড বা নির্দিষ্ট পরিমাণে  OOP সাপোর্ট করে </td>
+    </tr>
+    <tr class="border-b ">
+      <td class="px-6 py-4 font-semibold">Tooling</td>
+      <td class="px-6 py-4">IDE বা Code Editor ফুল সাপোর্ট দেয় </td>
+      <td class="px-6 py-4">বেসিক সাপোর্ট </td>
+    </tr>
+    <tr class="border-b">
+      <td class="px-6 py-4 font-semibold">Learning Curve</td>
+      <td class="px-6 py-4"> JavaScript জেনে পরে এক্সট্রা কিছু শিখতে হবে  </td>
+      <td class="px-6 py-4">  হাই লেভেল প্রোগ্রামিং ভাষা তাই সহজই তুলনামূলক   </td>
+    </tr>
+    <tr class="border-b ">
+      <td class="px-6 py-4 font-semibold">Code Maintainability</td>
+      <td class="px-6 py-4">স্টাটীক টাইপিং এর ফলে সহজেই মেইন্টেইন করা যায় </td>
+      <td class="px-6 py-4"> অনেক ক্ষেত্রে মেইন্টেইন করা কষ্টসাধ্য প্রজেক্ট বড় হলে  </td>
+    </tr>
+    <tr class="border-b">
+      <td class="px-6 py-4 font-semibold">Performance</td>
+      <td class="px-6 py-4">JavaScript এর মতই তবে আগের ভার্সনে কনভার্ট করে কম্পেটেবলিটি দিতে পারে </td>
+      <td class="px-6 py-4"> সরাসরি ব্রাইজারে লাইন বাই লাইন এক্সিকিউট হয় </td>
+    </tr>
+    <tr class="border-b ">
+      <td class="px-6 py-4 font-semibold"> ফেমওয়ার্ক সাপোর্ট  </td>
+      <td class="px-6 py-4">React, Angular, Vue, ইত্যাদি অধিকাং ফ্রেমওয়ার্ক সাপোর্ট করে </td>
+      <td class="px-6 py-4">Native</td>
+    </tr>
+    <tr>
+      <td class="px-6 py-4 font-semibold">Backward Compatibility</td>
+      <td class="px-6 py-4"> আগের JavaScript এর ভার্সনে কনভার্ট করতে সক্ষম  </td>
+      <td class="px-6 py-4">Native JavaScript</td>
+    </tr>
+  </tbody>
+</table>

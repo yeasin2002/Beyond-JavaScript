@@ -1,6 +1,8 @@
+import { categoriesById } from '@/data/categories';
 import { toTitleCase } from '@/utils/naming-convention';
-import fs from 'node:fs';
-import path from 'node:path';
+import fs from 'fs';
+import { notFound } from 'next/navigation';
+import path from 'path';
 import React, { PropsWithChildren } from 'react';
 import { ContentSidebar } from './sidebar';
 
@@ -9,9 +11,11 @@ const JSInterviewQuestion = async ({
   params
 }: PropsWithChildren<{ params: Promise<{ categoryId: string }> }>) => {
   const { categoryId } = await params;
+  console.log('params', categoryId);
+
+  if (!categoriesById.get(categoryId)) notFound();
 
   const categoryDir = path.join(process.cwd(), 'src', 'content', categoryId);
-
   const subcategories = fs.readdirSync(categoryDir).map(folder => ({
     id: folder,
     name: toTitleCase(folder),
