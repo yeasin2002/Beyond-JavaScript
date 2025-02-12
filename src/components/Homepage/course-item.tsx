@@ -12,10 +12,11 @@ export const CourseItem = ({ course }: Props) => {
       key={course.name}
       href={{ pathname: course.link }}
       className="flex items-center justify-center gap-x-2 rounded-lg bg-foreground px-8 py-2.5 font-medium text-background transition-colors hover:bg-foreground/90"
+      aria-label={`course of ${course.name}`}
     >
       <Image
         src={course.icon}
-        alt={course.name}
+        alt={`icon of ${course.name}`}
         className="size-6"
         width={40}
         height={40}

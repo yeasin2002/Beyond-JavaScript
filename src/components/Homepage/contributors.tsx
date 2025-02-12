@@ -54,6 +54,7 @@ export async function Contributors() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-purple-500 transition-colors hover:text-purple-400"
+                      aria-label="github profile"
                     >
                       <Github className="h-5 w-5" />
                     </a>
