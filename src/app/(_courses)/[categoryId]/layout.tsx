@@ -33,10 +33,15 @@ const JSInterviewQuestion = async ({
       }))
   }));
 
+  const willHideSidebar =
+    Array.isArray(subcategories) && subcategories.length === 0;
   return (
     <>
       <CourseNavbar />
-      <ContentSidebar menu={subcategories}>{children}</ContentSidebar>;
+      <ContentSidebar menu={subcategories} hideSidebar={willHideSidebar}>
+        {children}
+      </ContentSidebar>
+      ;
     </>
   );
 };

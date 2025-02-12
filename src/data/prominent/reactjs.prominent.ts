@@ -1,4 +1,4 @@
-export const reactFeatures = [
+export const reactProminent = [
   {
     label: 'কম্পোনেন্ট-বেইজড আর্কিটেকচার',
     desc: 'React একটি কম্পোনেন্ট-ভিত্তিক লাইব্রেরি, যেখানে প্রতিটি UI অংশকে ছোট, একধকবার  কম্পোনেন্ট হিসেবে তৈরি করা যায়।'
