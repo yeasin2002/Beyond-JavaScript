@@ -7,6 +7,17 @@ export default {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
+      fontFamily: {
+        mono: [
+          'var(--font-cascadia)',
+          'Consolas',
+          'Monaco',
+          'Liberation Mono',
+          'Courier New',
+          'monospace'
+        ]
+      },
+
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
