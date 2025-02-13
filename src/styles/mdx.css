@@ -1,0 +1,124 @@
+[data-rehype-pretty-code-figure] {
+  --code-font-size: 1.25rem;
+}
+
+html.light :is(code[data-theme*=' '], pre[data-theme*=' '], ) {
+  color: var(--shiki-light);
+  background-color: var(--shiki-light-bg);
+}
+
+html:not(.light) :is(code[data-theme*=' '], pre[data-theme*=' ']) {
+  color: var(--shiki-dark);
+  background-color: var(--shiki-dark-bg);
+}
+
+html.light :is(code[data-theme*=' '] span) {
+  color: var(--shiki-light);
+}
+
+html:not(.light) :is(code[data-theme*=' '] span) {
+  color: var(--shiki-dark);
+}
+
+html.light pre {
+  --shiki-bg: var(--shiki-light-bg);
+}
+
+html:not(.light) pre {
+  --shiki-bg: var(--shiki-dark-bg);
+}
+
+:not(span)[data-rehype-pretty-code-figure]
+  code[data-line-numbers]:not(
+    [data-language='sh'],
+    [data-language='shell'],
+    [data-language='sh-session'],
+    [data-language='shell-session'],
+    [data-language='ansi']
+  )
+  > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+
+  @apply mr-[var(--code-font-size,20px)] inline-block w-4 text-right font-mono text-muted-foreground;
+}
+
+:not(span)[data-rehype-pretty-code-figure]
+  code[data-line-numbers]:is(
+    [data-language='sh'],
+    [data-language='shell'],
+    [data-language='sh-session'],
+    [data-language='shell-session'],
+    [data-language='ansi']
+  )
+  > [data-line]::before {
+  content: var(--terminal-prompt, '$');
+
+  @apply mr-[var(--code-font-size,20px)] inline-block w-4 text-right font-mono text-pink-600;
+}
+
+:not(span)[data-rehype-pretty-code-figure] code {
+  counter-reset: line;
+  box-decoration-break: clone;
+
+  @apply grid min-w-full break-words rounded-none border-0 bg-transparent p-0 text-sm leading-normal;
+}
+
+:not(span)[data-rehype-pretty-code-figure] code > * {
+  padding-left: var(--code-font-size, 20px);
+  padding-right: var(--code-font-size, 20px);
+}
+
+[data-rehype-pretty-code-figure] .line--highlighted {
+  @apply relative;
+}
+
+[data-rehype-pretty-code-figure] .line--highlighted::after {
+  @apply pointer-events-none absolute inset-0 z-10 border-l-2 border-[rgb(47,47,245)] bg-foreground/5 content-[''] dark:bg-foreground/10;
+}
+
+[data-rehype-pretty-code-figure] :not(.word--highlighted) > .word--highlighted {
+  @apply rounded-md bg-foreground/5 p-[2px] dark:bg-foreground/10;
+}
+
+[data-rehype-pretty-code-title] + pre {
+  @apply mt-0;
+}
+
+#c6719a79-09c1-4eab-ba61-5eb5a4c9f8ce :is(h1, h2, h3, h4, h5, h6):target {
+  @apply text-[rgb(47,47,245)];
+}
+
+.subheading-anchor {
+  @apply absolute inset-0;
+}
+
+.subheading-anchor:hover::before {
+  @apply absolute inset-0 -left-[0.8em] font-mono text-[1em] text-muted-foreground/50 content-['#'] max-md:hidden;
+}
+
+:is(h2):not(:first-child) .subheading-anchor:hover::before {
+  @apply top-[2.5rem];
+}
+
+:is(h1, h2, h3, h4, h5, h6):first-child .subheading-anchor:hover::before {
+  @apply top-0;
+}
+
+.prose :where(h2:not(:is(h1 + h2))):not(:where([class~='not-prose'] *)) {
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-color: rgb(var(--border));
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+}
+
+.stack-content {
+  display: grid;
+  grid-template: container;
+  isolation: isolate;
+}
+
+.stack-content > * {
+  grid-area: container;
+}
