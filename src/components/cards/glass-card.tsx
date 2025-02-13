@@ -2,7 +2,7 @@
 
 /* eslint-disable @next/next/no-img-element */
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { userReview } from '../Homepage';
 
 export function GlassCard({ review }: { review: (typeof userReview)[number] }) {

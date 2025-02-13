@@ -1,19 +1,20 @@
-import createMDX from '@next/mdx';
+import { NextConfig } from 'next';
+import { withContentlayer } from 'next-contentlayer';
 
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    typedRoutes: true
+    typedRoutes: true,
+    mdxRs: true
   },
+
   images: {
     remotePatterns: [
       { protocol: 'https' as const, hostname: 'skillicons.dev' },
       { protocol: 'https' as const, hostname: 'avatars.githubusercontent.com' }
     ]
   },
+
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx']
-};
+} satisfies NextConfig;
 
-const withMDX = createMDX({});
-
-export default withMDX(nextConfig);
+export default withContentlayer(nextConfig);

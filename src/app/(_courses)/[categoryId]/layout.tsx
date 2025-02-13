@@ -1,19 +1,10 @@
 import { categoriesById } from '@/data/categories';
-import { env } from '@/env';
-import { existReadDirSync } from '@/utils/file-system';
 import { toTitleCase } from '@/utils/naming-convention';
-import fs from 'fs';
+import { allBlogs } from 'contentlayer/generated';
 import { notFound } from 'next/navigation';
-import path from 'path';
 import React, { PropsWithChildren } from 'react';
 import { CourseNavbar } from './course-nav';
 import { ContentSidebar } from './sidebar';
-
-export function generateStaticParams() {
-  return Object.values(categoriesById).map(category => ({
-    params: { categoryId: category.id }
-  }));
-}
 
 const JSInterviewQuestion = async ({
   children,
@@ -23,28 +14,53 @@ const JSInterviewQuestion = async ({
 
   if (!categoriesById.get(categoryId)) notFound();
 
-  const categoryDir = path.join(env.SRC_FOLDER, 'content', categoryId);
+  const categories = allBlogs.reduce(
+    (acc, blog) => {
+      const [cat, sub] = blog._raw.sourceFileDir.split('/');
+      const sourceFile = blog._raw.sourceFileName.replace('.mdx', '');
+      const sourceFilePath = '/' + blog._raw.sourceFilePath.replace('.mdx', '');
 
-  const subcategories = existReadDirSync(categoryDir)
-    .map(folder => ({
-      id: folder,
-      name: toTitleCase(folder),
-      url: `/${categoryId}/${folder}`,
-      createdAt: fs.statSync(path.join(categoryDir, folder)).birthtime,
-      contents: existReadDirSync(path.join(categoryDir, folder))
-        .filter(file =>
-          fs.lstatSync(path.join(categoryDir, folder, file)).isFile()
-        )
-        .map(content => ({
-          id: content,
-          url: `/${categoryId}/${folder}/${content.replace('.mdx', '')}`,
-          name: toTitleCase(content.replace('.mdx', '')),
-          createdAt: fs.statSync(path.join(categoryDir, folder, content))
-            .birthtime
-        }))
-        .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())
-    }))
-    .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+      if (!acc[cat]) {
+        acc[cat] = [];
+      }
+
+      const ext = acc[cat].find(item => item.id === sub);
+
+      if (!ext) {
+        acc[cat].push({
+          id: sub,
+          name: toTitleCase(sub),
+          url: '/' + blog._raw.sourceFileDir,
+          contents: [
+            {
+              id: sourceFile,
+              name: toTitleCase(sourceFile),
+              url: sourceFilePath
+            }
+          ]
+        });
+      } else {
+        ext.contents.push({
+          id: sourceFile,
+          name: toTitleCase(sourceFile),
+          url: sourceFilePath
+        });
+      }
+
+      return acc;
+    },
+    {} as Record<
+      string,
+      Array<{
+        id: string;
+        name: string;
+        url: string;
+        contents: { id: string; name: string; url: string }[];
+      }>
+    >
+  );
+
+  const subcategories = categories[categoryId]! ?? [];
 
   const willHideSidebar =
     Array.isArray(subcategories) && subcategories.length === 0;
