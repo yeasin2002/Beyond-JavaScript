@@ -28,10 +28,8 @@ keyword ব্যবহার করা হয় তাকে Access Modifiers ব
 
 উদাহরণঃ
 
-<CodeBlock
-language='typescript'
-filename='public-class.ts'
-code={`
+```tsx
+
  class Person {
   public name: string; // এক্সপ্লিসিটলি বলে দেয়া হচ্ছে, এটা Public 
   age: number; // কোন keyword দেয়া হয় তবুও ডিফল্টভাবেই এটা Public
@@ -44,7 +42,7 @@ const person = new Person("Alice"); console.log(person.name, person.age); // ✅
 ক্লাসের বাহিরেও প্রোপার্টি একেসেস করা যাচ্ছে person.greet(); // ✅ ক্লাসের
 বাহিরেও মেথড একেসেস করা যাচ্ছে
 
-`} />
+```
 
 ### Privet
 
@@ -54,10 +52,7 @@ Properties তখন Privet হবে । ফলে উক্ত Method বা P
 
 উদাহরণঃ
 
-<CodeBlock
-language='typescript'
-filename='privet-class.ts'
-code={`
+```tsx
 class Person {
   private age: number; // Private property
 
@@ -73,7 +68,8 @@ const person = new Person("Alice", 25); person.introduce(); // ✅ introduce
 console.log(person.age); // ❌ TypeScript এখানে ইরোর দিবে , যেহেতু এটা প্রাইভেট
 তাই, Error: Property 'age' is private console.log(person.getAge()); // ❌
 এক্ষেত্রেও এই Method প্রাইভেট keyword দেয়াতে এটা প্রাইভেট ও শধুমাত্রে ক্লাসের
-ভিতরে এক্সেস আছে , Error: Method 'getAge' is private `} />
+ভিতরে এক্সেস আছে , Error: Method 'getAge' is private
+```
 
 ### Protected
 
@@ -83,10 +79,8 @@ protected Modifiers হলে সেই method বা property সেগুল�
 
 উদাহরণঃ
 
-<CodeBlock
-language='typescript'
-filename='protected-class.ts'
-code={`
+```tsx 
+
 class Person {
   protected name: string; // Protected property
 
@@ -105,7 +99,7 @@ const student = new Student("Bob", 10); student.introduce(); // ✅ Allowed //
 console.log(student.name); // ❌ Error: Property 'name' is protected //
 console.log(student.getName()); // ❌ Error: Method 'getName' is protected
 
-`} />
+```
 
 <div className='my-20'>
 ### কোনটা কোথায় ব্যবহার করতে হবেঃ
