@@ -1,7 +1,5 @@
 {
-  "name": "any",
-  "version": "0.1.0",
-  "private": true,
+  "name": "stuck-unboxed",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
