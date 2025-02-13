@@ -1,0 +1,325 @@
+---
+lesson: 1
+---
+
+You are currently reading about it within it. 😂
+
+## Challenges Faced
+
+- Manage content efficiently to streamline operations.
+- Implement MDX integration for dynamic content rendering.
+- Customize code blocks in MDX to enhance readability:
+  - Add **syntax highlighting** for improved code clarity.
+  - Include a **Copy to Clipboard** feature for easy code replication.
+  - Display **line numbers** for easier navigation.
+  - Highlight specific **lines** and **words** to draw attention to key parts.
+- Implement a feature to **increment views** without requiring user authentication.
+
+## Technologies Used
+
+- [Nextjs](https://nextjs.org?_highlight)
+- [TypeScript](https://www.typescriptlang.org?_highlight)
+- [Tailwind CSS](https://tailwindcss.com?_highlight)
+- [Framer Motion](https://www.framer.com/motion?_highlight)
+- [Shadcn UI](https://ui.shadcn.com?_highlight)
+- [MDX](https://mdxjs.com?_highlight)
+- [Contentlayer](https://contentlayer.dev?_highlight)
+- [Redis](https://redis.io?_highlight)
+
+## Solutions
+
+Here is the explanation of how I tackled these challenges.
+
+### Manage content efficiently
+
+To address the challenge of managing content efficiently, I opted for Contentlayer, a powerful content management solution. Here's how I approached this
+
+- Content Structuring with Contentlayer
+  - Leveraged Contentlayer to define a structured content model.
+  - Created a `contentlayer.config.ts` file to define document types like `Project` for easy content organization.
+- Efficient Content Retrieval
+  - Used Contentlayer feature to efficiently get and retrieve content data.
+  - Implemented `generateStaticParams{:tsx}` in Next.js for static site generation, ensuring optimal performance.
+- Content Management Workflow
+  - Organized content files in a directory structure (e.g., `content/projects`) for easy management.
+  - Regularly updated content files to reflect the latest projects and achievements.
+
+### MDX integration
+
+To address the challenge of dynamic content rendering, especially for projects and blog posts, I successfully integrated MDX into my Next.js project. Here's how I approached this
+
+- Setting Up MDX in Next.js
+
+  - Installed the necessary packages for MDX integration
+    ```ansi
+    pnpm add -D remark-gfm rehype-slug rehype-pretty-code rehype-autolink-headings
+    ```
+  - Configured Next.js to recognize MDX files by updating the `next.config.mjs` file.
+
+    ```js {3} title="next.config.mjs"
+    export default {
+      experimental: {
+        mdxRs: true,
+      },
+    };
+    ```
+
+- Dynamic Page Creation with MDX
+  - Created individual pages for projects and blog posts using the `[slug].tsx` convention.
+  - Dynamically get and rendered MDX content for each page using Next.js `generateStaticParams{:tsx}` functions.
+
+### Customize Code Blocks
+
+To enhance the readability of code blocks in MDX, I implemented several features
+
+#### Syntax Highlighting
+
+I utilized the `rehype-pretty-code` plugin to add syntax highlighting to code blocks. This not only improves code clarity but also provides a visually appealing presentation.
+
+```js showLineNumbers /rehypePrettyCode/ title="contentlayer.config.js"
+import rehypePrettyCode from "rehype-pretty-code";
+
+export default makeSource({
+  mdx: {
+    rehypePlugins: [rehypePrettyCode],
+  },
+});
+```
+
+#### Copy to Clipboard
+
+I utilized the `react-children-utilities` to copy text inside react tree.
+
+```tsx title="copy-button.tsx" showLineNumbers
+import { useEffect, useState } from "react";
+
+export function CopyButton({ text }: { text: string }) {
+  const [clicked, setClick] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setClick(false), 600);
+    return () => clearTimeout(timer);
+  }, [clicked]);
+
+  async function copy() {
+    if (text && navigator && navigator.clipboard) {
+      await navigator.clipboard.writeText(text);
+      setClick(true);
+    }
+  }
+
+  return (
+    <button className="h-8 w-8" onClick={copy}>
+      {clicked ? "copied" : "copy"}
+    </button>
+  );
+}
+```
+
+add copy-button to code blocks
+
+```tsx {1-2,13-15} showLineNumbers title="mdx.tsx"
+import { CopyButton } from "$components/copy-button";
+import { onlyText } from "react-children-utilities";
+
+export function Mdx({ code }: MdxProps) {
+  const Component = useMDXComponent(code);
+
+  return (
+    <div className="mdx">
+      <Component
+        components={{
+          pre: ({ className, ...props }: Props) => (
+            <div>
+              <div>
+                <CopyButton text={onlyText(props.children)} />
+              </div>
+
+              <pre className={cn("...", className)} {...props} />
+            </div>
+          ),
+        }}
+      />
+    </div>
+  );
+}
+```
+
+#### Display Line Numbers
+
+`rehype-pretty-code` does not provide a straightforward way to display line numbers. Here's how I achieve that.
+
+when code blocks have showLineNumbers props `rehype-pretty-code` add data-line-numbers data attribute to code tag and data-line to each line.
+
+````mdx showLineNumbers /showLineNumbers/
+```tsx showLineNumbers
+console.log("Hello World");
+```
+````
+
+```html showLineNumbers /data-line/ /data-line-numbers/
+<code data-language="mdx" data-line-numbers>
+  <span data-line>console.log("Hello World")</span>
+</code>
+```
+
+Now i can add line numbers based on that using CSS increment feature. `:not(span){:css}` to don't apply style to inline code blocks
+
+```css showLineNumbers
+:not(span)[data-rehype-pretty-code-fragment]
+  code[data-line-numbers]:not(
+    [data-language="sh"],
+    [data-language="shell"],
+    [data-language="sh-session"],
+    [data-language="shell-session"],
+    [data-language="ansi"]
+  )
+  > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+
+  @apply mr-[var(--code-font-size,20px)] inline-block w-4 text-right font-mono text-muted-foreground;
+}
+
+/* for terminal based code blocks */
+:not(span)[data-rehype-pretty-code-fragment]
+  code[data-line-numbers]:is(
+    [data-language="sh"],
+    [data-language="shell"],
+    [data-language="sh-session"],
+    [data-language="shell-session"],
+    [data-language="ansi"]
+  )
+  > [data-line]::before {
+  content: var(--terminal-prompt, "$");
+
+  @apply mr-[var(--code-font-size,20px)] inline-block w-4 text-right font-mono text-pink-600;
+}
+```
+
+#### Highlight Lines and Words
+
+I added the `.line--highlighted{:css}` class to the highlighted line and the `.word--highlighted{:css}` class to the highlighted words using `rehype-pretty-code`'s `onVisitHighlightedLine{:js}` and `onVisitHighlightedChars{:js}` methods.
+
+```js showLineNumbers title="contentlayer.config.js" {9-15,17-23}
+import rehypePrettyCode from "rehype-pretty-code";
+
+export default makeSource({
+  mdx: {
+    rehypePlugins: [
+      [
+        rehypePrettyCode,
+        {
+          onVisitHighlightedLine(node) {
+            if (Array.isArray(node.properties.className)) {
+              return node.properties.className.push("line--highlighted");
+            }
+
+            node.properties.className = ["line--highlighted"];
+          },
+
+          onVisitHighlightedChars(node) {
+            if (Array.isArray(node.properties.className)) {
+              return node.properties.className.push("word--highlighted");
+            }
+
+            node.properties.className = ["word--highlighted"];
+          },
+        },
+      ],
+    ],
+  },
+});
+```
+
+I can now style lines and words easily based on class names.
+
+```css title="line--highlighted.css" showLineNumbers
+.line--highlighted {
+  @apply relative;
+}
+
+.line--highlighted::after {
+  @apply pointer-events-none absolute inset-0 z-10 border-l-2 border-link bg-foreground/10 content-[''];
+}
+```
+
+`:not(.word--highlighted) > .word--highlighted{:css}` This selector ensures that overlaid highlighted words do not have the style.
+
+```css title="word--highlighted.css" showLineNumbers
+:not(.word--highlighted) > .word--highlighted {
+  @apply rounded-md bg-foreground/10 p-[2px];
+}
+```
+
+### Increment Views
+
+To increase view counts without requiring user authentication, I utilized Redis as a caching mechanism. Whenever a user visits a project or blog post, the view count is incremented and stored in Redis using the hashed ID and post or blog slug.
+
+```ts showLineNumbers title="api/route.ts" {4-5,8-9}
+export async function POST(req: NextRequest, ctx: { params: { id: string } }) {
+  if (req.ip) {
+    const hash = await generateHash(req.ip);
+    const isNew = await redis.set(["deduplicate", hash, ctx.params.id].join("-"));
+    if (!isNew) return NextResponse.json({ status: "failed" }, { status: 208 });
+  }
+
+  await redis.incr(ctx.params.id);
+  return NextResponse.json({ status: "success" }, { status: 201 });
+}
+```
+
+I use the ReportView component to increase the view count for specific projects or blogs. This approach allows me to easily integrate the component within server components without the need to render the entire component on the client side.
+
+```tsx title="view.tsx" showLineNumbers
+import { useEffect, useState } from "react";
+
+export function ReportView({ id }: { id: string }) {
+  useEffect(() => {
+    const abortController = new AbortController();
+
+    fetch(`/api/incr/${id}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      signal: abortController.signal,
+    });
+
+    return () => abortController.abort();
+  }, [id]);
+
+  return null;
+}
+```
+
+Here's how the ReportView component is being used.
+
+```tsx showLineNumbers {4,8,13} title="page.tsx"
+import { Header } from "$components/header";
+import { Mdx } from "$components/mdx";
+import { allProjects } from "contentlayer/generated";
+import { ReportView } from "$components/view";
+
+export default async function Project({ params }: ProjectProps) {
+  const slug = params.slug.join("/");
+  const project = allProjects.find(project => project.slug === slug);
+
+  return (
+    <div className="bg-background isolate min-h-screen">
+      <Header details={project} />
+      <ReportView id={project.id} />
+
+      <Mdx code={project.body.code} />
+    </div>
+  );
+}
+```
+
+## Results
+
+- Streamline content management by implementing Contentlayer to organize structured content.
+- Increased the overall flexibility of the portfolio by successfully integrating MDX for dynamic content rendering.
+- Code readability has been improved through the use of syntax highlighting, a 'Copy to Clipboard' button, line numbers, and the ability to highlight specific lines and words.
+- Utilized Redis to provide insight into the popularity of projects and blog posts by incrementing views without requiring user authentication.
+- Achieved a responsive portfolio with animations that enhance the user experience.
+
+[Feel free to reach out if you have any questions or suggestions!](mailto:alimam01828@gmail.com)
