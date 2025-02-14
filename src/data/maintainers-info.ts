@@ -1,3 +1,4 @@
+import { DiscordIcon } from '@/components/mdx/icons/brand';
 import { Facebook, Github, Linkedin, Twitter } from 'lucide-react';
 
 export const maintainerYeasinInfo = [
@@ -19,17 +20,22 @@ export const maintainerImamInfo = [
   {
     name: 'Github',
     icon: Github,
-    link: 'https://github.com/yeasin2002'
+    link: 'https://github.com/al-imam'
   },
   {
     name: 'Linkedin',
     icon: Linkedin,
-    link: 'https://www.linkedin.com/in/yeasin2002/'
+    link: 'https://www.linkedin.com/in/al-imam'
   },
   {
-    name: 'Twitter',
-    icon: Twitter,
-    link: 'https://twitter.com/yeasin2002'
+    name: 'Facebook',
+    icon: Facebook,
+    link: 'https://www.facebook.com/alimam.nirob'
+  },
+  {
+    name: 'Discord',
+    icon: DiscordIcon,
+    link: 'https://discordapp.com/users/alimam_'
   }
 ];
 

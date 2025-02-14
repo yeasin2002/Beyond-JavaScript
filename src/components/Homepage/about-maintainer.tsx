@@ -6,7 +6,7 @@ import { anekBangla } from '@/fonts/bengali.fonts';
 import { motion } from 'motion/react';
 import Image from 'next/image';
 
-import imam_maintainer from '@/assets/maintainers/al-imam.jpeg';
+import imam_maintainer from '@/assets/maintainers/al-imam.jpg';
 import yeasin_maintainer from '@/assets/maintainers/yeasin.jpg';
 import { maintainersInfo } from '@/data/maintainers-info';
 import Link from 'next/link';
