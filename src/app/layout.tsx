@@ -2,6 +2,8 @@ import { ThemeProvider } from '@/components/shared';
 import { cn } from '@/utils';
 import type { Metadata } from 'next';
 import LocalFont from 'next/font/local';
+import NextTopLoader from 'nextjs-toploader';
+
 import '../styles/main.css';
 import '../styles/mdx.css';
 
@@ -23,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn(`antialiased`, cascadia.variable)}>
+        <NextTopLoader color="#00DC82" />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
