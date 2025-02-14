@@ -1,4 +1,7 @@
-import { CodeBlock } from '../../../../../../components/ui/custom/code-blocks';
+---
+lesson: 5
+---
+
 
 এইবার প্রাক্টিক্যালি আমরা দেখব কিভাবে JavaScript/TypeScript এর OOP এর কাজ করা হয়
 , প্রথমত শুরু করব ক্লাস এর সিনটেক্স দিয়ে ।
@@ -7,15 +10,13 @@ import { CodeBlock } from '../../../../../../components/ui/custom/code-blocks';
 
 #### Basic Class 
 
-<CodeBlock
-language='JavaScript' 
- code={`class Person {}`}
-/>
+```js
+class Person {}
+```
 
 
 #### JavaScript দিয়ে বানানো 
-<CodeBlock
- code={`
+```js
 class Person {
   constructor(name, age) {
     this.name = name;
@@ -25,13 +26,11 @@ class Person {
 greet() { return "Hello, my name is " + this.name + " and I am " + this.age + "
 years old."; } }
 
-const person1 = new Person("John", 25); console.log(person1.greet()); `}
-language='JavaScript' />
-
+const person1 = new Person("John", 25); console.log(person1.greet()); 
+```
 
 #### TypeScript দিয়ে বানানো 
-<CodeBlock
- code={`
+```ts 
 class PersonTS {
   name: string;
   age: number;
@@ -42,8 +41,8 @@ greet(): string { return "Hello, my name is " + this.name + " and I am " +
 this.age + " years old." } }
 
 const person2 = new PersonTS("Alice", 30); console.log(person2.greet());
+```
 
-`} language='TypeScript' />
 
 ### বিস্তারিত প্রতিটি ক্লাসের ভাগ করি এখন 
 #### ক্লাস এর জন্য কয়েকটা জিনিস প্রয়োজন । 

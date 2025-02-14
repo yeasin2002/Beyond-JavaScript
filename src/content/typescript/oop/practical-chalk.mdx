@@ -1,14 +1,15 @@
-import { CodeBlock } from '../../../../../../components/ui/custom/code-blocks';
+---
+lesson: 8
+---
+
 
 # React world Example : Chalk
 
 এই অধ্যায়ে আমরা Chalk.js এর মত একটা ছোট লাইব্রেরি বানাব যেটার মাধ্যমে কনসোলে যেকোন কিছু style করে প্রিন্ট করতে পারব ।
 প্রথমত আমরা রিকুয়ারমেন্টগুলো একটু দেখি ।
 
-<CodeBlock
-language='typescript'
-filename='chalk.ts'
-code={`
+
+```tsx
 class Chalk {
   private text: string;
 
@@ -42,14 +43,13 @@ return this.text;
 }
 
 export const chalk = new Chalk("hello");
-`}
-/>
+
+```
 
 #### এক্ষেত্রে এটাকে ব্যবহার করতে পারি যেভাবেঃ 
-<CodeBlock 
-language='typescript'
-filename='app.ts'
-code={`
+
+```tsx 
+
 // Create a new instance with some text
 const chalk = new Chalk("Hello World");
 
@@ -81,5 +81,4 @@ const emptyChalk = new Chalk();
 // Then use it with different strings
 console.log(new Chalk("Success!").bold().value());
 
-`}
-/>
+```

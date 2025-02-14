@@ -1,4 +1,8 @@
-import { CodeBlock } from '../../../../../../components/ui/custom/code-blocks';
+---
+lesson: 9
+---
+
+
 
 # React world Example : Date Time Helper
 
@@ -23,10 +27,8 @@ import { CodeBlock } from '../../../../../../components/ui/custom/code-blocks';
 4. getCurrentTime (time-only)
 5. getCurrentDateTime (date + time)
 
- <CodeBlock
-language='typescript'
-filename='date-time-helper.ts'
-code={`
+
+```tsx 
 class DateUtils {
   parseDate(dateString: string): Date {
     return new Date(dateString);
@@ -57,14 +59,12 @@ class DateUtils {
   }
 }
 
-export default DateUtils;`}/>
+export default DateUtils;
+```
 
 
 #### এক্ষেত্রে এর ব্যবহার উদাহরণসহ দেখানো হল । 
- <CodeBlock
-language='typescript'
-filename='date-time-helper.ts'
-code={`
+```tsx 
 import DateUtils from "./date-time-helper";
 const dateUtils = new DateUtils();
 
@@ -78,8 +78,7 @@ console.log("Formatted Date:",formattedDate);
 console.log("Current Date:", currentDate);
 console.log("CurrentTime:", currentTime);
 console.log("Current DateTime:", currentDateTime);
-
-`}/>
+```
 
 ### বাকি এই ২০ টা মেথড চাইলে আপনারা কাজ করতে পারেন তাই সে হিসেবে রিকুয়ারমেন্ট দেয়া হল।
 
