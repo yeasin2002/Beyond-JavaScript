@@ -1,47 +1,54 @@
+'use client';
+
 import { Card, CardContent } from '@/components/ui/shadcn/card';
 import { hindSiliguri } from '@/fonts';
 import { Headphones, Music } from 'lucide-react';
+import { motion } from 'motion/react';
 import Image from 'next/image';
 
-import imam_maintainer from '@/assets/maintainers/al-imam.jpg';
+import imam_maintainer from '@/assets/maintainers/al-imam.jpeg';
 import yeasin_maintainer from '@/assets/maintainers/yeasin.jpg';
+const images = [yeasin_maintainer, imam_maintainer];
 
 export function AboutMaintainer() {
   return (
     <div className="min-h-screen p-6 md:p-12">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
-          {/* image of maintainers */}
-          <div className="container mx-auto px-4 py-16">
-            <h1 className="mb-12 text-center text-3xl font-bold">
-              Overlapping Image Gallery
-            </h1>
-            <div className="relative mx-auto h-[500px] w-full max-w-3xl sm:h-[600px]">
-              <div className="absolute left-0 top-0 h-3/4 w-3/4 transition-transform duration-300 hover:translate-x-4 hover:translate-y-4 hover:rotate-2">
+          {/* Right column maintainer images */}
+          <div className="flex items-center justify-center">
+            {images.map((image, idx) => (
+              <motion.div
+                key={'images' + idx}
+                style={{
+                  rotate: Math.random() * 20 - 10
+                }}
+                whileHover={{
+                  scale: 1.1,
+                  rotate: 0,
+                  zIndex: 100
+                }}
+                whileTap={{
+                  scale: 1.1,
+                  rotate: 0,
+                  zIndex: 100
+                }}
+                className="-mr-4 mt-4 flex-shrink-0 overflow-hidden rounded-xl border border-neutral-100 bg-white p-1 dark:border-neutral-700 dark:bg-neutral-800"
+              >
                 <Image
-                  src={imam_maintainer}
-                  alt="First Image"
-                  fill
-                  className="rounded-lg border-4 border-background object-cover shadow-xl"
-                  sizes="(max-width: 768px) 75vw, (max-width: 1200px) 50vw, 33vw"
+                  src={image}
+                  alt="maintainers  images"
+                  width={1200}
+                  height={1200}
+                  className="size-32 flex-shrink-0 rounded-lg object-cover md:size-60"
                 />
-              </div>
-              <div className="absolute bottom-0 right-0 h-3/4 w-3/4 transition-transform duration-300 hover:-translate-x-4 hover:-translate-y-4 hover:-rotate-2">
-                <Image
-                  src={yeasin_maintainer}
-                  alt="Second Image"
-                  fill
-                  className="rounded-lg border-4 border-background object-cover shadow-xl"
-                  sizes="(max-width: 768px) 75vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </div>
-            </div>
+              </motion.div>
+            ))}
           </div>
 
           {/* Right column with content */}
           <div className="space-y-8">
             <h2
-              //  className="text-4xl font-bold text-white md:text-5xl lg:text-6xl"
               className={`homepage-section bg-gradient-to-r from-teal-400 to-cyan-600 bg-clip-text py-4 text-transparent ${hindSiliguri.className}`}
             >
               প্রজেক্ট মেইন্টাইনার

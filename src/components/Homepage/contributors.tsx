@@ -15,7 +15,7 @@ export async function Contributors() {
           <h1
             className={`homepage-section bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text py-4 text-transparent ${hindSiliguri.className}`}
           >
-            কন্ট্রিবিউটরগণ
+            সকল কন্ট্রিবিউটরগণ
           </h1>
           <p className={`homepage-section-desc ${anekBangla.className}`}>
             যাদের সহযোগিতায় সাইটি পূর্নতা পেয়েছে ।
