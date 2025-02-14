@@ -26,25 +26,22 @@ const JSInterviewQuestion = async ({
 
       const ext = acc[cat].find(item => item.id === sub);
 
+      const content = {
+        id: sourceFile,
+        name: toTitleCase(sourceFile),
+        url: sourceFilePath,
+        lesson: blog.lesson
+      };
+
       if (!ext) {
         acc[cat].push({
           id: sub,
           name: toTitleCase(sub),
           url: '/' + blog._raw.sourceFileDir,
-          contents: [
-            {
-              id: sourceFile,
-              name: toTitleCase(sourceFile),
-              url: sourceFilePath
-            }
-          ]
+          contents: [content]
         });
       } else {
-        ext.contents.push({
-          id: sourceFile,
-          name: toTitleCase(sourceFile),
-          url: sourceFilePath
-        });
+        ext.contents.push(content);
       }
 
       return acc;
@@ -55,15 +52,20 @@ const JSInterviewQuestion = async ({
         id: string;
         name: string;
         url: string;
-        contents: { id: string; name: string; url: string }[];
+        contents: { id: string; name: string; url: string; lesson: number }[];
       }>
     >
   );
 
-  const subcategories = categories[categoryId]! ?? [];
+  const subcategories = (categories[categoryId] ?? [])
+    .map(subcat => ({
+      ...subcat,
+      lesion: Math.min(...subcat.contents.map(content => content.lesson)),
+      contents: subcat.contents.sort((a, b) => a.lesson - b.lesson)
+    }))
+    .sort((a, b) => a.lesion - b.lesion);
 
-  const willHideSidebar =
-    Array.isArray(subcategories) && subcategories.length === 0;
+  const willHideSidebar = subcategories.length === 0;
 
   return (
     <>
