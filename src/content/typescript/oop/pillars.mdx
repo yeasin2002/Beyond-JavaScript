@@ -1,0 +1,78 @@
+import { CodeBlock } from '../../../../../../components/ui/custom/code-blocks';
+
+# Pillars Of OOP
+
+### আমরা আগেও জানলাম, TypeScript OOP এর মুল বিষয় বা পিলার সমূহ হলোঃ
+
+        1. Encapsulation
+        2. Abstraction
+        3. Inheritance
+        4. Polymorphism
+
+এই অধ্যায়ে আমরা প্রতিটি পিলারের পিলার বিস্তারিত আলোচনা করব ।
+
+## 1. Encapsulation
+
+## 2. Abstraction
+
+## 3. inheritance :
+
+প্যারেন্ট ক্লাসের মেথদ বা প্রোপার্টি চাইল্ড ক্লাসে নিয়ে আসে তা একসেস (Access) বা ব্যবহার করাকে inheritance বলা হয় । যেমন মানুষের ক্ষেত্রে ছেলে তার বাবা'র সম্পত্তি পায়, বাবা আবার দাঁড়াত সম্পত্তি পায় এটাকেই inheritance বলা হয় । এক্ষেত্রে `extends ` keyword ব্যবহার করে কোন ক্লাস এর মেথড বা প্রোপার্টি inherit করার জন্য ব্যবহার করা হয় ।
+
+inheritance উদাহরণ সহ এখন দেখিঃ
+
+```tsx
+ class League {
+  public apa = 'হাসিনা';
+
+dialogue() {
+console.log('স্বজন হারানোর বেদনা');
+}
+
+output(name: string): void {
+console.log(name + ' পালাইছে ');
+}
+}
+
+class StudentLeague extends League {
+leader() {
+console.log('খুনি ' + this.apa);
+}
+}
+```
+
+এখানে StudentLeague  ক্লাস League ক্লাসকে `extends` keyword এর মাধ্যমে এর property এবং methods extends করছে । এক্ষাত্রে League হল Parent Class ও StudentLeague হল Child Class ।  
+ এটাকে এটাকে কিভাবে ব্যবহার করব তা দেখি ।
+
+
+```tsx
+const chatroLeage = new StudentLeague();
+chatroLeage.leader(); //খুনি হাসিনা
+chatroLeage.output('হাসিনা'); //হাসিনা  পালাইছে
+
+```
+
+যদিও StudentLeague এর নিজের কোন `output` নামের কোন method নাই আবার তার নিজের কোণ  `apa` নামক প্রপার্টি নাই  কিন্তু তবুও আমরা ব্যবহার করতে পারছি এর  কারন এটা তার প্যারেন্ট অর্থাৎ League এর থেকে নিয়েছে । সহজ ভাষার বাস্তব সিনারী দিক থেকে চিন্তা করে একটা উদাহরন  দেখতে পারেঃ 
+আওয়ামিলীগ ছিল প্রধান অর্থাৎ আমরা প্যারেন্ড ক্লাস ধরে নিতে পারি, এক্ষেত্রে ছাত্রলীগ আওয়ামিলীগ এরই  জন্ম হয় তাই এটা আওয়ামিলীগ এর চাইল্ড বলা যায়, সুতরাং প্যারেন্ট থেকে খুন,গুম, চাদাবাজি এসব যে বিশেষ বৈশিষ্ট্য  এসব তা নিজেদের মাঝে inherit করে নিয়েছে তাই এটাকেই inheritance বলা হয়ে থাকে । 
+
+## 4. polymorphism :
+
+polymorphism মূলত Greek শব্দ থেকে এসেছে । এক্ষেত্রে শব্দ খন্ডালে পাইঃ
+
+- Poly : many (অনেক)
+- Morph : forms(আকার/গঠন)
+
+যার শব্দের মানে হল `Many Forms` বা `অনেক আকার/গঠন` ।
+
+### polymorphism এর প্রয়োজনীয়তাঃ
+
+- কোড রি-ইউজিবিলিটিঃ একটা সিঙ্গেল মেথড বা ফাংশন যা একাধিক ক্ষেত্রে একাধিক ভাবে ব্যবহার করা যায় ।
+- এক্সটেনসিবিলিটিঃ নতুন ফিচার সহজেই এড করা যায়, এক্সিস্টিং কোড পরিবর্তন না করেই ।
+- মেইন্টেনেবিলিটিঃ কোড সহজেই মেইন্টেইন করা যায়, এক্সিটিং কোড যেহেতু পরিবর্তন করার প্রয়োজন হয় না ও সহজেই কোড রিড হয় যায় ।
+
+### Polymorphism এর প্রকারভেদঃ
+
+Polymorphism প্রধানত ২ প্রকার
+
+1. Compile-time Polymorphism (Method Overloading)
+2. Runtime Polymorphism (Method Overriding)
