@@ -1,4 +1,5 @@
 import {
+  AboutMaintainer,
   Contributors,
   Footer,
   FrequentlyAskedQuestions,
@@ -6,6 +7,7 @@ import {
   Navbar,
   UserReview
 } from '@/components/Homepage';
+
 import { ScatteredDotsBg } from '@/components/shared';
 
 export default function Home() {
@@ -17,6 +19,7 @@ export default function Home() {
       <div className="relative">
         <ScatteredDotsBg />
         <FrequentlyAskedQuestions />
+        <AboutMaintainer />
         <Contributors />
       </div>
       <Footer />
