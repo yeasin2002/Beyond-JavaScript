@@ -1,5 +1,5 @@
 import { courseList } from '@/data';
-import { maintainersInfo } from '@/data/maintainers-info';
+import { maintainerYeasinInfo } from '@/data/maintainers-info';
 import { anekBangla, hindSiliguri, mina } from '@/fonts/bengali.fonts';
 import { publicSans, rubik } from '@/fonts/english.fonts';
 import Link from 'next/link';
@@ -60,7 +60,7 @@ export function Footer() {
               মেইন্টেনার এর সাথে যোগাযোগ
             </h4>
             <div className="flex gap-4">
-              {maintainersInfo.map(social => (
+              {maintainerYeasinInfo.map(social => (
                 <Link
                   key={social.name}
                   href={{ pathname: social.link }}
