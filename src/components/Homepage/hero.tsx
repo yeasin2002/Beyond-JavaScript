@@ -3,6 +3,9 @@ import { anekBangla, hindSiliguri, mina, sriracha } from '@/fonts';
 import { CourseItem } from './course-item';
 
 export function Hero() {
+  const publishedCourse = courseList.filter(course => course.isPublished);
+  const unpublishedCourse = courseList.filter(course => !course.isPublished);
+
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-background">
       <div
@@ -53,7 +56,7 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col flex-wrap items-center justify-center gap-4 sm:flex-row">
-              {courseList.slice(0, 2).map(course => {
+              {publishedCourse.map(course => {
                 return <CourseItem course={course} key={course.name} />;
               })}
             </div>
@@ -65,7 +68,7 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col flex-wrap items-center justify-center gap-4 sm:flex-row">
-              {courseList.slice(2).map(course => {
+              {unpublishedCourse.map(course => {
                 return <CourseItem course={course} key={course.name} />;
               })}
             </div>
