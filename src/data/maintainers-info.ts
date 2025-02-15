@@ -1,6 +1,10 @@
 import { DiscordIcon } from '@/components/mdx/icons/brand';
 import { Facebook, Github, Linkedin, Twitter } from 'lucide-react';
 
+// image  of maintainer
+import imam_maintainer from '@/assets/maintainers/al-imam.jpg';
+import yeasin_maintainer from '@/assets/maintainers/yeasin.jpg';
+
 export const maintainerYeasinInfo = [
   { name: 'Github', icon: Github, link: 'https://github.com/yeasin2002' },
   {
@@ -43,11 +47,13 @@ export const maintainersInfo = [
   {
     name: 'Md Kawsar Islam Yeasin',
     shortName: 'Yeasin',
+    image: yeasin_maintainer,
     contact: maintainerYeasinInfo
   },
   {
     name: 'Al Imam',
     shortName: 'Imam',
+    image: imam_maintainer,
     contact: maintainerImamInfo
   }
 ];

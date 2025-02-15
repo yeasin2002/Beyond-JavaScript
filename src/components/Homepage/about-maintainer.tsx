@@ -1,54 +1,38 @@
-'use client';
-
 import { Card, CardContent } from '@/components/ui/shadcn/card';
 import { hindSiliguri } from '@/fonts';
 import { anekBangla } from '@/fonts/bengali.fonts';
-import { motion } from 'motion/react';
-import Image from 'next/image';
 
-import imam_maintainer from '@/assets/maintainers/al-imam.jpg';
-import yeasin_maintainer from '@/assets/maintainers/yeasin.jpg';
 import { maintainersInfo } from '@/data/maintainers-info';
 import Link from 'next/link';
-const images = [yeasin_maintainer, imam_maintainer];
+import { UserImage } from '../shared';
+
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger
+} from '@/components/ui/shadcn/tooltip';
 
 export function AboutMaintainer() {
   return (
     <div className="min-h-[70vh] p-6 md:p-12">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
-          {/* Right column maintainer images */}
           <div className="flex items-center justify-center">
-            {images.map((image, idx) => (
-              <motion.div
-                key={'images' + idx}
-                style={{
-                  rotate: Math.random() * 20 - 10
-                }}
-                whileHover={{
-                  scale: 1.1,
-                  rotate: 0,
-                  zIndex: 100
-                }}
-                whileTap={{
-                  scale: 1.1,
-                  rotate: 0,
-                  zIndex: 100
-                }}
-                className="-mr-4 mt-4 flex-shrink-0 overflow-hidden rounded-xl border border-neutral-100 bg-white p-1 dark:border-neutral-700 dark:bg-neutral-800"
-              >
-                <Image
-                  src={image}
-                  alt="maintainers  images"
-                  width={1200}
-                  height={1200}
-                  className="size-32 flex-shrink-0 rounded-lg object-cover md:size-60"
-                />
-              </motion.div>
+            {maintainersInfo.map((maintainer, idx) => (
+              <TooltipProvider key={idx} delayDuration={500}>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <UserImage index={idx} image={maintainer.image} />
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <span> {maintainer.shortName} </span>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
             ))}
           </div>
 
-          {/* Right column with content */}
           <div className={`space-y-8 ${anekBangla.className}`}>
             <h2
               className={`homepage-section bg-gradient-to-r from-teal-400 to-cyan-600 bg-clip-text py-4 text-transparent ${hindSiliguri.className}`}
