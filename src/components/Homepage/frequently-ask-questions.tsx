@@ -19,7 +19,7 @@ export function FrequentlyAskedQuestions() {
           className="mx-auto mb-12 max-w-2xl text-center"
         >
           <h2
-            className={`homepage-section bg-gradient-to-b from-white via-white/90 to-[#f5f5f5] bg-clip-text py-2 text-transparent ${hindSiliguri.className}`}
+            className={`homepage-section bg-gradient-to-b from-[#4567b7] via-[#6495ed] to-[#87ceeb] bg-clip-text py-2 text-transparent ${hindSiliguri.className}`}
           >
             প্রায়শই জিজ্ঞাসিত প্রশ্ন
           </h2>
