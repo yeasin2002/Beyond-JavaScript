@@ -3,3 +3,170 @@ lesson: 1
 ---
 
 # Container-Presentational Pattern (Separation of concerns) 
+
+Container-Presentational Pattern হলো Separation of Concerns (SoC) প্রিন্সিপাল   মেনে কম্পোনেন্ট ডিজাইন করার একটি  পদ্ধতি। এই ক্ষেত্রে বা এই প্যাটার্নের ক্ষেত্রে আমাদের   UI (Presentational) Component এবং  Logic (Container) Component আলাদা আলাদা  করি।  
+যেমন ধরি Parent Component  এর কাছে সকল প্রকার logic, Data fetching এসব করা হল এবং Child Component  সেগুলা শুধু রেন্ডার করা কাজ করবে । এক্ষেত্রে সুবিধা হবে Child Component   গুলো চাইলে আমরা অন্যান্য নানা জায়গায় ব্যবহার করতে পারব , অর্থাৎ কোডের রি-ইউজিবিলিটি বাড়বে ও আমাদের কম কোড লেখা লাগবে। এক্ষেত্রে একটা জিনিস মাথায় রাখা লাগবে যে আমাদের Child Component   গুলো যত সম্ভব Dummy Component বানাতে হবে, এখানে Dummy Component বলতে কি বুঝানো হয়েছে? Dummy Component বলতে এসব   Component তেমন বিশেষ লজিক ধারণ করবে না ফলে এটাকে প্রপস পাঠিয়ে আমরা নানা জায়গায় ব্যবহার করতে পারব 
+
+
+
+<table >
+  <thead>
+    <tr>
+      <th>বিষয়</th>
+      <th>Container Component</th>
+      <th>Presentational Component</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>কাজ</strong></td>
+      <td>Data fetching, state management, business logic হ্যান্ডেল করা</td>
+      <td>শুধুমাত্র UI এবং props অনুযায়ী রেন্ডারিং করা</td>
+    </tr>
+    <tr>
+      <td><strong>Dependency</strong></td>
+      <td>External API, Redux, Context, Hooks ব্যবহার করতে পারে</td>
+      <td>শুধুমাত্র UI রেন্ডার করে, external dependency কম থাকে</td>
+    </tr>
+    <tr>
+      <td><strong>State Management</strong></td>
+      <td>Stateful হতে পারে (useState, useEffect ব্যবহার করতে পারে)</td>
+      <td>Stateless হয়, শুধুমাত্র props-এর ওপর নির্ভর করে</td>
+    </tr>
+    <tr>
+      <td><strong>Responsibility</strong></td>
+      <td>UI Component-এ props পাঠানো ও event handler সেট করা</td>
+      <td>UI প্রদর্শন করা ও props থেকে ডাটা দেখানো</td>
+    </tr>
+    <tr>
+      <td><strong>Code Reusability</strong></td>
+      <td>একটি container কম্পোনেন্ট বিভিন্ন UI কম্পোনেন্টের জন্য data handle করতে পারে</td>
+      <td>একই UI বিভিন্ন জায়গায় পুনরায় ব্যবহার করা যায়</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+### এখন আমরা সাধারণভাবে  ডিজাইন করে দেখি । 
+
+উদাহরণঃ 
+
+```tsx 
+import { useEffect, useState } from "react";
+
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
+const UserList = () => {
+  const [users, setUsers] = useState<User[]>([]);
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((res) => res.json())
+      .then((data) => setUsers(data))
+      .catch((err) => console.error("Error fetching users:", err));
+  }, []);
+
+  return (
+    <div className="p-4 bg-gray-100 rounded-lg">
+      <h2 className="text-lg font-bold mb-2">User List</h2>
+      <ul>
+        {users.map((user) => (
+          <li key={user.id} className="p-2 border-b">
+            <strong>{user.name}</strong> - {user.email}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default UserList;
+
+
+```
+
+এখানে আমরা সহজ একটা উদাহরণ নিলাম যেখানে,  একই  Component  এর মধ্যেই Data Fetcing  ও পাশাপাশি আবার সেটা  UI  তে দেখানোও হচ্ছে ।  এখানে একটা সমস্যা আছে, সেটা হল যদি আমাদের এই  API  এর নিয়ে কোন কাজ করতে হয়   কখনও তখন সেটা আমাদের এই UI এর দিকটাও দেখতে হছে , যেখানে একটা লম্বা কোড বেস হবে সেখানে ।  যা মেন্টেইন করতে কষ্ট হতে পারে। আবার এখানে যদি আরও এমন থাকত তখন সিনারিওটা কেমন হতে পারত চিন্তা করা যায় ? 
+
+### এখন আমরা এটাকে সহজ ভাবে করব, Container-Presentational Pattern অনুসারে করলে এটা কেমন হত সেটা দেখি এখনঃ 
+
+১ . Container Component (UserListContainer.tsx)
+
+```tsx 
+import { useEffect, useState } from "react";
+import UserList from "./UserList";
+
+const UserListContainer = () => {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((res) => res.json())
+      .then((data) => setUsers(data))
+      .catch((err) => console.error("Error fetching users:", err));
+  }, []);
+
+  return <UserList users={users} />;
+};
+
+export default UserListContainer;
+
+
+```
+
+
+২ . Presentational Component (UserList.tsx)
+
+```tsx 
+
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
+const UserList = ({ users }: { users: User[] }) => {
+  return (
+    <div className="p-4 bg-gray-100 rounded-lg">
+      <h2 className="text-lg font-bold mb-2">User List</h2>
+      <ul>
+        {users.map((user) => (
+          <li key={user.id} className="p-2 border-b">
+            <strong>{user.name}</strong> - {user.email}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default UserList;
+
+```
+
+### সুবিধা কি ? 
+এখানে আমরা কি এমন  এক্সট্রা  সুবিধা পাচ্ছি সেটা বিবেচনা করি ; 
+ - Code Maintainability : Logic এবং UI আলাদা থাকায় কোড বুঝতে ও মেইনটেইন করতে সহজ হয়। যদি এখানে  আরও অনেক কোড থাকত তখন সেটা মেইন্টেইন করা ও কোড রিড করা কষ্টদায়ক হত । 
+- Reusability : UserList কম্পোনেন্টকে অন্য জায়গায়ও ব্যবহার করা যাবে, এটাকে চাইলেই আমরা নানা ভাবে নানা জায়গায় এই Data কে  Props   হিসেবে দিয়েই ব্যবহার করতে পারব । 
+- Scalability : প্রজেক্ট বড় হলেও সমস্যা হবে না, কারণ কম্পোনেন্টগুলো স্পষ্টভাবে আলাদা থাকে।
+- Testing সহজ হয় : Presentational Component গুলো সহজে টেস্ট করা যায় কারণ তারা শুধুমাত্র UI রেন্ডার করে। যেমন আমরা চাইলে data fetching  টাও অন্য  `file`  এ করে   সেটা এখানে ব্যবহার করতে পারতাম, এক্ষেত্রে  সেই ফাইলে সহজেই  unit test করা যেত । 
+
+
+সুতরাং, এসকল সুবিধার জন্য আমরা মূলত এই Pattern ব্যবহার করতে পারি । এক্ষেত্রে এই প্যাটার্ন Separation of concerns  priciple  ফলো করে ও সেটাকে মেনে চলে  । অর্থাৎ Separation of concerns ও ঠিক এই বিষয়ে বলে আর আমরা এই ডিজাইন প্যাটার্ন মেনে চললে সেটাই তখন Separation of concerns এর নিয়ম সন্তুষ্ট করে । 
+
+## Single Responsibility Principle (SRP)
+
+এখন আমরা  এই ধরনের আরেকটা  ইম্পোর্টেন্ট  প্রিসিসিপাল বা কনভেনশন সম্পর্কে জানব আর সেটা হল Single Responsibility Principle । 
+এর নাম দিয়েই এটা অনেকটা বুঝা যায় , Single Responsibility Principle  এর মানে হল কোন নির্দিষ্ট একটা Component টি কোণ নির্দিষ্ট একটা কাজ করবে অর্থাৎ Single Responsibility ধারণ করবে তা নিয়েই কাজ করবে । 
+
+Single Responsibility Principle  ও  Separation of concerns Principle  অনেকটা সিমিলার যদিও বেশ পার্থক্য আছে , 
+
+যেমন, 
+- Separation of concerns Principle অন্যযায়ী UI and business logic, state  আলাদা হবে এখানে parent Component চাইলে একাধিক data fetching  বা  business logic  রাখতে পারব 
+- Single Responsibility Principle অন্যযায়ী তা হবে না , কোন নির্দিষ্ট `File` সে নির্দিষ্ট একটা কাজই করবে বা উদাহরণ হিসেবে বলতে পারি যেমন সে একটা বিষয় Data Fetch  করে সেটা UI  তে রেন্ডার করবে । 
+
+
