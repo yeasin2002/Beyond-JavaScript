@@ -13,7 +13,7 @@ keyword ব্যবহার করা হয় তাকে Access Modifiers ব
 ## Access Modifiers এর প্রকারভেদঃ
 
     1. Public
-    2. Privet
+    2. Private
     3. Protected
 
 ##### এ নিয়ে এখন উদাহরণসহ বিস্তারিত আলোচনা করি,
@@ -44,10 +44,10 @@ const person = new Person("Alice"); console.log(person.name, person.age); // ✅
 
 ```
 
-### Privet
+### Private
 
-Developer নিজে থেকে এক্সপ্লিসিটলি বলে দিবে এটা Privet তাহলে সেই Method বা
-Properties তখন Privet হবে । ফলে উক্ত Method বা Properties শুধুমাত্র উক্ত Class
+Developer নিজে থেকে এক্সপ্লিসিটলি বলে দিবে এটা Private তাহলে সেই Method বা
+Properties তখন Private হবে । ফলে উক্ত Method বা Properties শুধুমাত্র উক্ত Class
 এর মধ্যেই সিমাবদ্ধ থাকবে । এটিকে বাহিরে থেকে Access করা যাবে না ।
 
 উদাহরণঃ
@@ -144,7 +144,7 @@ console.log(student.getName()); // ❌ Error: Method 'getName' is protected
 
 </div>
 
-### Public, Privet and Protected এর মধ্যে তুলনাঃ
+### Public, Private and Protected এর মধ্যে তুলনাঃ
 
 <table>
   <thead>
