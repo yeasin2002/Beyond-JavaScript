@@ -8,9 +8,13 @@ export default async function Page({
 }: {
   params: Promise<{ slug: string[]; categoryId: string }>;
 }) {
-  const { slug: slugs } = await params;
+  const { slug: slugs, categoryId } = await params;
 
-  const slug = slugs.join('/');
+  const slug = [categoryId, ...slugs].join('/');
+
+  console.log(slug);
+  console.log(slugs);
+  console.log(allBlogs);
 
   const blog = allBlogs.find(blog => blog.slug === slug.replace('.mdx', ''));
 
