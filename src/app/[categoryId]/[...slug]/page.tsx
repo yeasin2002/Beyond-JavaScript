@@ -12,10 +12,6 @@ export default async function Page({
 
   const slug = [categoryId, ...slugs].join('/');
 
-  console.log(slug);
-  console.log(slugs);
-  console.log(allBlogs);
-
   const blog = allBlogs.find(blog => blog.slug === slug.replace('.mdx', ''));
 
   if (!blog) notFound();
