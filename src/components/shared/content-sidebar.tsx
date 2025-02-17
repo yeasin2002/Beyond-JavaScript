@@ -19,7 +19,7 @@ type Props = {
 
 export function ContentSidebar({ menu, children }: Props) {
   return (
-    <div className="container mx-auto flex min-h-svh !w-full divide-x-4">
+    <div className="container mx-auto flex min-h-svh !w-full divide-x-2">
       <div className="scrollbar-thin sticky top-0 h-svh min-w-60 !overflow-y-auto truncate bg-background pt-5">
         {menu.map(item => {
           return (

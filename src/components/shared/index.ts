@@ -5,4 +5,3 @@ export * from './noice';
 export * from './scattered-dots';
 export * from './theme-provider';
 export * from './user-image';
-
