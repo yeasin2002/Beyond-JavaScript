@@ -6,8 +6,9 @@ import {
   AccordionItem,
   AccordionTrigger
 } from '@/components/ui/shadcn/accordion';
-import { publicSans } from '@/fonts';
+import { publicSans, rubik } from '@/fonts';
 import { anekBangla } from '@/fonts/bengali.fonts';
+
 import { SidebarContentType } from '@/types';
 import Link from 'next/link';
 import * as React from 'react';
@@ -37,7 +38,7 @@ export function ContentSidebar({ menu, children }: Props) {
                       <Link
                         key={index}
                         href={{ pathname: item.baseUrl + subContent.url }}
-                        className="block truncate capitalize text-gray-100 hover:text-gray-200"
+                        className={`block truncate font-bold capitalize text-gray-100 hover:text-gray-200 ${rubik.className}`}
                       >
                         {subContent.name}
                       </Link>
