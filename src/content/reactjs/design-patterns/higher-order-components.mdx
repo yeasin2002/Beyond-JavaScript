@@ -27,10 +27,11 @@ HOC হল একটি ফাংশন যা একটি Components নেয়
 
  #####   HOC উদাহরণ 
 
+with-user-data.tsx 
  ```tsx
 import React, { useEffect, useState } from "react";
 
-// Define the TypeScript type for user data
+
 type User = {
   id: number;
   name: string;
@@ -72,8 +73,11 @@ const withUserData = <P extends object>(
     return <WrappedComponent {...props} users={users} />;
   };
 };
+ ```
 
-// Regular component that receives user data
+UserContainer.tsx
+ ```tsx 
+
 const UserList = ({ users }: { users: User[] }) => {
   return (
     <div>
@@ -89,10 +93,12 @@ const UserList = ({ users }: { users: User[] }) => {
   );
 };
 
-// Enhance UserList component with user data using the HOC
-const UserListWithData = withUserData(UserList);
 
-// App Component
+const UserListWithData = withUserData(UserList);
+ ```
+
+App.tsx
+ ```tsx
 export default function App() {
   return (
     <div>
@@ -104,3 +110,4 @@ export default function App() {
 
 
  ```
+
